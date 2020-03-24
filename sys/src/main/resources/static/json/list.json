@@ -1,0 +1,23 @@
+{
+    "code": 0,
+    "msg": "",
+    "count": 16,
+    "data": [
+        { "id":"001", "username":"张玉林", "sex":"女", "class":"12", "state":"在校", "jf":10 },
+        { "id":"002", "username":"刘晓军", "sex":"男", "class":"11", "state":"已开除", "jf":0 },
+        { "id":"003", "username":"张恒", "sex":"男", "class":"11", "state":"已开除", "jf":10 },
+        { "id":"004", "username":"朱一", "sex":"男", "class":"11", "state":"在校", "jf":8 },
+        { "id":"005", "username":"刘佳能", "sex":"女", "class":"12", "state":"在校", "jf":18 },
+        { "id":"006", "username":"晓梅", "sex":"女", "class":"8", "state":"在校", "jf":25 },
+        { "id":"007", "username":"马冬梅", "sex":"女", "class":"8", "state":"已开除", "jf":21 },
+        { "id":"008", "username":"刘晓庆", "sex":"女", "class":"8", "state":"在校", "jf":8 },
+        { "id":"009", "username":"刘晓庆", "sex":"女", "class":"8", "state":"在校", "jf":8 },
+        { "id":"010", "username":"刘晓庆", "sex":"女", "class":"10", "state":"在校", "jf":1 },
+        { "id":"011", "username":"刘晓庆", "sex":"女", "class":"10", "state":"在校", "jf":1 },
+        { "id":"012", "username":"刘晓庆", "sex":"女", "class":"11", "state":"在校", "jf":45 },
+        { "id":"013", "username":"刘晓庆", "sex":"女", "class":"9", "state":"已开除", "jf":12 },
+        { "id":"014", "username":"刘晓庆", "sex":"女", "class":"8", "state":"在校", "jf":29 },
+        { "id":"015", "username":"刘晓庆", "sex":"女", "class":"8", "state":"在校", "jf":21 },
+        { "id":"016", "username":"刘晓庆", "sex":"女", "class":"12", "state":"在校", "jf":10 }
+    ]
+}

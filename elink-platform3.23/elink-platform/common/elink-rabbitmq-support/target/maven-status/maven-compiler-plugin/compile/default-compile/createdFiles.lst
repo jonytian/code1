@@ -1,0 +1,3 @@
+com\legaoyi\rabbitmq\RabbitmqFanoutExchangeMessageProducer.class
+com\legaoyi\rabbitmq\RabbitMessageListenerManager.class
+com\legaoyi\rabbitmq\RabbitmqDirectExchangeMessageProducer.class

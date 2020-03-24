@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd"
+	default-lazy-init="true">
+	<alias alias="elink_0001_2013_messageHandler" name="elink_0001_2011_messageHandler" />
+	<alias alias="elink_0100_2013_messageHandler" name="elink_0100_2011_messageHandler" />
+	<alias alias="elink_0102_2013_messageHandler" name="elink_0102_2011_messageHandler" />
+	<alias alias="elink_0200_2013_messageHandler" name="elink_0200_2011_messageHandler" />
+	<alias alias="elink_0201_2013_messageHandler" name="elink_0201_2011_messageHandler" />
+	<alias alias="elink_0500_2013_messageHandler" name="elink_0500_2011_messageHandler" />
+	<alias alias="elink_0801_2013_messageHandler" name="elink_0801_2011_messageHandler" />
+
+	<alias alias="elink_0001_2015_messageHandler" name="elink_0001_2011_messageHandler" />
+	<alias alias="elink_0100_2015_messageHandler" name="elink_0100_2011_messageHandler" />
+	<alias alias="elink_0102_2015_messageHandler" name="elink_0102_2011_messageHandler" />
+	<alias alias="elink_0200_2015_messageHandler" name="elink_0200_2011_messageHandler" />
+	<alias alias="elink_0201_2015_messageHandler" name="elink_0201_2011_messageHandler" />
+	<alias alias="elink_0500_2015_messageHandler" name="elink_0500_2011_messageHandler" />
+	<alias alias="elink_0801_2015_messageHandler" name="elink_0801_2011_messageHandler" />
+
+	<alias alias="elink_0001_2016_messageHandler" name="elink_0001_2011_messageHandler" />
+	<alias alias="elink_0100_2016_messageHandler" name="elink_0100_2011_messageHandler" />
+	<alias alias="elink_0102_2016_messageHandler" name="elink_0102_2011_messageHandler" />
+	<alias alias="elink_0201_2016_messageHandler" name="elink_0201_2011_messageHandler" />
+	<alias alias="elink_0500_2016_messageHandler" name="elink_0500_2011_messageHandler" />
+	<alias alias="elink_0801_2016_messageHandler" name="elink_0801_2011_messageHandler" />
+
+	<alias alias="elink_0001_201602_messageHandler" name="elink_0001_2011_messageHandler" />
+	<alias alias="elink_0100_201602_messageHandler" name="elink_0100_2011_messageHandler" />
+	<alias alias="elink_0102_201602_messageHandler" name="elink_0102_2011_messageHandler" />
+	<alias alias="elink_0200_201602_messageHandler" name="elink_0200_2016_messageHandler" />
+	<alias alias="elink_0201_201602_messageHandler" name="elink_0201_2011_messageHandler" />
+	<alias alias="elink_0500_201602_messageHandler" name="elink_0500_2011_messageHandler" />
+	<alias alias="elink_0801_201602_messageHandler" name="elink_0801_2011_messageHandler" />
+	<alias alias="elink_1206_201602_messageHandler" name="elink_1206_2016_messageHandler" />
+	<alias alias="elink_1205_201602_messageHandler" name="elink_1205_2016_messageHandler" />
+
+	<alias alias="elink_0001_2019_messageHandler" name="elink_0001_2011_messageHandler" />
+	<alias alias="elink_0100_2019_messageHandler" name="elink_0100_2011_messageHandler" />
+	<alias alias="elink_0102_2019_messageHandler" name="elink_0102_2011_messageHandler" />
+	<alias alias="elink_0200_2019_messageHandler" name="elink_0200_2011_messageHandler" />
+	<alias alias="elink_0201_2019_messageHandler" name="elink_0201_2011_messageHandler" />
+	<alias alias="elink_0500_2019_messageHandler" name="elink_0500_2011_messageHandler" />
+	<alias alias="elink_0801_2019_messageHandler" name="elink_0801_2011_messageHandler" />
+</beans>

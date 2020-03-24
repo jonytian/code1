@@ -1,0 +1,151 @@
+@charset "utf-8";
+
+.player_ctl_bar {
+	background-color: #1A1A1A;
+	min-width: 600px !important;
+	width:100%;
+	height:100px;
+	position: absolute;
+	padding: 0px 15px;
+}
+
+.player_ctl_progress_bar {
+	width: 100%;
+	height: 20px;
+	overflow: hidden;
+	position: relative;
+	margin-top: 10px;
+}
+
+.player_ctl_progress_bar_bg {
+	width: 100%;
+	height: 6px;
+	background: #686868;
+	border-radius: 3px;
+	margin-top: 7px;
+	position: relative;
+}
+
+.player_ctl_progress_bar_buff {
+	height: 6px;
+	border-radius: 3px 0 0 3px;
+	background: #959595;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.player_ctl_progress_bar_move {
+	height: 6px;
+	border-radius: 3px 0 0 3px;
+	background: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+}
+
+.player_ctl_progress_bar_btn {
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	position: absolute;
+	background: #fff;
+	top: -7px;
+	right: -20px;
+	cursor: pointer;
+}
+
+.player_ctl_bar_list {
+	width: 100%;
+	height: 24px;
+	line-height: 24px;
+	margin-top: 21px;
+	overflow: hidden;
+}
+
+.player_ctl_bar_list_box {
+	float: left;
+	height: 24px;
+	overflow: hidden;
+}
+
+.player_ctl_bar_list_box i {
+	cursor: pointer;
+	color: #fff;
+	font-size: 20px;
+}
+
+.player_ctl_bar_list_voice {
+	float: left;
+	height: 24px;
+	overflow: hidden;
+	margin-left: 51px;
+}
+
+.player_ctl_bar_list_voice i {
+	cursor: pointer;
+	color: #fff;
+	font-size: 20px;
+	margin-right: 20px;
+}
+
+.player_ctl_bar_voice_bar_box {
+	width: 154px;
+	height: 24px;
+	float: left;
+	overflow: hidden;
+	position: relative;
+}
+
+.player_ctl_bar_voice_bar {
+	width: 154px;
+	height: 6px;
+	background: #686868;
+	border-radius: 3px;
+	margin-top: 9px;
+	position: relative;
+}
+
+.player_ctl_bar_voice_bar_in {
+	width: 60px;
+	height: 6px;
+	background: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.player_ctl_bar_voice_bar_btn {
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	background: #fff;
+	position: absolute;
+	top: 2px;
+	left: 60px;
+}
+
+.player_video_time {
+	float: left;
+	margin-left: 51px;
+	height: 24px;
+	line-height: 24px;
+	font-size: 16px;
+	color: #939393
+}
+
+.player_video_time font {
+	color: #fff;
+}
+
+.player_video_time em {
+	font-style: normal;
+}
+
+#player_ctl_bar_full_screen {
+	font-size: 20px;
+	color: #fff;
+	float: right;
+	cursor: pointer;
+}

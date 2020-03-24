@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.logs.mapper.SystemMapper">
+
+	<resultMap id="BaseResultMap" type="SystemLog">
+		<id column="id" jdbcType="INTEGER" property="id"/>
+		<result column="content" jdbcType="VARCHAR" property="content"/>
+		<result column="user_id" jdbcType="INTEGER" property="userId"/>
+		<result column="username" jdbcType="TIMESTAMP" property="username"/>
+		<result column="ip" jdbcType="VARCHAR" property="ip"/>
+		<result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+	</resultMap>
+
+	<sql id="Base_Column_List">
+    id, content, user_id, username,ip,create_time
+    </sql>
+
+	<!--查找全部-->
+	<select id="findAll" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List"/>
+		from t_system_log
+	</select>
+
+	<!--根据主键查找-->
+	<select id="findById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List"/>
+		from t_system_log
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+
+	<!--根据主键删除-->
+	<delete id="deleteById" parameterType="java.lang.Integer">
+		delete from t_system_log
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<!--新增-->
+	<insert id="insert" parameterType="SystemLog">
+		insert into t_system_log
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="content != null">
+				content,
+			</if>
+			<if test="userId != null">
+				user_id,
+			</if>
+			<if test="username != null">
+				username,
+			</if>
+			<if test="ip != null">
+				ip,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="content != null">
+				#{content,jdbcType=VARCHAR},
+			</if>
+			<if test="userId != null">
+				#{userId,jdbcType=VARCHAR},
+			</if>
+			<if test="username != null">
+				#{username,jdbcType=INTEGER},
+			</if>
+			<if test="ip != null">
+				#{ip,jdbcType=TIMESTAMP},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+
+	<delete id="delete" parameterType="SystemLog">
+		delete from t_system_log
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+
+
+</mapper>

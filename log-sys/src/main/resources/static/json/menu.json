@@ -1,0 +1,71 @@
+{
+	"status": 0,
+	"msg": "ok",
+	"data": [{
+			"id": 1,
+			"name": "用户管理",
+			"icon": "&#xe6b8;",
+			"url": "",
+			"children": [{
+				"id": 2,
+				"name": "用户列表",
+				"icon": "",
+				"url": "/user"
+			}]
+		},
+		{
+			"id": 8,
+			"name": "设备管理",
+			"icon": "&#xe705;",
+			"url": "",
+			"children": [{
+				"id": 9,
+				"name": "设备列表",
+				"icon": "",
+				"url": "/device"
+			}]
+		},
+		{
+			"id": 11,
+			"name": "日志管理",
+			"icon": "&#xe723;",
+			"url": "",
+			"children": [{
+				"id": 12,
+				"name": "异常列表",
+				"icon": "",
+				"url": "/log"
+			},{
+				"id": 13,
+				"name": "消息列表",
+				"icon": "",
+				"url": "/log/msg"
+			}
+			]
+		},
+		{
+			"id": 18,
+			"name": "系统统计",
+			"icon": "&#xe6ce;",
+			"url": "",
+			"children": [{
+				"id": 19,
+				"name": "拆线图",
+				"icon": "",
+				"url": "/chart/line"
+			},
+			{
+				"id": 20,
+				"name": "柱状图",
+				"icon": "",
+				"url": "/chart/bar"
+			},
+			{
+				"id": 22,
+				"name": "饼图",
+				"icon": "",
+				"url": "/chart/pie"
+			}]
+		}
+	]
+}

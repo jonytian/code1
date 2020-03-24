@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="30766cdf-6f83-4b38-82ed-6720eaf3b3ed" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/common/elink-excel-util/target/" />
+    <ignored path="$PROJECT_DIR$/device-gateway/elink-tjsatl-file-server/target/" />
+    <ignored path="$PROJECT_DIR$/rest-api-core/elink-lbs-api-core/target/" />
+    <ignored path="$PROJECT_DIR$/common/elink-disruptor-support/target/" />
+    <ignored path="$PROJECT_DIR$/rest-api-core/elink-report-api-core/target/" />
+    <ignored path="$PROJECT_DIR$/common/elink-util/target/" />
+    <ignored path="$PROJECT_DIR$/common/elink-mq-support/target/" />
+    <ignored path="$PROJECT_DIR$/rest-api-core/target/" />
+    <ignored path="$PROJECT_DIR$/elink-data-analyst/target/" />
+    <ignored path="$PROJECT_DIR$/persistence-support/target/" />
+    <ignored path="$PROJECT_DIR$/common/elink-rabbitmq-support/target/" />
+    <ignored path="$PROJECT_DIR$/rest-api-core/elink-management-model/target/" />
+    <ignored path="$PROJECT_DIR$/device-gateway/elink-device-protocol-jt8081078-message/target/" />
+    <ignored path="$PROJECT_DIR$/device-gateway/elink-device-gateway/target/" />
+    <ignored path="$PROJECT_DIR$/persistence-support/elink-spring-mongo-support/target/" />
+    <ignored path="$PROJECT_DIR$/device-gateway/elink-device-protocol-jt8082013-message/target/" />
+    <ignored path="$PROJECT_DIR$/device-gateway/elink-device-protocol-jt8082019-codec/target/" />
+    <ignored path="$PROJECT_DIR$/device-gateway/elink-device-jt8082019-gateway/target/" />
+    <ignored path="$PROJECT_DIR$/common/target/" />
+    <ignored path="$PROJECT_DIR$/device-gateway/elink-device-message-storer/target/" />
+    <ignored path="$PROJECT_DIR$/elink-platform-rest-api/target/" />
+    <ignored path="$PROJECT_DIR$/persistence-support/elink-spring-jpa-support/target/" />
+    <ignored path="$PROJECT_DIR$/rest-api-core/elink-platform-base-model/target/" />
+    <ignored path="$PROJECT_DIR$/device-gateway/elink-device-protocol-jt8081078-codec/target/" />
+    <ignored path="$PROJECT_DIR$/rest-api-core/elink-message-model/target/" />
+    <ignored path="$PROJECT_DIR$/elink-platform-web/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/device-gateway/elink-device-protocol-tjsatl2017-message/target/" />
+    <ignored path="$PROJECT_DIR$/device-gateway/elink-device-protocol-jt8082013-codec/target/" />
+    <ignored path="$PROJECT_DIR$/device-gateway/elink-device-protocol-jt8082011-codec/target/" />
+    <ignored path="$PROJECT_DIR$/rest-api-core/elink-platform-base-core/target/" />
+    <ignored path="$PROJECT_DIR$/device-gateway/target/" />
+    <ignored path="$PROJECT_DIR$/device-gateway/elink-device-message-storer-base/target/" />
+    <ignored path="$PROJECT_DIR$/rest-api-core/elink-message-api-core/target/" />
+    <ignored path="$PROJECT_DIR$/device-gateway/elink-tjsatl-message-storer-core/target/" />
+    <ignored path="$PROJECT_DIR$/device-gateway/elink-device-protocol-tjsatl2017-codec/target/" />
+    <ignored path="$PROJECT_DIR$/device-gateway/elink-device-protocol-jt8082011-message/target/" />
+    <ignored path="$PROJECT_DIR$/device-gateway/elink-device-protocol-base/target/" />
+    <ignored path="$PROJECT_DIR$/device-gateway/elink-device-protocol-jt8082019-message/target/" />
+    <ignored path="$PROJECT_DIR$/rest-api-core/elink-management-api-core/target/" />
+    <ignored path="$PROJECT_DIR$/persistence-support/elink-spring-redis-support/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/elink_platform$Startup.ic" NAME="Startup Coverage Results" MODIFIED="1576039148007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.legaoyi.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="15" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/java/com/legaoyi/Startup.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/webapp/WEB-INF/jsp/device/alarmDetail.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/webapp/js/device/alarmDetail.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="666">
+              <caret line="37" column="35" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/webapp/js/base.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="546" column="9" selection-start-line="546" selection-start-column="9" selection-end-line="546" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/device-gateway/elink-device-gateway/src/main/resources/application-dev.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elink-platform-rest-api/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="27" selection-start-column="27" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elink-platform-rest-api/src/main/resources/application-dev.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1134">
+              <caret line="63" column="27" selection-start-line="63" selection-start-column="27" selection-end-line="63" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/device-gateway/elink-device-gateway/src/main/resources/application-prod.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/resources/application-test.properties">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/resources/application-prod.properties">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>clinetId</find>
+      <find>startVideo</find>
+      <find>setLiveVideoServer</find>
+      <find>startPlayBack</find>
+      <find>onclickUploadFile</find>
+      <find>setResourceListTable</find>
+      <find>doSendQueryResourceCmd</find>
+      <find>getResourceColumns</find>
+      <find>平台</find>
+      <find>getColumns</find>
+      <find>rtmp_server_url</find>
+      <find>loadRtmpServer</find>
+      <find>c</find>
+      <find>main-frame</find>
+      <find>保存</find>
+      <find>saveAsImage</find>
+      <find>match</find>
+      <find>message</find>
+      <find>-request</find>
+      <find>Id</find>
+      <find>文本</find>
+      <find>showCmdDialog</find>
+      <find>conditionsCache</find>
+      <find>cacheConditions</find>
+      <find>search-type</find>
+      <find>getQueryUrl</find>
+      <find>dsm</find>
+      <find>getDeviceStateStr</find>
+      <find>online</find>
+      <find>getDe</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/js/ckplayer/language.xml" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/js/ckplayer/ckplayer.min.js" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/js/ckplayer/ckplayer.xml" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/js/base.js" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/elink-platform-web/pom.xml" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/resources/application-test.properties" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/js/device/uploadPassengerList.js" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/WEB-INF/jsp/device/queryAnswerList.jsp" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/WEB-INF/jsp/device/uploadPassengerList.jsp" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/js/device/queryAnswerList.js" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/java/com/legaoyi/platform/controller/MainController.java" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/java/com/legaoyi/platform/util/HttpClientUtil.java" />
+        <option value="$PROJECT_DIR$/elink-platform-rest-api/src/main/java/com/legaoyi/platform/config/BasicAuthenticationProvider.java" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/WEB-INF/jsp/pub/player-ctl-bar.jsp" />
+        <option value="$PROJECT_DIR$/device-gateway/elink-device-gateway/src/main/resources/application-prod.properties" />
+        <option value="$PROJECT_DIR$/device-gateway/elink-device-message-storer/src/main/resources/application-test.properties" />
+        <option value="$PROJECT_DIR$/device-gateway/elink-device-message-storer/src/main/resources/application-dev.properties" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/WEB-INF/jsp/device/mapToolbar.jsp" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/common/footer.jsp" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/js/content.js" />
+        <option value="$PROJECT_DIR$/device-gateway/elink-device-message-storer/src/main/java/com/legaoyi/storer/handler/JTT808_0801_2011_MediaConverHandler.java" />
+        <option value="$PROJECT_DIR$/device-gateway/elink-device-message-storer/src/main/java/com/legaoyi/storer/task/VideoHandlerTask.java" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/java/com/legaoyi/rabbitmq/LiveVideoRabbitmqListener.java" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/js/device/liveVideoList.js" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/WEB-INF/jsp/device/liveVideoList.jsp" />
+        <option value="$PROJECT_DIR$/device-gateway/elink-device-message-storer/src/main/resources/application-prod.properties" />
+        <option value="$PROJECT_DIR$/device-gateway/elink-device-message-storer/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/js/main.js" />
+        <option value="$PROJECT_DIR$/device-gateway/elink-device-message-storer/src/main/java/com/legaoyi/storer/task/VideoStateCheckTask.java" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/js/common/constants.js" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/WEB-INF/jsp/multiMap.jsp" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/resources/application-dev.properties" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/WEB-INF/jsp/main.jsp" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/WEB-INF/jsp/editPassword.jsp" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/WEB-INF/jsp/report/charts_date.jsp" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/js/echarts/echarts.min.js" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/WEB-INF/jsp/content.jsp" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/java/com/legaoyi/platform/dwr/DwrMessagePusher.java" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/java/com/legaoyi/platform/controller/MainViewController.java" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/resources/logback.xml" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/WEB-INF/jsp/device/upMessageList.jsp" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/WEB-INF/jsp/device/downMessageList.jsp" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/js/device/historyVideoList.js" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/WEB-INF/jsp/device/jttUnknownMessageList.jsp" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/js/device/alarmList.js" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/elink-platform-web/src/main/webapp/WEB-INF/jsp/device/alarmList.jsp" />
+        <option value="$PROJECT_DIR$/elink-platform-rest-api/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/rest-api-core/elink-message-api-core/src/main/java/com/legaoyi/message/rest/MessageController.java" />
+        <option value="$PROJECT_DIR$/device-gateway/elink-device-gateway/src/main/resources/application-dev.properties" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="elink-platform-web" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="elink-platform-web" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="333" />
+    <option name="y" value="245" />
+    <option name="width" value="1036" />
+    <option name="height" value="829" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="elink-platform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="elink-platform" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="elink-platform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="elink-platform" type="462c0819:PsiDirectoryNode" />
+              <item name="elink-platform-web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="elink-platform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="elink-platform" type="462c0819:PsiDirectoryNode" />
+              <item name="elink-platform-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="elink-platform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="elink-platform" type="462c0819:PsiDirectoryNode" />
+              <item name="elink-platform-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="elink-platform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="elink-platform" type="462c0819:PsiDirectoryNode" />
+              <item name="elink-platform-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="elink-platform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="elink-platform" type="462c0819:PsiDirectoryNode" />
+              <item name="elink-platform-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="elink-platform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="elink-platform" type="462c0819:PsiDirectoryNode" />
+              <item name="elink-platform-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="elink-platform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="elink-platform" type="462c0819:PsiDirectoryNode" />
+              <item name="elink-platform-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+              <item name="device" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1579590021125" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\elink-platform\elink-platform-web\src\main\webapp\images" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.legaoyi.rabbitmq" />
+      <recent name="com.legaoyi.storer.task" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Work\elink-platform\device-gateway\elink-device-message-storer\src\main\resources" />
+      <recent name="D:\Work\elink-platform\elink-platform-web\src\main\webapp\js\device" />
+      <recent name="D:\Work\elink-platform\elink-platform-web\src\main\webapp\WEB-INF\jsp\device" />
+      <recent name="D:\Work\elink-platform\elink-platform-web\src\main\webapp\images" />
+      <recent name="D:\Work\elink-platform\device-gateway\elink-device-gateway\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Startup">
+    <configuration name="Deploy to Host" type="DEPLOY_HOST_RUN_CONFIGURATION" factoryName="Deploy to Host">
+      <option name="address" value="192.168.110.22" />
+      <option name="afterCommand" value="/home/vehicle/car/gateway/start.sh" />
+      <option name="alreadyReset" value="true" />
+      <option name="autoOpen" value="false" />
+      <option name="beforeCommand" value="/home/vehicle/car/gateway/start.sh" />
+      <option name="defaultTabIdx" value="0" />
+      <option name="ecsInstance">
+        <EcsInstance>
+          <option name="OSType" />
+          <option name="instanceId" />
+          <option name="instanceName" />
+          <option name="netType" />
+          <option name="privateIps" />
+          <option name="publicIps" />
+          <option name="regionId" />
+          <option name="tags" />
+        </EcsInstance>
+      </option>
+      <option name="hostTagId" value="0" />
+      <option name="location" value="/home/vehicle/car" />
+      <option name="pathOrUrl" value="D:\Work\elink-platform\elink-platform-web\target\elink-platform-web.jar" />
+      <option name="tagId" value="0" />
+      <option name="terminalCommand" />
+      <option name="type" value="HOST" />
+      <option name="uploadType" value="MAVEN" />
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="clean install" />
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/elink-platform-web/pom.xml" goal="clean package" />
+      </method>
+    </configuration>
+    <configuration name="Startup (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="elink-device-gateway" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.legaoyi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.legaoyi.Startup" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Startup (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="elink-platform-rest-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.legaoyi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.legaoyi.Startup" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Startup (3)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="elink-data-analyst" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.legaoyi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.legaoyi.Startup" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Startup (4)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="elink-device-message-storer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.legaoyi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.legaoyi.Startup" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Startup" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="elink-platform-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.legaoyi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.legaoyi.Startup" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.Startup" />
+        <item itemvalue="Spring Boot.Startup (4)" />
+        <item itemvalue="Spring Boot.Startup (2)" />
+        <item itemvalue="Spring Boot.Startup (1)" />
+        <item itemvalue="Spring Boot.Startup (3)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SshConsoleOptionsProvider">
+    <option name="myEncoding" value="UTF-8" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="30766cdf-6f83-4b38-82ed-6720eaf3b3ed" name="Default Changelist" comment="" />
+      <created>1574824978157</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574824978157</updated>
+      <workItem from="1574824986166" duration="7532000" />
+      <workItem from="1574838346332" duration="21358000" />
+      <workItem from="1575013307964" duration="48153000" />
+      <workItem from="1575451425039" duration="14605000" />
+      <workItem from="1575611131607" duration="76742000" />
+      <workItem from="1576220281834" duration="36030000" />
+      <workItem from="1576458416361" duration="34694000" />
+      <workItem from="1576649774491" duration="67835000" />
+      <workItem from="1577178816029" duration="2946000" />
+      <workItem from="1577273751268" duration="73894000" />
+      <workItem from="1577703173014" duration="36657000" />
+      <workItem from="1578877551272" duration="5123000" />
+      <workItem from="1578989794424" duration="7373000" />
+      <workItem from="1579139961051" duration="2915000" />
+      <workItem from="1579146404837" duration="10594000" />
+      <workItem from="1579398749169" duration="17245000" />
+      <workItem from="1579590446800" duration="1438000" />
+      <workItem from="1579593035049" duration="763000" />
+      <workItem from="1581501741801" duration="609000" />
+      <workItem from="1582010438837" duration="1264000" />
+      <workItem from="1582780917116" duration="6764000" />
+      <workItem from="1583286779514" duration="4046000" />
+      <workItem from="1583894043606" duration="62000" />
+      <workItem from="1584351289472" duration="67000" />
+      <workItem from="1584354232723" duration="599000" />
+      <workItem from="1584934409699" duration="1858000" />
+      <workItem from="1584937739820" duration="1288000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="482454000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2238806" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info id="Alibaba Cloud Explorer" order="8" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.16522679" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.787257" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.32937366" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49946696" weight="0.16198704" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.14794816" />
+      <window_info anchor="bottom" id="Statistic" order="11" weight="0.032397408" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="bottom" id="Messages" order="15" weight="0.32829374" />
+      <window_info anchor="bottom" id="Alibaba Cloud View" order="16" weight="0.5896328" />
+      <window_info anchor="right" id="Coverage" order="0" sideWeight="0.50141245" side_tool="true" weight="0.015974442" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" sideWeight="0.4992948" weight="0.015974442" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="4" sideWeight="0.49910232" weight="0.10127932" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Alibaba Function Compute" order="10" weight="0.32995737" />
+      <window_info anchor="right" id="Alibaba Log Console" order="11" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.21512248" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3347732" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.16954644" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.40064794" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Statistic" order="11" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="bottom" id="Messages" order="15" />
+      <window_info anchor="right" id="Coverage" order="0" sideWeight="0.50141245" side_tool="true" weight="0.015974442" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" sideWeight="0.4992948" weight="0.015974442" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="4" sideWeight="0.49910232" weight="0.07028754" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>pwd</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>user.get(password)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/rest-api-core/elink-platform-base-model/src/main/java/com/legaoyi/platform/model/DistrictSearchData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-api-core/elink-platform-base-model/src/main/java/com/legaoyi/platform/model/Enterprise.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-api-core/elink-platform-base-model/src/main/java/com/legaoyi/platform/model/EnterpriseConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-api-core/elink-platform-base-model/src/main/java/com/legaoyi/platform/model/Organization.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-api-core/elink-platform-base-model/src/main/java/com/legaoyi/platform/model/UserResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-api-core/elink-platform-base-model/src/main/java/com/legaoyi/platform/model/UserRole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-api-core/elink-platform-base-model/src/main/java/com/legaoyi/platform/model/UserRoleUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-rest-api/src/main/resources/application-prod.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="45" column="23" lean-forward="true" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-api-core/elink-message-api-core/src/main/java/com/legaoyi/message/rest/MediaDataController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-345">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-api-core/elink-management-api-core/src/main/java/com/legaoyi/management/rest/DictionaryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1134">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-api-core/elink-lbs-api-core/src/main/java/com/legaoyi/lbs/rest/GpsInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2052">
+          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-api-core/elink-platform-base-core/src/main/java/com/legaoyi/platform/rest/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-api-core/elink-message-api-core/src/main/java/com/legaoyi/message/rest/VedioController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-597">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-api-core/elink-management-api-core/src/main/java/com/legaoyi/management/rest/AASController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-api-core/elink-management-api-core/src/main/java/com/legaoyi/management/rest/CarIconController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="40" column="25" lean-forward="true" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-api-core/elink-management-api-core/src/main/java/com/legaoyi/management/rest/DeviceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21">
+          <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-api-core/elink-management-api-core/src/main/java/com/legaoyi/management/rest/ImageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-rest-api/src/main/java/com/legaoyi/platform/rest/GeneralController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="90" column="9" lean-forward="true" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/webapp/js/device/alarmList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="157" column="65" selection-start-line="157" selection-start-column="60" selection-end-line="157" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-api-core/elink-platform-base-model/src/main/java/com/legaoyi/platform/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1224">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-api-core/elink-platform-base-model/src/main/java/com/legaoyi/platform/model/Device.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1170">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/webapp/WEB-INF/jsp/editPassword.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/webapp/WEB-INF/jsp/content.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/webapp/WEB-INF/jsp/device/alarmNotifyRule.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2214">
+          <caret line="123" column="49" selection-start-line="123" selection-start-column="46" selection-end-line="123" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/webapp/WEB-INF/jsp/device/alarmSetting.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/webapp/WEB-INF/jsp/device/cmdSetting.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/java/com/legaoyi/platform/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1692">
+          <caret line="115" column="5" selection-start-line="115" selection-start-column="5" selection-end-line="115" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/java/com/legaoyi/platform/controller/MainViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/java/com/legaoyi/platform/filter/SecurityServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/webapp/js/cache.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-api-core/elink-message-api-core/src/main/java/com/legaoyi/message/rest/MessageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="47" column="221" selection-start-line="47" selection-start-column="221" selection-end-line="47" selection-end-column="221" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/webapp/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4752">
+          <caret line="264" column="36" selection-start-line="264" selection-start-column="36" selection-end-line="264" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-api-core/elink-message-api-core/src/main/java/com/legaoyi/message/service/MessageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest-api-core/elink-message-model/src/main/java/com/legaoyi/gateway/message/model/DeviceDownMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/elink-util/src/main/java/com/legaoyi/common/util/Result.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="23" />
+          <folding>
+            <element signature="e#562#563#0" expanded="true" />
+            <element signature="e#594#595#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/webapp/WEB-INF/jsp/device/ckplayer.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/device-gateway/elink-device-message-storer/src/main/java/com/legaoyi/storer/task/VideoStateCheckTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="51" column="43" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-web/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/resources/application-dev.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/device-gateway/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/java/com/legaoyi/Startup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/webapp/WEB-INF/jsp/device/alarmDetail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/webapp/js/device/alarmDetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="37" column="35" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/device-gateway/elink-device-gateway/src/main/resources/application-dev.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-rest-api/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="27" selection-start-column="27" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-rest-api/src/main/resources/application-dev.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1134">
+          <caret line="63" column="27" selection-start-line="63" selection-start-column="27" selection-end-line="63" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/device-gateway/elink-device-gateway/src/main/resources/application-prod.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/resources/application-test.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/resources/application-prod.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elink-platform-web/src/main/webapp/js/base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="546" column="9" selection-start-line="546" selection-start-column="9" selection-end-line="546" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

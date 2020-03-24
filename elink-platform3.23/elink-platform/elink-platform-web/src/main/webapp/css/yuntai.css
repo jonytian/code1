@@ -1,0 +1,175 @@
+.control-wrapper {
+	position: relative;
+	width: 150px;
+	height: 150px;
+	margin: 0 auto;
+	border-radius: 100%;
+	margin-bottom:15px;
+	margin-top:15px;
+}
+
+.control-btn {
+	cursor:pointer;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	width: 44%;
+	height: 44%;
+	border-radius: 5px;
+	border: 1px solid #4b8df8;
+	box-sizing: border-box;
+	transition: all .3s linear;
+}
+
+.control-btn i {
+	font-size: 20px;
+	color: #4b8df8;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.control-round {
+	position: absolute;
+	top: 21%;
+	left: 21%;
+	width: 58%;
+	height: 58%;
+	background: #081832d4;
+	border-radius: 100%;
+}
+
+.control-round-inner {
+	position: absolute;
+	left: 15%;
+	top: 15%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 70%;
+	height: 70%;
+	font-size: 40px;
+	color: #4b8df8;
+	border: 1px solid #4b8df8;
+	border-radius: 100%;
+	transition: all .3s linear;
+	cursor:pointer;
+}
+
+.control-inner-btn {
+	position: absolute;
+	width: 60%;
+	height: 60%;
+	background: #081832d4;
+}
+
+.control-top {
+	top: -8%;
+	left: 27%;
+	transform: rotate(-45deg);
+	border-radius: 5px 100% 5px 0;
+}
+
+.control-top .control-inner {
+	left: -1px;
+	bottom: 0;
+	border-top: 1px solid #4b8df8;
+	border-right: 1px solid #4b8df8;
+	border-radius: 0 100% 0 0;
+}
+
+.control-top .fa {
+	transform: rotate(45deg) translateY(-7px);
+}
+
+.control-left {
+	top: 27%;
+	left: -8%;
+	transform: rotate(45deg);
+	border-radius: 5px 0 5px 100%;
+}
+
+.control-left .control-inner {
+	right: -1px;
+	top: -1px;
+	border-bottom: 1px solid #4b8df8;
+	border-left: 1px solid #4b8df8;
+	border-radius: 0 0 0 100%;
+}
+
+.control-left .fa {
+	transform: rotate(-45deg) translateX(-7px);
+}
+
+.control-right {
+	top: 27%;
+	right: -8%;
+	transform: rotate(45deg);
+	border-radius: 5px 100% 5px 0;
+}
+
+.control-right .control-inner {
+	left: -1px;
+	bottom: -1px;
+	border-top: 1px solid #4b8df8;
+	border-right: 1px solid #4b8df8;
+	border-radius: 0 100% 0 0;
+}
+
+.control-right .fa {
+	transform: rotate(-45deg) translateX(7px);
+}
+
+.control-bottom {
+	left: 27%;
+	bottom: -8%;
+	transform: rotate(45deg);
+	border-radius: 0 5px 100% 5px;
+}
+
+.control-bottom .control-inner {
+	top: -1px;
+	left: -1px;
+	border-bottom: 1px solid #4b8df8;
+	border-right: 1px solid #4b8df8;
+	border-radius: 0 0 100% 0;
+}
+
+.control-bottom .fa {
+	transform: rotate(-45deg) translateY(7px);
+}
+
+
+#yuntai {
+	width: 34.8%;
+	height:180px;
+	bottom:0px;
+	position: fixed;
+	color: #ffffff;
+	font-size: 14px;
+	text-align: center;
+	background: #081832d4;
+	border: 1px solid #ccc;
+	display:none;
+}
+
+#yuntai>div {
+	float:left;
+	margin-left:15px;
+}
+
+#yuntai>div img {
+	width:35px;
+	height:35px;
+	margin-left:15px;
+}
+
+#yuntai>div select {
+	height: 20px;
+	width: 80px;
+	border-radius: 3px;
+	text-indent: 1em;
+	border: 1px solid #4b8df8;
+	color: #000000;
+	background-color: #cccccc4f;
+}

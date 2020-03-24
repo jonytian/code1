@@ -1,0 +1,9 @@
+/*add by tyj.20200309*/
+.layui-layer-setwin {
+	position: absolute;
+	right: 25px;
+	*right: 0;
+	top: 25px;
+	font-size: 0;
+	line-height: initial;
+}

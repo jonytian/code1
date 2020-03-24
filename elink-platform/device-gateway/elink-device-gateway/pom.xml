@@ -1,0 +1,193 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>elink-device-gateway</artifactId>
+	<parent>
+		<groupId>com.legaoyi</groupId>
+		<artifactId>elink-platform</artifactId>
+		<version>2.0.0.RELEASE</version>
+		<relativePath>../../pom.xml</relativePath>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.legaoyi</groupId>
+			<artifactId>elink-disruptor-support</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.legaoyi</groupId>
+			<artifactId>elink-rabbitmq-support</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.legaoyi</groupId>
+			<artifactId>elink-device-protocol-jt8081078-codec</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.legaoyi</groupId>
+			<artifactId>elink-device-protocol-jt8082011-codec</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.legaoyi</groupId>
+			<artifactId>elink-device-protocol-jt8082013-codec</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.legaoyi</groupId>
+			<artifactId>elink-device-protocol-tjsatl2017-codec</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
+
+		<!-- ehcache 缓存 -->
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-all</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>*.xml</exclude>
+						<exclude>*.properties</exclude>
+						<exclude>*copyright</exclude>
+						<exclude>*public</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<!-- 运行maven命令 :mvn package appassembler:assemble 
+				    configurationDirectory：生成配置文件路径 
+					configurationSourceDirectory：配置文件原路径，默认为src/main/config 
+					assembleDirectory:整体包目录 
+					extraJvmArguments：jvm参数 
+					binFileExtensions：生成脚本的后缀
+					platforms：生成哪几种平台 repositoryName：依赖包目录，默认repo 
+					programs：这个必须参数，启动的主class -->
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>appassembler-maven-plugin</artifactId>
+				<version>2.0.0</version>
+				<configuration>
+					<configurationDirectory>conf</configurationDirectory>
+					<configurationSourceDirectory>src/main/resources</configurationSourceDirectory>
+					<copyConfigurationDirectory>true</copyConfigurationDirectory>
+					<includeConfigurationDirectoryInClasspath>true</includeConfigurationDirectoryInClasspath>
+					<assembleDirectory>${project.build.directory}/elink-device-gateway</assembleDirectory>
+					<extraJvmArguments>-Xms512m</extraJvmArguments>
+					<binFileExtensions>
+						<unix>.sh</unix>
+					</binFileExtensions>
+					<platforms>
+						<platform>windows</platform>
+						<platform>unix</platform>
+					</platforms>
+					<repositoryLayout>flat</repositoryLayout>
+					<repositoryName>lib</repositoryName>
+					<useWildcardClassPath>true</useWildcardClassPath>
+					<programs>
+						<program>
+							<mainClass>com.legaoyi.Startup</mainClass>
+						</program>
+					</programs>
+				</configuration>
+			</plugin>
+			<!-- ProGuard混淆插件,-keepdirectories似乎不起作用，生产的jar要重新打包 jar cvf spring-security-acl-5.1.0.RELEASE.jar *-->
+            <plugin>
+                <groupId>com.github.wvengen</groupId>
+                <artifactId>proguard-maven-plugin</artifactId>
+                <version>2.0.13</version>
+                <executions>
+                    <execution>
+                        <!-- 混淆时刻，这里是打包的时候混淆-->
+                        <phase>package</phase>
+                        <goals>
+                            <!-- 使用插件的什么功能，当然是混淆-->
+                            <goal>proguard</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <proguardVersion>6.0.3</proguardVersion>
+                    <addMavenDescriptor>true</addMavenDescriptor>
+                    <!-- 是否将生成的PG文件安装部署-->
+                    <attach>true</attach>
+                    <!-- 是否混淆-->
+                    <obfuscate>true</obfuscate>
+                    <!-- 指定生成文件分类 -->
+                    <attachArtifactClassifier>pg</attachArtifactClassifier>
+                    <options>
+                      <!-- JDK目标版本1.7-->
+                        <option>-target 1.8</option>
+                        <!-- 不做收缩（删除注释、未被引用代码）-->
+                        <option>-dontshrink</option>
+                        <!-- 不做优化（变更代码实现逻辑）-->
+                        <option>-dontoptimize</option>
+                        <!-- 指定不去忽略非公共库的类-->
+                        <option>-dontskipnonpubliclibraryclasses</option>
+                        <!-- 指定不去忽略非公共库的成员-->
+                        <option>-dontskipnonpubliclibraryclassmembers</option>
+                        <!-- 优化时允许访问并修改有修饰符的类和类的成员 -->
+                        <option>-allowaccessmodification</option>
+                        <!-- 确定统一的混淆类的成员名称来增加混淆-->
+                        <option>-useuniqueclassmembernames</option>
+                        <!-- 不混淆所有包名-->
+                        <option>-keeppackagenames</option>
+                        <option>-keepdirectories</option>
+                        <!-- 混合时不使用大小写混合，混合后的类名为小写-->
+                        <option>-dontusemixedcaseclassnames</option>
+                        <option>-ignorewarnings</option>
+                        <!-- 不混淆所有特殊的类-->
+                        <option>-keepattributes
+                            Exceptions,InnerClasses,Signature,Deprecated,SourceFile,LineNumberTable,LocalVariable*Table,*Annotation*,Synthetic,EnclosingMethod
+                        </option>
+                        <option>-keep class com.legaoyi.Startup* {*;}</option>
+                        <option>-keep class com.legaoyi.AppApplicationListener* {*;}</option>
+                        <option>-keep class com.legaoyi.AppConfiguration* {*;}</option>
+                        <option>-keep class com.legaoyi.protocol.util.ServerRuntimeContext* {*;}</option>
+                        <option>-keep class com.legaoyi.rabbitmq.DeviceDownMessageRabbitmqListener* {*;}</option>
+                        <option>-keep class com.legaoyi.protocol.server.LoggerChannelInbouHandler* {*;}</option>
+                        <option>-keep class com.legaoyi.protocol.server.LoggerChannelOutbouHandler* {*;}</option>
+                        <option>-keep class com.legaoyi.protocol.server.SessionManager* {*;}</option>
+                        <option>-keep class com.legaoyi.protocol.server.ChannelInboundEventHandler* {*;}</option>
+                    </options>
+<!--                     <injar>${project.build.finalName}.jar</injar> -->
+<!--                     <outjar>${project.build.finalName}.jar</outjar> -->
+                    <!-- 添加依赖，这里你可以按你的需要修改，这里测试只需要一个JRE的Runtime包就行了 -->
+                    <libs>
+                        <lib>${java.home}/lib/rt.jar</lib>
+                        <lib>${java.home}/lib/jce.jar</lib>
+                    </libs>
+                    <!-- 加载文件的过滤器，就是你的工程目录了-->
+                    <inFilter>com/legaoyi/**</inFilter>
+                    <!-- 对什么东西进行加载，这里仅有classes成功，毕竟你也不可能对配置文件及JSP混淆吧-->
+                    <injar>classes</injar>
+                    <!-- 输出目录-->
+                    <outputDirectory>${project.build.directory}</outputDirectory>
+                </configuration>
+                <dependencies>
+                    <dependency>
+					    <groupId>net.sf.proguard</groupId>
+					    <artifactId>proguard-base</artifactId>
+					    <version>6.0.3</version>
+					</dependency>
+                </dependencies>
+            </plugin>
+		</plugins>
+	</build>
+</project>
+

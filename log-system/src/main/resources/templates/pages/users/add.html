@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  
+  <head>
+    <meta charset="UTF-8">
+    <title>添加用户</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+      <link th:href="@{/css/font.css}" rel="stylesheet">
+      <link th:href="@{/css/weadmin.css}" rel="stylesheet">
+      <script th:src="@{/lib/layui/layui.js}"></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  
+  <body>
+    <div class="weadmin-body">
+        <form th:action="@{/user/save}" method="post" class="form-horizontal m-t" id="userForm" >
+          <div class="layui-form-item">
+              <label for="username" class="layui-form-label">
+                  <span class="we-red">*</span>邮箱
+              </label>
+              <div class="layui-input-inline">
+                  <input type="text" id="username" name="username" required="required" lay-verify="required"
+                  autocomplete="off" class="layui-input" aria-required="true" aria-invalid="true">
+
+              </div>
+              <div class="layui-form-mid layui-word-aux">
+                  <span class="we-red">*</span>邮箱为唯一登录名
+              </div>
+          </div>
+
+          <!--<div class="layui-form-item">-->
+              <!--<label class="layui-form-label"><span class="we-red">*</span>角色</label>-->
+              <!--<div class="layui-input-block">-->
+                <!--<input type="checkbox" name="like1[write]" lay-skin="primary" title="超级管理员" checked="">-->
+                <!--&lt;!&ndash;<input type="checkbox" name="like1[read]" lay-skin="primary" title="cwe">&ndash;&gt;-->
+                <!--&lt;!&ndash;<input type="checkbox" name="like1[write]" lay-skin="primary" title="ce" checked="">&ndash;&gt;-->
+              <!--</div>-->
+          <!--</div>-->
+          <div class="layui-form-item">
+              <label class="layui-form-label">
+                  <span class="we-red">*</span>密码
+              </label>
+              <div class="layui-input-inline">
+                  <input type="password" id="password" name="password" required="" lay-verify="pass"
+                  autocomplete="off" class="layui-input">
+              </div>
+              <div class="layui-form-mid layui-word-aux">
+                  6到16个字符
+              </div>
+          </div>
+          <div class="layui-form-item">
+              <label  class="layui-form-label">
+                  <span class="we-red">*</span>确认密码
+              </label>
+              <div class="layui-input-inline">
+                  <input type="password" id="rePassword" name="rePassword" required="" lay-verify="repass"
+                  autocomplete="off" class="layui-input">
+              </div>
+          </div>
+          <div class="layui-form-item">
+              <label  class="layui-form-label"></label>
+              <button  class="layui-btn" lay-filter="add" lay-submit="">保存</button>
+          </div>
+      </form>
+    </div>
+
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/plugins/layer/layer.min.js}"></script>
+    <script th:src="@{/js/plugins/jquery-form/jquery.form.js}"></script>
+    <script th:src="@{/js/plugins/validate/jquery.validate.min.js}"></script>
+    <script th:src="@{/js/plugins/validate/messages_zh.min.js}"></script>
+    <script type="text/javascript">
+        $().ready(function () {
+            var icon = "<i class='fa fa-times-circle'></i> ";
+            $("#userForm").validate({
+                rules:{
+                    username:{
+                        required:true,
+                        maxlength:16
+                    },
+                    password:{
+                        required:true,
+                        rangelength:[6,16]
+                    },
+                    rePassword:{
+                        required:true,
+                        rangelength:[6,16]
+                    }
+                },
+                messages:{
+                    username:{
+                        required:icon+"用户名必须填写",
+                        maxlength:icon+"用户名长度16个字符内"
+                    },
+                    password:{
+                        required:icon+'密码不能为空',
+                        minength:icon+'密码长度6-16个字符'
+                    },
+                    rePassword:{
+                        required:icon+'确认密码不能为空',
+                        minength:icon+'密码长度6-16个字符'
+                    }
+
+                },
+                submitHandler:function (form) {
+                    if ($("#password").val() !=  $("#rePassword").val()){
+                        layer.msg("两次密码不一致！");
+                        return
+                    }
+
+                    // var passMatch = $("#password").val();
+                    // var matchReg1 = /(?!^(\d+|[a-zA-Z]+|[~!@#$%^&*?]+)$)^[\w~!@#$%^&*?]{6,16}$/;
+                    // console.log(passMatch.match(matchReg1));
+                    // if(passMatch.match(matchReg1)==null){
+                    //     layer.msg("密码格式不正确，必须包含字母、数字、符号中的任意2种!");
+                    //     return
+                    // }
+                    //
+                    // var strMatch = $("#username").val();
+                    // var matchReg = /.*?(@reacheng.com)/;
+                    // console.log(strMatch.match(matchReg));
+                    // if(strMatch.match(matchReg)==null){
+                    //     layer.msg("邮箱格式不正确，必须以@reacheng.com结尾!");
+                    //     return
+                    // }
+
+                    var index = layer.load(1);
+                    $(form).ajaxSubmit({
+                        dataType:"json",
+                        success:function (res) {
+                            if(res && res.code == 0){
+                                layer.close(index);
+                                layer.msg(res.data);
+                                setTimeout(function(){
+                                    window.parent.location.reload(); //刷新父页面
+                                },500)
+                            }else{
+                                layer.msg(res.data);
+                                layer.close(index);
+                            }
+                        },
+                        error:function (res) {
+                            layer.msg("请求错误");
+                            layer.close(index);
+                        }
+                    })
+                }
+            });
+
+        })
+    </script>
+  </body>
+
+</html>

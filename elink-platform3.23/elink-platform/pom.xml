@@ -1,0 +1,324 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>pom</packaging>
+	<artifactId>elink-platform</artifactId>
+	<groupId>com.legaoyi</groupId>
+	<version>2.0.0.RELEASE</version>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.6.RELEASE</version>
+		<relativePath />
+	</parent>
+
+	<modules>
+		<module>common</module>
+		<module>device-gateway</module>
+		<module>persistence-support</module>
+		<module>elink-platform-rest-api</module>
+		<module>rest-api-core</module>
+		<module>elink-data-analyst</module>
+		<module>elink-platform-web</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<elink.version>2.0.0.RELEASE</elink.version>
+		<disruptor.version>3.4.2</disruptor.version>
+		<netty.version>4.1.31.Final</netty.version>
+		<mysql.connector.version>5.1.37</mysql.connector.version>
+		<poi.version>4.0.0</poi.version>
+		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<artifactId>spring-aop</artifactId>
+			<groupId>org.springframework</groupId>
+		</dependency>
+
+		<dependency>
+			<artifactId>spring-beans</artifactId>
+			<groupId>org.springframework</groupId>
+		</dependency>
+
+		<dependency>
+			<artifactId>spring-context</artifactId>
+			<groupId>org.springframework</groupId>
+		</dependency>
+
+		<dependency>
+			<artifactId>spring-core</artifactId>
+			<groupId>org.springframework</groupId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>18.0</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-collections</groupId>
+				<artifactId>commons-collections</artifactId>
+				<version>3.2.2</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils</artifactId>
+				<version>1.9.3</version>
+			</dependency>
+			
+			<dependency>
+			    <groupId>commons-net</groupId>
+			    <artifactId>commons-net</artifactId>
+			    <version>3.6</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-mq-support</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-rabbitmq-support</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-disruptor-support</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-spring-mongo-support</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-spring-redis-support</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-device-protocol-base</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-device-protocol-jt8081078-codec</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-device-protocol-jt8081078-message</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-device-protocol-jt8082011-message</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-device-protocol-jt8082011-codec</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-device-protocol-jt8082013-message</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-device-protocol-jt8082013-codec</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-device-protocol-jt8082019-message</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-device-protocol-jt8082019-codec</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-device-protocol-tjsatl2017-message</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-device-protocol-tjsatl2017-codec</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-util</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-platform-base-model</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-platform-base-core</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-management-model</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-message-model</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-excel-util</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-spring-jpa-support</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-device-message-storer-base</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-tjsatl-message-storer-core</artifactId>
+				<version>${elink.version}</version>
+			</dependency>
+		 	
+		 	<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-management-api-core</artifactId>
+				<version>${elink.version}</version>
+		 	</dependency>
+		 	
+		 	<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-lbs-api-core</artifactId>
+				<version>${elink.version}</version>
+		 	</dependency>
+		 	
+		 	<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-report-api-core</artifactId>
+				<version>${elink.version}</version>
+		 	</dependency>
+		 	
+		 	<dependency>
+				<groupId>com.legaoyi</groupId>
+				<artifactId>elink-message-api-core</artifactId>
+				<version>${elink.version}</version>
+		 	</dependency>
+
+			<dependency>
+				<groupId>com.lmax</groupId>
+				<artifactId>disruptor</artifactId>
+				<version>${disruptor.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.netty</groupId>
+				<artifactId>netty-all</artifactId>
+				<version>${netty.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-plugin-plugin</artifactId>
+				<version>3.5.2</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>spring-snapshots</id>
+			<url>http://repo.spring.io/snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>spring-milestones</id>
+			<url>http://repo.spring.io/milestone</url>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-snapshots</id>
+			<url>http://repo.spring.io/snapshot</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>spring-milestones</id>
+			<url>http://repo.spring.io/milestone</url>
+		</pluginRepository>
+	</pluginRepositories>
+</project>

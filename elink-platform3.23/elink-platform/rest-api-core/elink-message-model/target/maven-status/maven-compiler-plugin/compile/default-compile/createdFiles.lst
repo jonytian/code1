@@ -1,0 +1,3 @@
+com\legaoyi\gateway\message\model\DeviceDownMessage.class
+com\legaoyi\gateway\message\model\DeviceHistoryMedia.class
+com\legaoyi\gateway\message\model\DeviceUpMessage.class

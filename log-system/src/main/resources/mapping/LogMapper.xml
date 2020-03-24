@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.logs.mapper.LogMapper">
+
+  <resultMap id="BaseResultMap" type="Log">
+    <id column="log_id" jdbcType="INTEGER" property="logId"/>
+    <result column="exception" jdbcType="VARCHAR" property="exception"/>
+    <result column="description" jdbcType="VARCHAR" property="description"/>
+    <result column="package_name" jdbcType="VARCHAR" property="packageName"/>
+    <result column="happen_time" jdbcType="VARCHAR" property="happenTime"/>
+    <result column="expiration_time" jdbcType="TIMESTAMP" property="expirationTime"/>
+    <result column="log_path" jdbcType="VARCHAR" property="logPath"/>
+    <result column="rom_version" jdbcType="VARCHAR" property="romVersion"/>
+    <result column="android_version" jdbcType="VARCHAR" property="androidVersion"/>
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+    <result column="device_id" jdbcType="INTEGER" property="deviceId"/>
+  </resultMap>
+
+  <sql id="Base_Column_List">
+  log_id, exception, description, package_name, happen_time,file_name,file_path, expiration_time, log_path, rom_version
+  ,android_version,create_time,device_id
+  </sql>
+
+
+  <resultMap type="LogVo" id="logVoList">
+    <!-- 多表查询时要查询的字段都不可以省略-->
+    <!-- id和result功能相同，一般id写主键，这样可以提高性能-->
+    <id column="log_id" jdbcType="INTEGER" property="logId"/>
+    <result column="exception" jdbcType="VARCHAR" property="exception"/>
+    <result column="description" jdbcType="VARCHAR" property="description"/>
+    <result column="package_name" jdbcType="VARCHAR" property="packageName"/>
+    <result column="happen_time" jdbcType="VARCHAR" property="happenTime"/>
+    <result column="expiration_time" jdbcType="TIMESTAMP" property="expirationTime"/>
+    <result column="log_path" jdbcType="VARCHAR" property="logPath"/>
+    <result column="file_name" jdbcType="VARCHAR" property="fileName"/>
+    <result column="file_path" jdbcType="VARCHAR" property="filePath"/>
+    <result column="rom_version" jdbcType="VARCHAR" property="romVersion"/>
+    <result column="android_version" jdbcType="VARCHAR" property="androidVersion"/>
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+    <result column="device_id" jdbcType="INTEGER" property="deviceId"/>
+    <association property="device" javaType="Device">
+      <id column="device_id" jdbcType="INTEGER" property="deviceId"/>
+      <result column="imei" jdbcType="VARCHAR" property="imei"/>
+      <result column="project_name" jdbcType="VARCHAR" property="projectName"/>
+      <result column="token" jdbcType="VARCHAR" property="token"/>
+      <result column="kicked" jdbcType="INTEGER" property="kicked"/>
+      <result column="online" jdbcType="INTEGER" property="online"/>
+      <result column="restart" jdbcType="INTEGER" property="restart"/>
+      <result column="mtklog_status" jdbcType="INTEGER" property="mtklogStatus"/>
+      <result column="connect_time" jdbcType="TIMESTAMP" property="connectTime"/>
+      <result column="disconnect_time" jdbcType="TIMESTAMP" property="disconnectTime"/>
+      <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+    </association>
+  </resultMap>
+
+  <!--按条件查找所有日志-->
+  <select id="selectAllLogs" resultMap="logVoList">
+    SELECT
+    l.`log_id`,
+    l.`exception`,
+    l.`description`,
+    l.`package_name`,
+    l.`happen_time`,
+    l.`expiration_time`,
+    l.`log_path`,
+    l.`rom_version`,
+    l.`android_version`,
+    l.`create_time`,
+    l.`device_id`,
+    l.`file_name`,
+    l.`file_path`,
+
+
+    d.`device_id`,
+    d.`imei`,
+    d.`project_name`,
+    d.`token`,
+    d.`kicked`,
+    d.`online`,
+    d.`restart`,
+    d.`mtklog_status`,
+    d.`connect_time`,
+    d.`disconnect_time`,
+    d.`create_time`
+
+    FROM  t_log l
+    LEFT JOIN
+    t_device d ON
+    l.`device_id`=d.`device_id`
+
+    <where>
+      <if test="logVoSearch.imei!=null and logVoSearch.imei!=''">
+        AND d.imei like CONCAT(CONCAT('%',#{logVoSearch.imei}),
+        '%')
+      </if>
+      <if test="logVoSearch.projectName!=null and logVoSearch.projectName!=''">
+        AND d.`project_name` like CONCAT(CONCAT('%',#{logVoSearch.projectName}),
+        '%')
+      </if>
+      <if test="logVoSearch.exception!=null and logVoSearch.exception!=''">
+        AND l.exception like CONCAT(CONCAT('%',#{logVoSearch.exception}),
+        '%')
+      </if>
+      <if test="logVoSearch.description!=null and logVoSearch.description!=''">
+        AND l.description like CONCAT(CONCAT('%',#{logVoSearch.description}),
+        '%')
+      </if>
+
+      <if test="logVoSearch.romVersion!=null and logVoSearch.romVersion!=''">
+        AND l.`rom_version` like CONCAT(CONCAT('%',#{logVoSearch.romVersion}),
+        '%')
+      </if>
+      <if test="logVoSearch.insertTimeStart!=null and logVoSearch.insertTimeStart!=''">
+        AND l.create_time &gt;= #{logVoSearch.insertTimeStart}
+      </if>
+      <if test="logVoSearch.insertTimeEnd!=null and logVoSearch.insertTimeEnd!=''">
+        AND l.create_time &lt;= #{logVoSearch.insertTimeEnd}
+      </if>
+    </where>
+
+
+  </select>
+
+  <!--=Start getLogs 分页查询列表ProductSearch -->
+  <select id="getLogs" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from t_log
+    <where>
+      <if test="logSearch.imei!=null and logSearch.imei!=''">
+        AND imei like CONCAT(CONCAT('%',#{logSearch.imei}),
+        '%')
+      </if>
+      <if test="logSearch.exception!=null and logSearch.exception!=''">
+        AND exception like CONCAT(CONCAT('%',#{logSearch.exception}),
+        '%')
+      </if>
+
+      <if test="logSearch.insertTimeStart!=null and logSearch.insertTimeStart!=''">
+        AND create_time &gt;= #{logSearch.insertTimeStart}
+      </if>
+      <if test="logSearch.insertTimeEnd!=null and logSearch.insertTimeEnd!=''">
+        AND create_time &lt;= #{logSearch.insertTimeEnd}
+      </if>
+
+    </where>
+    ORDER BY log_id DESC
+  </select>
+
+  <!--新增-->
+  <insert id="insert" parameterType="Log">
+    insert ignore into t_log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="logId != null">
+        log_id,
+      </if>
+      <if test="exception != null">
+        exception,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="packageName != null">
+        package_name,
+      </if>
+      <if test="happenTime != null">
+        happen_time,
+      </if>
+      <if test="expirationTime != null">
+        expiration_time,
+      </if>
+      <if test="logPath != null">
+        log_path,
+      </if>
+      <if test="romVersion != null">
+        rom_version,
+      </if>
+      <if test="androidVersion != null">
+        android_version,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="deviceId != null">
+        device_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="logId != null">
+        #{logId,jdbcType=INTEGER},
+      </if>
+      <if test="exception != null">
+        #{exception,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="packageName != null">
+        #{packageName,jdbcType=VARCHAR},
+      </if>
+      <if test="happenTime != null">
+        #{happenTime,jdbcType=VARCHAR},
+      </if>
+      <if test="expirationTime != null">
+        #{expirationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logPath != null">
+        #{logPath,jdbcType=VARCHAR},
+      </if>
+      <if test="romVersion != null">
+        #{romVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="androidVersion != null">
+        #{androidVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deviceId != null">
+        #{deviceId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+
+  <!--根据主键进行更新-->
+  <update id="update" parameterType="Log">
+    update t_log
+    <set>
+      <if test="fileName != null">
+        file_name = #{fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="filePath != null">
+        file_path = #{filePath,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where log_id = #{logId,jdbcType=INTEGER}
+  </update>
+
+  <!-- getOne -->
+  <select id="getOne" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from t_log
+    WHERE  exception=#{exceptionName} and happen_time = #{happenTime}
+  </select>
+
+
+</mapper>

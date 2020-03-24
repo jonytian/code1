@@ -1,0 +1,5 @@
+com\legaoyi\lbs\rest\GpsInfoController.class
+com\legaoyi\lbs\service\GpsInfoService.class
+com\legaoyi\lbs\rest\GpsInfoController$1.class
+com\legaoyi\lbs\service\impl\GpsInfoServiceImpl.class
+com\legaoyi\lbs\ext\service\impl\GpsExtendServiceImpl.class

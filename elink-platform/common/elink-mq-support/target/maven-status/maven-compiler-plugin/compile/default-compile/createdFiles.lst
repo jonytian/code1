@@ -1,0 +1,4 @@
+com\legaoyi\mq\MQMessageListenerManager.class
+com\legaoyi\mq\MQMessageHandler.class
+com\legaoyi\mq\MQMessageListener.class
+com\legaoyi\mq\MQMessageProducer.class

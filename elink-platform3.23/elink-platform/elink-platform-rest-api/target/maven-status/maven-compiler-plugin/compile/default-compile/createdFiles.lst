@@ -1,0 +1,12 @@
+com\legaoyi\platform\config\SecurityConfiguration.class
+com\legaoyi\platform\config\RabbitmqConfiguration.class
+com\legaoyi\AppApplicationListener.class
+com\legaoyi\platform\config\RedisCachingConfiguration.class
+com\legaoyi\platform\service\impl\SecurityServiceImpl.class
+com\legaoyi\platform\rest\GeneralController.class
+com\legaoyi\platform\config\BasicAuthenticationProvider.class
+com\legaoyi\platform\service\SecurityService.class
+com\legaoyi\Startup.class
+com\legaoyi\platform\filter\HttpMethodOverrideHeaderFilter$HttpMethodRequestWrapper.class
+com\legaoyi\platform\filter\HttpMethodOverrideHeaderFilter.class
+com\legaoyi\platform\config\CustomWebMvcConfiguration.class

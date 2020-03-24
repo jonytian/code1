@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd"
+	default-lazy-init="true">
+
+	<alias alias="elink_0001_tjsatl_messageBodyDecoder" name="elink_0001_2013_messageBodyDecoder" />
+	<alias alias="elink_0002_tjsatl_messageBodyDecoder" name="elink_0002_2013_messageBodyDecoder" />
+	<alias alias="elink_0003_tjsatl_messageBodyDecoder" name="elink_0003_2013_messageBodyDecoder" />
+	<alias alias="elink_0004_tjsatl_messageBodyDecoder" name="elink_0004_2013_messageBodyDecoder" />
+
+	<alias alias="elink_0100_tjsatl_messageBodyDecoder" name="elink_0100_2013_messageBodyDecoder" />
+	<alias alias="elink_0101_tjsatl_messageBodyDecoder" name="elink_0101_2013_messageBodyDecoder" />
+	<alias alias="elink_0102_tjsatl_messageBodyDecoder" name="elink_0102_2013_messageBodyDecoder" />
+
+	<alias alias="elink_0107_tjsatl_messageBodyDecoder" name="elink_0107_2013_messageBodyDecoder" />
+	<alias alias="elink_0108_tjsatl_messageBodyDecoder" name="elink_0108_2013_messageBodyDecoder" />
+
+	<alias alias="elink_0301_tjsatl_messageBodyDecoder" name="elink_0301_2013_messageBodyDecoder" />
+	<alias alias="elink_0302_tjsatl_messageBodyDecoder" name="elink_0302_2013_messageBodyDecoder" />
+	<alias alias="elink_0303_tjsatl_messageBodyDecoder" name="elink_0303_2013_messageBodyDecoder" />
+
+	<alias alias="elink_0700_tjsatl_messageBodyDecoder" name="elink_0700_2013_messageBodyDecoder" />
+	<alias alias="elink_0700_00H_tjsatl_messageBodyDecoder" name="elink_0700_00H_2013_messageBodyDecoder" />
+	<alias alias="elink_0700_01H_tjsatl_messageBodyDecoder" name="elink_0700_01H_2013_messageBodyDecoder" />
+	<alias alias="elink_0700_02H_tjsatl_messageBodyDecoder" name="elink_0700_02H_2013_messageBodyDecoder" />
+	<alias alias="elink_0700_03H_tjsatl_messageBodyDecoder" name="elink_0700_03H_2013_messageBodyDecoder" />
+	<alias alias="elink_0700_04H_tjsatl_messageBodyDecoder" name="elink_0700_04H_2013_messageBodyDecoder" />
+	<alias alias="elink_0700_05H_tjsatl_messageBodyDecoder" name="elink_0700_05H_2013_messageBodyDecoder" />
+	<alias alias="elink_0700_06H_tjsatl_messageBodyDecoder" name="elink_0700_06H_2013_messageBodyDecoder" />
+	<alias alias="elink_0700_07H_tjsatl_messageBodyDecoder" name="elink_0700_07H_2013_messageBodyDecoder" />
+	<alias alias="elink_0700_08H_tjsatl_messageBodyDecoder" name="elink_0700_08H_2013_messageBodyDecoder" />
+	<alias alias="elink_0700_09H_tjsatl_messageBodyDecoder" name="elink_0700_09H_2013_messageBodyDecoder" />
+	<alias alias="elink_0700_10H_tjsatl_messageBodyDecoder" name="elink_0700_10H_2013_messageBodyDecoder" />
+	<alias alias="elink_0700_11H_tjsatl_messageBodyDecoder" name="elink_0700_11H_2013_messageBodyDecoder" />
+	<alias alias="elink_0700_12H_tjsatl_messageBodyDecoder" name="elink_0700_12H_2013_messageBodyDecoder" />
+	<alias alias="elink_0700_13H_tjsatl_messageBodyDecoder" name="elink_0700_13H_2013_messageBodyDecoder" />
+	<alias alias="elink_0700_14H_tjsatl_messageBodyDecoder" name="elink_0700_14H_2013_messageBodyDecoder" />
+	<alias alias="elink_0700_15H_tjsatl_messageBodyDecoder" name="elink_0700_15H_2013_messageBodyDecoder" />
+
+	<alias alias="elink_0701_tjsatl_messageBodyDecoder" name="elink_0701_2013_messageBodyDecoder" />
+	<alias alias="elink_0702_tjsatl_messageBodyDecoder" name="elink_0702_2013_messageBodyDecoder" />
+	<alias alias="elink_0705_tjsatl_messageBodyDecoder" name="elink_0705_2013_messageBodyDecoder" />
+
+	<alias alias="elink_0800_tjsatl_messageBodyDecoder" name="elink_0800_2013_messageBodyDecoder" />
+	<alias alias="elink_0801_tjsatl_messageBodyDecoder" name="elink_0801_2013_messageBodyDecoder" />
+	<alias alias="elink_0802_tjsatl_messageBodyDecoder" name="elink_0802_2013_messageBodyDecoder" />
+	<alias alias="elink_0805_tjsatl_messageBodyDecoder" name="elink_0805_2013_messageBodyDecoder" />
+
+	<alias alias="elink_0608_tjsatl_messageBodyDecoder" name="elink_0608_2013_messageBodyDecoder" />
+
+	<alias alias="elink_8001_tjsatl_messageBodyEncoder" name="elink_8001_2013_messageBodyEncoder" />
+	<alias alias="elink_8004_tjsatl_messageBodyEncoder" name="elink_8004_2013_messageBodyEncoder" />
+
+	<alias alias="elink_8100_tjsatl_messageBodyEncoder" name="elink_8100_2013_messageBodyEncoder" />
+
+	<alias alias="elink_8104_tjsatl_messageBodyEncoder" name="elink_8104_2013_messageBodyEncoder" />
+	<alias alias="elink_8105_tjsatl_messageBodyEncoder" name="elink_8105_2013_messageBodyEncoder" />
+	<alias alias="elink_8106_tjsatl_messageBodyEncoder" name="elink_8106_2013_messageBodyEncoder" />
+	<alias alias="elink_8107_tjsatl_messageBodyEncoder" name="elink_8107_2013_messageBodyEncoder" />
+	<alias alias="elink_8108_tjsatl_messageBodyEncoder" name="elink_8108_2013_messageBodyEncoder" />
+
+	<alias alias="elink_8201_tjsatl_messageBodyEncoder" name="elink_8201_2013_messageBodyEncoder" />
+	<alias alias="elink_8202_tjsatl_messageBodyEncoder" name="elink_8202_2013_messageBodyEncoder" />
+	<alias alias="elink_8203_tjsatl_messageBodyEncoder" name="elink_8203_2013_messageBodyEncoder" />
+	<alias alias="elink_8204_tjsatl_messageBodyEncoder" name="elink_8204_2013_messageBodyEncoder" />
+
+	<alias alias="elink_8300_tjsatl_messageBodyEncoder" name="elink_8300_2013_messageBodyEncoder" />
+	<alias alias="elink_8301_tjsatl_messageBodyEncoder" name="elink_8301_2013_messageBodyEncoder" />
+	<alias alias="elink_8302_tjsatl_messageBodyEncoder" name="elink_8302_2013_messageBodyEncoder" />
+	<alias alias="elink_8303_tjsatl_messageBodyEncoder" name="elink_8303_2013_messageBodyEncoder" />
+	<alias alias="elink_8304_tjsatl_messageBodyEncoder" name="elink_8304_2013_messageBodyEncoder" />
+
+	<alias alias="elink_8400_tjsatl_messageBodyEncoder" name="elink_8400_2013_messageBodyEncoder" />
+	<alias alias="elink_8401_tjsatl_messageBodyEncoder" name="elink_8401_2013_messageBodyEncoder" />
+
+	<alias alias="elink_8500_tjsatl_messageBodyEncoder" name="elink_8500_2013_messageBodyEncoder" />
+
+	<alias alias="elink_8600_tjsatl_messageBodyEncoder" name="elink_8600_2013_messageBodyEncoder" />
+	<alias alias="elink_8601_tjsatl_messageBodyEncoder" name="elink_8601_2013_messageBodyEncoder" />
+	<alias alias="elink_8602_tjsatl_messageBodyEncoder" name="elink_8602_2013_messageBodyEncoder" />
+	<alias alias="elink_8603_tjsatl_messageBodyEncoder" name="elink_8603_2013_messageBodyEncoder" />
+	<alias alias="elink_8604_tjsatl_messageBodyEncoder" name="elink_8604_2013_messageBodyEncoder" />
+	<alias alias="elink_8605_tjsatl_messageBodyEncoder" name="elink_8605_2013_messageBodyEncoder" />
+	<alias alias="elink_8606_tjsatl_messageBodyEncoder" name="elink_8606_2013_messageBodyEncoder" />
+	<alias alias="elink_8607_tjsatl_messageBodyEncoder" name="elink_8607_2013_messageBodyEncoder" />
+
+	<alias alias="elink_8700_tjsatl_messageBodyEncoder" name="elink_8700_2013_messageBodyEncoder" />
+	<alias alias="elink_8700_08H_tjsatl_messageBodyEncoder" name="elink_8700_08H_2013_messageBodyEncoder" />
+	<alias alias="elink_8700_09H_tjsatl_messageBodyEncoder" name="elink_8700_09H_2013_messageBodyEncoder" />
+	<alias alias="elink_8700_10H_tjsatl_messageBodyEncoder" name="elink_8700_10H_2013_messageBodyEncoder" />
+	<alias alias="elink_8700_11H_tjsatl_messageBodyEncoder" name="elink_8700_11H_2013_messageBodyEncoder" />
+	<alias alias="elink_8700_12H_tjsatl_messageBodyEncoder" name="elink_8700_12H_2013_messageBodyEncoder" />
+	<alias alias="elink_8700_13H_tjsatl_messageBodyEncoder" name="elink_8700_13H_2013_messageBodyEncoder" />
+	<alias alias="elink_8700_14H_tjsatl_messageBodyEncoder" name="elink_8700_14H_2013_messageBodyEncoder" />
+	<alias alias="elink_8700_15H_tjsatl_messageBodyEncoder" name="elink_8700_15H_2013_messageBodyEncoder" />
+
+	<alias alias="elink_8701_tjsatl_messageBodyEncoder" name="elink_8701_2013_messageBodyEncoder" />
+	<alias alias="elink_8701_82H_tjsatl_messageBodyEncoder" name="elink_8701_82H_2013_messageBodyEncoder" />
+	<alias alias="elink_8701_83H_tjsatl_messageBodyEncoder" name="elink_8701_83H_2013_messageBodyEncoder" />
+	<alias alias="elink_8701_84H_tjsatl_messageBodyEncoder" name="elink_8701_84H_2013_messageBodyEncoder" />
+	<alias alias="elink_8701_C2H_tjsatl_messageBodyEncoder" name="elink_8701_C2H_2013_messageBodyEncoder" />
+	<alias alias="elink_8701_C3H_tjsatl_messageBodyEncoder" name="elink_8701_C3H_2013_messageBodyEncoder" />
+	<alias alias="elink_8701_C4H_tjsatl_messageBodyEncoder" name="elink_8701_C4H_2013_messageBodyEncoder" />
+
+	<alias alias="elink_8702_tjsatl_messageBodyEncoder" name="elink_8702_2013_messageBodyEncoder" />
+
+	<alias alias="elink_8608_tjsatl_messageBodyEncoder" name="elink_8608_2013_messageBodyEncoder" />
+
+	<alias alias="elink_8800_tjsatl_messageBodyEncoder" name="elink_8800_2013_messageBodyEncoder" />
+	<alias alias="elink_8802_tjsatl_messageBodyEncoder" name="elink_8802_2013_messageBodyEncoder" />
+	<alias alias="elink_8803_tjsatl_messageBodyEncoder" name="elink_8803_2013_messageBodyEncoder" />
+	<alias alias="elink_8804_tjsatl_messageBodyEncoder" name="elink_8804_2013_messageBodyEncoder" />
+	<alias alias="elink_8805_tjsatl_messageBodyEncoder" name="elink_8805_2013_messageBodyEncoder" />
+
+	<alias alias="elink_1003_tjsatl_messageBodyDecoder" name="elink_1003_2016_messageBodyDecoder" />
+	<alias alias="elink_1005_tjsatl_messageBodyDecoder" name="elink_1005_2016_messageBodyDecoder" />
+	<alias alias="elink_1205_tjsatl_messageBodyDecoder" name="elink_1205_2016_messageBodyDecoder" />
+	<alias alias="elink_1206_tjsatl_messageBodyDecoder" name="elink_1206_2016_messageBodyDecoder" />
+
+	<alias alias="elink_9003_tjsatl_messageBodyEncoder" name="elink_9003_2016_messageBodyEncoder" />
+	<alias alias="elink_9101_tjsatl_messageBodyEncoder" name="elink_9101_2016_messageBodyEncoder" />
+	<alias alias="elink_9102_tjsatl_messageBodyEncoder" name="elink_9102_2016_messageBodyEncoder" />
+	<alias alias="elink_9105_tjsatl_messageBodyEncoder" name="elink_9105_2016_messageBodyEncoder" />
+	<alias alias="elink_9201_tjsatl_messageBodyEncoder" name="elink_9201_2016_messageBodyEncoder" />
+	<alias alias="elink_9202_tjsatl_messageBodyEncoder" name="elink_9202_2016_messageBodyEncoder" />
+	<alias alias="elink_9205_tjsatl_messageBodyEncoder" name="elink_9205_2016_messageBodyEncoder" />
+	<alias alias="elink_9206_tjsatl_messageBodyEncoder" name="elink_9206_2016_messageBodyEncoder" />
+	<alias alias="elink_9207_tjsatl_messageBodyEncoder" name="elink_9207_2016_messageBodyEncoder" />
+
+	<alias alias="elink_9301_tjsatl_messageBodyEncoder" name="elink_9301_2016_messageBodyEncoder" />
+	<alias alias="elink_9302_tjsatl_messageBodyEncoder" name="elink_9302_2016_messageBodyEncoder" />
+	<alias alias="elink_9303_tjsatl_messageBodyEncoder" name="elink_9303_2016_messageBodyEncoder" />
+	<alias alias="elink_9304_tjsatl_messageBodyEncoder" name="elink_9304_2016_messageBodyEncoder" />
+	<alias alias="elink_9305_tjsatl_messageBodyEncoder" name="elink_9305_2016_messageBodyEncoder" />
+	<alias alias="elink_9306_tjsatl_messageBodyEncoder" name="elink_9306_2016_messageBodyEncoder" />
+</beans>

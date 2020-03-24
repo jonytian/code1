@@ -1,0 +1,233 @@
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="~{admin/layout/app}">
+
+
+<head>
+    <style>
+        .form-group label:after {
+            content: '*';
+            color: red;
+            font-size: 8px;
+        }
+    </style>
+</head>
+<div layout:fragment="content" >
+    <div class="ibox float-e-margins">
+        <div class="ibox-content">
+            <form th:action="@{/admin/app/save}" method="post" class="form-horizontal m-t" id="roleForm" >
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">应用名称</label>
+                    <div class="col-sm-8">
+                        <select  class="form-control"  name="appName" id="appName">
+                            <option th:each="item:${apps}" th:value="${item.getAppName()}"  th:text="${item.getAppName()}"></option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">是否主动拉起</label>
+                    <div class="col-sm-8">
+                        <select  class="form-control"  name="classType" id="classType"  onchange="test()">
+                            <option  th:value="1"  th:text="是"></option>
+                            <option  th:value="0" th:text="否"></option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="form-group" id="demo">
+                    <label class="col-sm-3 control-label">应用启动类名</label>
+                    <div class="col-sm-8">
+                        <input id="className"   name="className" class="form-control" type="text" aria-required="true" aria-invalid="true"  >
+                    </div>
+                </div>
+
+                <div class="form-group" id="demo1">
+                    <label class="col-sm-3 control-label">应用启动类名类型</label>
+                    <div class="col-sm-8">
+                        <select  class="form-control"  name="type" id="type" >
+                            <option  th:value="0"  th:text="Activity"></option>
+                            <option  th:value="1"   th:text="Service"></option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">请选择项目</label>
+                    <div class="col-sm-8">
+                        <div class="col-sm-6" th:each="item:${pros}">
+                            <input   type="checkbox" name="ids"  th:value="${item.getId()}"  th:text="${item.getProjectName()}">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">版本CODE</label>
+                    <div class="col-sm-8">
+                        <input id="versionCode"   name="versionCode" class="form-control" type="text" aria-required="true" aria-invalid="true"  >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">版本号</label>
+                    <div class="col-sm-8">
+                        <input id="version"   name="version" class="form-control" type="text" aria-required="true" aria-invalid="true"  >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">MD5</label>
+                    <div class="col-sm-8">
+                        <input id="upMd5"   name="upMd5" class="form-control" type="text" aria-required="true" aria-invalid="true"  >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">测试IMEI</label>
+                    <div class="col-sm-8">
+                        <input id="testImei"   name="testImei" class="form-control" type="text" aria-required="true" aria-invalid="true"  >
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">上传文件</label>
+                    <div class="col-sm-8">
+                        <input id="file"  name="file"  class="form-control" type="file" >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-3">
+                        <button class="btn btn-primary" type="submit">保 存</button>
+                    </div>
+                </div>
+                <input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden"/>
+            </form>
+        </div>
+    </div>
+</div>
+<script layout:fragment="my-script">
+
+    $().ready(function () {
+        var icon = "<i class='fa fa-times-circle'></i> ";
+
+        $("#roleForm").validate({
+            rules:{
+                appName:{
+                    required:true,
+                },
+
+                className:{
+            required:true,
+        },
+
+                ids:{
+            required:true,
+        },
+
+                type:{
+            required:true,
+        },
+                classType:{
+                    required:true,
+                },
+                versionCode:{
+                    required:true,
+                },
+                version:{
+                    required:true,
+                },
+                upMd5:{
+                    required:true,
+                },
+                testImei:{
+                    required:true,
+                },
+
+                file:{
+                    required:true,
+                },
+
+
+            },
+            messages:{
+                appName:{
+                    required:icon+"应用名必须填写",
+                },
+                className:{
+                    required:icon+"类名名必须填写",
+                },
+                ids:{
+                    required:icon+"至少选一个项目",
+                },
+                type:{
+                    required:icon+"至少选一个类型",
+                },
+                versionCode:{
+                    required:icon+"版本CODE必须填写",
+                },
+                version:{
+                    required:icon+"版本号必须填写",
+                },
+                classType:{
+                    required:icon+"请选择是否拉起",
+                },
+
+                upMd5:{
+                    required:icon+"md5不能为空",
+                },
+                testImei:{
+                    required:icon+"imei不能为空",
+                },
+                file:{
+                    required:icon+"文件不能为空",
+                },
+
+            },
+            submitHandler:function (form) {
+                var index = layer.load(1);
+                $(form).ajaxSubmit({
+                    dataType:"json",
+                    success:function (response) {
+                        if(response && response.code == 0){
+                            layer.close(index);
+                            layer.msg(response.data);
+                            setTimeout(function(){
+                                window.parent.location.reload(); //刷新父页面
+                            },500)
+                        }else{
+                            layer.msg(response.data);
+                            layer.close(index);
+                        }
+                    },
+                    error:function (response) {
+                        layer.msg("请求错误");
+                        layer.close(index);
+                    }
+                })
+            }
+        });
+
+    })
+
+    function test(){
+        var sel = document.getElementById("classType").value;
+        var sel1 = document.getElementById("type");
+        sel1.disabled = sel == 0 ? true : false;
+        if(sel == 0){
+            $("#demo").attr("style","display:none;");
+            $("#demo1").attr("style","display:none;");
+
+            $("#className").val("");
+        }else {
+            $("#demo").attr("style","display:block;");
+            $("#demo1").attr("style","display:block;");
+        }
+
+    }
+
+</script>

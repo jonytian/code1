@@ -1,0 +1,113 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="~{admin/layout/app}">
+
+
+
+<div layout:fragment="content" >
+    <div class="ibox float-e-margins">
+        <div class="ibox-content">
+            <form th:action="@{/admin/app/save}" method="post" class="form-horizontal m-t" id="roleForm" >
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">应用名称</label>
+                    <div class="col-sm-8">
+                        <select  class="form-control"  name="appName" id="appName" >
+                            <!--<option value="0">&#45;&#45;请选择&#45;&#45;</option>-->
+                            <option  th:selected="${app.getAppName() eq item.getAppName()}" th:each="item:${apps}" th:value="${item.getAppName()}"  th:text="${item.getAppName()}"></option>
+                        </select>
+                    </div>
+                </div>
+                <!--<div class="form-group">-->
+                    <!--<label class="col-sm-3 control-label">应用包名</label>-->
+                    <!--<div class="col-sm-8">-->
+                        <!--<select  class="form-control"  name="packageName" id="packageName" >-->
+                            <!--<option value="0">&#45;&#45;请选择&#45;&#45;</option>-->
+                            <!--<option th:each="item:${apps}" th:value="${item.getPackageName()}"  th:text="${item.getPackageName()}"></option>-->
+                        <!--</select>-->
+                    <!--</div>-->
+
+                <!--</div>-->
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">应用类名：</label>
+                    <div class="col-sm-8">
+                        <input id="className" th:value="${app.getClassName()}"   name="className" class="form-control" type="text" aria-required="true" aria-invalid="true"  >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">请选择项目</label>
+                    <div class="col-sm-8">
+                        <select  class="form-control"  name="projectName" id="projectName" >
+                            <!--<option value="0">&#45;&#45;请选择&#45;&#45;</option>-->
+                            <option th:selected="${app.getProjectName() eq item.getProjectName()}"  th:each="item:${pros}" th:value="${item.getProjectName()}"  th:text="${item.getProjectName()}"></option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">版本号：</label>
+                    <div class="col-sm-8">
+                        <input id="versionCode"  th:value="${app.getVersionCode()}"  name="versionCode" class="form-control" type="text" aria-required="true" aria-invalid="true"  >
+                    </div>
+                </div>
+
+                <!--<div class="form-group">-->
+                    <!--<label class="col-sm-3 control-label">上传文件：</label>-->
+                    <!--<div class="col-sm-8">-->
+                        <!--<input id="file"  name="file"  class="form-control" type="file" >-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-3">
+                        <button class="btn btn-primary" type="submit">保 存</button>
+                    </div>
+                </div>
+
+                <input type="hidden" th:value="${app.getId()}" name="id">
+                <input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden"/>
+            </form>
+        </div>
+    </div>
+</div>
+<script layout:fragment="my-script" th:inline="javascript">
+
+    $().ready(function () {
+
+
+        var icon = "<i class='fa fa-times-circle'></i> ";
+        $("#roleForm").validate({
+            rules:{
+            },
+            messages:{
+            },
+            submitHandler:function (form) {
+                var index = layer.load(1);
+                $(form).ajaxSubmit({
+                    dataType:"json",
+                    success:function (response) {
+                        if(response && response.code == 0){
+                            layer.close(index);
+                            layer.msg(response.data);
+                            setTimeout(function(){
+                                window.parent.location.reload(); //刷新父页面
+                            },500)
+                        }else{
+                            layer.msg(response.data);
+                            layer.close(index);
+                        }
+                    },
+                    error:function (response) {
+                        layer.msg("请求错误");
+                        layer.close(index);
+                    }
+                })
+            }
+        });
+
+    })
+
+
+</script>

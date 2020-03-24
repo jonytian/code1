@@ -1,0 +1,349 @@
+com.legaoyi.AppApplicationListener -> com.legaoyi.AppApplicationListener:
+    com.legaoyi.protocol.util.ServerRuntimeContext serverRuntimeContext -> serverRuntimeContext
+    14:14:void <init>() -> <init>
+    22:27:void onApplicationEvent(org.springframework.context.ApplicationEvent) -> onApplicationEvent
+    30:31:void startServer() -> startServer
+    34:35:void stopServer() -> stopServer
+com.legaoyi.AppConfiguration -> com.legaoyi.AppConfiguration:
+    8:8:void <init>() -> <init>
+com.legaoyi.Startup -> com.legaoyi.Startup:
+    15:15:void <init>() -> <init>
+    18:19:void main(java.lang.String[]) -> main
+    23:23:com.legaoyi.AppApplicationListener appApplicationListener() -> appApplicationListener
+com.legaoyi.file.message.codec.MessageDecoder -> com.legaoyi.file.message.codec.a:
+    org.slf4j.Logger logger -> logger
+    com.legaoyi.protocol.message.MessageHeader messageHeader -> a
+    byte[] messageBody -> b
+    16:16:void <init>() -> <init>
+    25:25:com.legaoyi.protocol.message.MessageHeader getMessageHeader() -> getMessageHeader
+    29:29:byte[] getMessageBody() -> a
+    35:102:void decode(byte[]) -> decode
+    18:18:void <clinit>() -> <clinit>
+com.legaoyi.file.message.codec.MessageEncoder -> com.legaoyi.file.message.codec.b:
+    20:20:void <init>() -> <init>
+    23:110:java.util.List encode(com.legaoyi.protocol.message.Message,com.legaoyi.protocol.message.encoder.MessageBodyEncoder) -> a
+com.legaoyi.file.message.codec.MessageHeaderEncoder -> com.legaoyi.file.message.codec.c:
+    13:13:void <init>() -> <init>
+    16:48:byte[] encode(com.legaoyi.protocol.message.MessageHeader) -> a
+    53:58:com.legaoyi.protocol.message.MessageHeader clone() -> clone
+    13:13:java.lang.Object clone() -> clone
+com.legaoyi.file.message.codec.Tjsatl_2017_1210_MessageBodyDecoder -> com.legaoyi.file.message.codec.d:
+    23:23:void <init>() -> <init>
+    27:79:com.legaoyi.protocol.message.MessageBody decode(byte[]) -> decode
+com.legaoyi.file.message.codec.Tjsatl_2017_1211_MessageBodyDecoder -> com.legaoyi.file.message.codec.e:
+    17:17:void <init>() -> <init>
+    21:39:com.legaoyi.protocol.message.MessageBody decode(byte[]) -> decode
+com.legaoyi.file.message.codec.Tjsatl_2017_1212_MessageBodyDecoder -> com.legaoyi.file.message.codec.f:
+    17:17:void <init>() -> <init>
+    21:38:com.legaoyi.protocol.message.MessageBody decode(byte[]) -> decode
+com.legaoyi.file.message.codec.Tjsatl_2017_8001_MessageBodyEncoder -> com.legaoyi.file.message.codec.g:
+    19:19:void <init>() -> <init>
+    24:31:byte[] encode(com.legaoyi.protocol.message.MessageBody) -> encode
+com.legaoyi.file.message.codec.Tjsatl_2017_9212_MessageBodyEncoder -> com.legaoyi.file.message.codec.h:
+    22:22:void <init>() -> <init>
+    27:47:byte[] encode(com.legaoyi.protocol.message.MessageBody) -> encode
+com.legaoyi.file.message.handler.DeviceDownMessageDeliverer -> com.legaoyi.file.message.handler.a:
+    23:23:void <init>() -> <init>
+    26:42:void deliver(io.netty.channel.ChannelHandlerContext,com.legaoyi.protocol.message.Message) -> a
+com.legaoyi.file.message.handler.ExchangeMessageHandler -> com.legaoyi.file.message.handler.b:
+    com.legaoyi.file.message.handler.ExchangeMessageHandler successor -> c
+    12:12:void <init>() -> <init>
+    17:17:com.legaoyi.file.message.handler.ExchangeMessageHandler getSuccessor() -> b
+    21:22:void setSuccessor(com.legaoyi.file.message.handler.ExchangeMessageHandler) -> a
+    void handle(io.netty.channel.ChannelHandlerContext,com.legaoyi.common.message.ExchangeMessage) -> a
+com.legaoyi.file.message.handler.MessageHandler -> com.legaoyi.file.message.handler.c:
+    void handle(io.netty.channel.ChannelHandlerContext,com.legaoyi.protocol.message.Message) -> b
+com.legaoyi.file.message.handler.Tjsatl_2017_1210_MessageHandler -> com.legaoyi.file.message.handler.d:
+    com.legaoyi.file.server.ServerMessageHandler serverMessageHandler -> d
+    com.legaoyi.file.message.handler.DeviceDownMessageDeliverer messageDeliverer -> e
+    boolean isAuthDisable -> f
+    22:22:void <init>() -> <init>
+    37:52:void handle(io.netty.channel.ChannelHandlerContext,com.legaoyi.protocol.message.Message) -> b
+com.legaoyi.file.message.handler.Tjsatl_2017_1211_MessageHandler -> com.legaoyi.file.message.handler.e:
+    org.slf4j.Logger logger -> logger
+    com.legaoyi.file.message.handler.DeviceDownMessageDeliverer messageDeliverer -> e
+    com.legaoyi.file.server.ServerMessageHandler serverMessageHandler -> d
+    26:26:void <init>() -> <init>
+    40:58:void handle(io.netty.channel.ChannelHandlerContext,com.legaoyi.protocol.message.Message) -> b
+    62:77:void handleIllegalMessage(io.netty.channel.ChannelHandlerContext,com.legaoyi.protocol.message.Message,int) -> a
+    28:28:void <clinit>() -> <clinit>
+com.legaoyi.file.message.handler.Tjsatl_2017_1212_MessageHandler -> com.legaoyi.file.message.handler.f:
+    org.slf4j.Logger logger -> logger
+    int BUFSIZE -> BUFSIZE
+    java.lang.String filePath -> g
+    com.legaoyi.file.message.handler.DeviceDownMessageDeliverer messageDeliverer -> e
+    com.legaoyi.file.server.ServerMessageHandler serverMessageHandler -> d
+    40:40:void <init>() -> <init>
+    59:148:void handle(io.netty.channel.ChannelHandlerContext,com.legaoyi.protocol.message.Message) -> b
+    151:342:void decodeFile(java.lang.String) -> a
+    345:370:void mergeFiles(java.lang.String,java.util.List) -> a
+    42:42:void <clinit>() -> <clinit>
+com.legaoyi.file.message.handler.Tjsatl_2017_1212_MessageHandler$1 -> com.legaoyi.file.message.handler.f$1:
+    com.legaoyi.file.message.handler.Tjsatl_2017_1212_MessageHandler this$0 -> h
+    70:70:void <init>(com.legaoyi.file.message.handler.Tjsatl_2017_1212_MessageHandler) -> <init>
+    74:80:int compare(com.legaoyi.file.messagebody.Attachment,com.legaoyi.file.messagebody.Attachment) -> a
+    70:70:int compare(java.lang.Object,java.lang.Object) -> compare
+com.legaoyi.file.messagebody.Attachment -> com.legaoyi.file.messagebody.a:
+    java.lang.String fileName -> fileName
+    java.lang.Long offset -> i
+    java.lang.Long length -> j
+    byte[] data -> data
+    3:3:void <init>() -> <init>
+    14:14:java.lang.String getFileName() -> getFileName
+    18:19:void setFileName(java.lang.String) -> setFileName
+    22:22:java.lang.Long getOffset() -> c
+    26:27:void setOffset(java.lang.Long) -> a
+    30:30:java.lang.Long getLength() -> d
+    34:35:void setLength(java.lang.Long) -> b
+    38:38:byte[] getData() -> getData
+    42:43:void setData(byte[]) -> setData
+com.legaoyi.file.messagebody.Tjsatl_2017_1210_MessageBody -> com.legaoyi.file.messagebody.b:
+    long serialVersionUID -> serialVersionUID
+    java.lang.String terminalId -> k
+    java.lang.String alarmTime -> l
+    int alarmSeq -> m
+    int alarmExt -> n
+    int totalFile -> o
+    java.lang.String alarmId -> p
+    int type -> type
+    java.util.List fileList -> q
+    21:21:void <init>() -> <init>
+    58:58:java.lang.String getTerminalId() -> e
+    62:63:void setTerminalId(java.lang.String) -> b
+    66:66:java.lang.String getAlarmTime() -> f
+    70:71:void setAlarmTime(java.lang.String) -> c
+    74:74:int getAlarmSeq() -> g
+    78:79:void setAlarmSeq(int) -> a
+    82:82:int getAlarmExt() -> h
+    86:87:void setAlarmExt(int) -> b
+    90:90:int getTotalFile() -> i
+    94:95:void setTotalFile(int) -> c
+    98:98:java.lang.String getAlarmId() -> j
+    102:103:void setAlarmId(java.lang.String) -> d
+    106:106:int getType() -> getType
+    110:111:void setType(int) -> setType
+    114:114:java.util.List getFileList() -> k
+    118:119:void setFileList(java.util.List) -> a
+com.legaoyi.file.messagebody.Tjsatl_2017_1211_MessageBody -> com.legaoyi.file.messagebody.c:
+    long serialVersionUID -> serialVersionUID
+    java.lang.String fileName -> fileName
+    int fileType -> r
+    java.lang.Long fileSize -> s
+    18:18:void <init>() -> <init>
+    37:37:java.lang.String getFileName() -> getFileName
+    41:42:void setFileName(java.lang.String) -> setFileName
+    45:45:int getFileType() -> l
+    49:50:void setFileType(int) -> d
+    53:53:java.lang.Long getFileSize() -> m
+    57:58:void setFileSize(java.lang.Long) -> c
+com.legaoyi.file.messagebody.Tjsatl_2017_1212_MessageBody -> com.legaoyi.file.messagebody.d:
+    long serialVersionUID -> serialVersionUID
+    16:16:void <init>() -> <init>
+com.legaoyi.file.messagebody.Tjsatl_2017_8001_MessageBody -> com.legaoyi.file.messagebody.e:
+    long serialVersionUID -> serialVersionUID
+    java.lang.String MESSAGE_ID -> MESSAGE_ID
+    java.lang.String messageId -> t
+    int messageSeq -> u
+    int result -> result
+    17:17:void <init>() -> <init>
+    36:36:java.lang.String getMessageId() -> getMessageId
+    40:41:void setMessageId(java.lang.String) -> setMessageId
+    44:44:int getMessageSeq() -> getMessageSeq
+    48:49:void setMessageSeq(int) -> setMessageSeq
+    52:52:int getResult() -> getResult
+    56:57:void setResult(int) -> e
+com.legaoyi.file.messagebody.Tjsatl_2017_9212_MessageBody -> com.legaoyi.file.messagebody.f:
+    long serialVersionUID -> serialVersionUID
+    java.lang.String MESSAGE_ID -> MESSAGE_ID
+    java.lang.String fileName -> fileName
+    int fileType -> r
+    int result -> result
+    java.util.List packageList -> v
+    22:22:void <init>() -> <init>
+    45:45:java.lang.String getFileName() -> getFileName
+    49:50:void setFileName(java.lang.String) -> setFileName
+    53:53:int getFileType() -> l
+    57:58:void setFileType(int) -> d
+    61:61:int getResult() -> getResult
+    65:66:void setResult(int) -> e
+    69:69:java.util.List getPackageList() -> n
+    73:74:void setPackageList(java.util.List) -> b
+com.legaoyi.file.rabbitmq.RabbitmqConfiguration -> com.legaoyi.file.rabbitmq.a:
+    java.lang.String upMessageExchange -> w
+    java.lang.String mediaUpMessageQueue -> x
+    boolean durable -> y
+    int bufferSize -> bufferSize
+    com.legaoyi.protocol.util.ServerRuntimeContext serverRuntimeContext -> serverRuntimeContext
+    com.legaoyi.file.server.ServerDisruptorMessageHandler serverDisruptorMessageHandler -> z
+    22:30:void <init>() -> <init>
+    46:46:org.springframework.amqp.core.Queue mediaUpMessageQueue() -> o
+    51:51:org.springframework.amqp.core.DirectExchange upMessageExchange() -> p
+    56:56:org.springframework.amqp.core.Binding commonUpMessageQueueBinding() -> q
+    61:61:com.legaoyi.mq.MQMessageProducer initMessageProducer() -> r
+    66:66:com.legaoyi.common.disruptor.DisruptorEventConsumer initDisruptorEventConsumer() -> s
+    71:71:com.legaoyi.common.disruptor.DisruptorEventProducer initDisruptorEventProducer() -> t
+    76:79:com.legaoyi.file.server.ServerUpstreamMessageHandler initServerMessageHandler() -> u
+com.legaoyi.file.server.BytesToMessageChannelHandler -> com.legaoyi.file.server.a:
+    org.slf4j.Logger logger -> logger
+    com.legaoyi.file.message.handler.DeviceDownMessageDeliverer messageDeliverer -> e
+    34:34:void <init>() -> <init>
+    45:75:void channelRead(io.netty.channel.ChannelHandlerContext,java.lang.Object) -> channelRead
+    78:101:com.legaoyi.protocol.message.Message decodeMessage(io.netty.channel.ChannelHandlerContext,byte[]) -> a
+    106:121:void handleIllegalMessage(io.netty.channel.ChannelHandlerContext,int) -> a
+    36:36:void <clinit>() -> <clinit>
+com.legaoyi.file.server.ChannelInboundEventHandler -> com.legaoyi.file.server.ChannelInboundEventHandler:
+    org.slf4j.Logger logger -> logger
+    java.util.Map activeDevices -> activeDevices
+    int maxTerminalConnSize -> maxTerminalConnSize
+    com.legaoyi.file.server.GatewayCacheManager gatewayCacheManager -> gatewayCacheManager
+    23:23:void <init>() -> <init>
+    38:70:void channelActive(io.netty.channel.ChannelHandlerContext) -> channelActive
+    74:84:void channelInactive(io.netty.channel.ChannelHandlerContext) -> channelInactive
+    88:96:void exceptionCaught(io.netty.channel.ChannelHandlerContext,java.lang.Throwable) -> exceptionCaught
+    100:113:void userEventTriggered(io.netty.channel.ChannelHandlerContext,java.lang.Object) -> userEventTriggered
+    25:27:void <clinit>() -> <clinit>
+com.legaoyi.file.server.CodecDecoder -> com.legaoyi.file.server.b:
+    org.slf4j.Logger logger -> logger
+    io.netty.buffer.ByteBuf delimiter -> A
+    27:27:void <init>() -> <init>
+    43:93:void decode(io.netty.channel.ChannelHandlerContext,io.netty.buffer.ByteBuf,java.util.List) -> decode
+    96:146:void decodeMessage(io.netty.channel.ChannelHandlerContext,io.netty.buffer.ByteBuf,java.util.List) -> a
+    150:165:void handleIllegalMessage(io.netty.channel.ChannelHandlerContext) -> a
+    168:186:int indexOf(io.netty.buffer.ByteBuf,io.netty.buffer.ByteBuf) -> indexOf
+    29:31:void <clinit>() -> <clinit>
+com.legaoyi.file.server.CodecEncoder -> com.legaoyi.file.server.c:
+    20:20:void <init>() -> <init>
+    24:27:void encode(io.netty.channel.ChannelHandlerContext,java.util.List,io.netty.buffer.ByteBuf) -> a
+    18:18:void encode(io.netty.channel.ChannelHandlerContext,java.lang.Object,io.netty.buffer.ByteBuf) -> encode
+com.legaoyi.file.server.GatewayCacheManager -> com.legaoyi.file.server.d:
+    java.lang.String CACHE_NAME_ELINK_DEVICE_GATEWAY_CACHE -> B
+    18:18:void <init>() -> <init>
+    24:24:java.util.Map addBlackListCache(java.lang.String,java.util.Map) -> a
+    29:29:java.util.Map getBlackListCache(java.lang.String) -> e
+    33:33:void removeBlackList(java.lang.String) -> f
+    37:37:com.legaoyi.file.server.security.TokenBucket addTokenBucketCacheByIp(java.lang.String,com.legaoyi.file.server.security.TokenBucket) -> a
+    42:42:com.legaoyi.file.server.security.TokenBucket getTokenBucketCacheByIp(java.lang.String) -> g
+    46:46:void removeTokenBucketCacheByIp(java.lang.String) -> h
+com.legaoyi.file.server.LoggerChannelInbouHandler -> com.legaoyi.file.server.e:
+    org.slf4j.Logger logger -> logger
+    18:18:void <init>() -> <init>
+    24:44:void channelRead(io.netty.channel.ChannelHandlerContext,java.lang.Object) -> channelRead
+    20:20:void <clinit>() -> <clinit>
+com.legaoyi.file.server.LoggerChannelOutbouHandler -> com.legaoyi.file.server.f:
+    org.slf4j.Logger logger -> logger
+    16:16:void <init>() -> <init>
+    22:34:void write(io.netty.channel.ChannelHandlerContext,java.lang.Object,io.netty.channel.ChannelPromise) -> write
+    18:18:void <clinit>() -> <clinit>
+com.legaoyi.file.server.OpenChannelHandler -> com.legaoyi.file.server.g:
+    io.netty.channel.group.ChannelGroup channelGroup -> C
+    11:13:void <init>(io.netty.channel.group.ChannelGroup) -> <init>
+    17:19:void channelActive(io.netty.channel.ChannelHandlerContext) -> channelActive
+    23:25:void channelInactive(io.netty.channel.ChannelHandlerContext) -> channelInactive
+com.legaoyi.file.server.Server -> com.legaoyi.file.server.h:
+    org.slf4j.Logger logger -> logger
+    boolean isRunning -> D
+    io.netty.channel.EventLoopGroup bossGroup -> E
+    io.netty.channel.EventLoopGroup workerGroup -> F
+    int idleTime -> G
+    int port -> port
+    int connectThreadPoolSize -> H
+    int ioThreadPoolSize -> I
+    io.netty.channel.group.ChannelGroup channelGroup -> C
+    com.legaoyi.file.server.ChannelInboundEventHandler channelInboundEventHandler -> J
+    com.legaoyi.file.server.BytesToMessageChannelHandler bytesToMessageChannelHandler -> K
+    com.legaoyi.file.server.LoggerChannelInbouHandler loggerChannelInbouHandler -> L
+    io.netty.channel.ChannelOutboundHandler loggerChannelOutbouHandler -> M
+    com.legaoyi.file.server.CodecEncoder codecEncoder -> N
+    java.lang.Object LOCK -> LOCK
+    34:55:void <init>() -> <init>
+    80:92:void start() -> start
+    95:108:void stop() -> stop
+    111:160:void startServer() -> startServer
+    34:34:com.legaoyi.file.server.CodecEncoder access$000(com.legaoyi.file.server.Server) -> a
+    34:34:io.netty.channel.ChannelOutboundHandler access$100(com.legaoyi.file.server.Server) -> b
+    34:34:int access$200(com.legaoyi.file.server.Server) -> c
+    34:34:io.netty.channel.group.ChannelGroup access$300(com.legaoyi.file.server.Server) -> d
+    34:34:com.legaoyi.file.server.ChannelInboundEventHandler access$400(com.legaoyi.file.server.Server) -> e
+    34:34:com.legaoyi.file.server.LoggerChannelInbouHandler access$500(com.legaoyi.file.server.Server) -> f
+    34:34:com.legaoyi.file.server.BytesToMessageChannelHandler access$600(com.legaoyi.file.server.Server) -> g
+    36:77:void <clinit>() -> <clinit>
+com.legaoyi.file.server.Server$1 -> com.legaoyi.file.server.h$1:
+    com.legaoyi.file.server.Server this$0 -> O
+    116:116:void <init>(com.legaoyi.file.server.Server) -> <init>
+    120:129:void initChannel(io.netty.channel.socket.SocketChannel) -> a
+    116:116:void initChannel(io.netty.channel.Channel) -> initChannel
+com.legaoyi.file.server.ServerDisruptorMessageHandler -> com.legaoyi.file.server.i:
+    org.slf4j.Logger logger -> logger
+    com.legaoyi.mq.MQMessageProducer producer -> P
+    java.lang.String gatewayId -> Q
+    23:23:void <init>() -> <init>
+    37:54:void handle(java.lang.Object) -> handle
+    25:25:void <clinit>() -> <clinit>
+com.legaoyi.file.server.ServerMessageHandler -> com.legaoyi.file.server.j:
+    void handle(com.legaoyi.common.message.ExchangeMessage) -> a
+com.legaoyi.file.server.ServerUpstreamMessageHandler -> com.legaoyi.file.server.k:
+    com.legaoyi.common.disruptor.DisruptorEventProducer producer -> R
+    java.lang.String routingKey -> routingKey
+    15:15:void <init>() -> <init>
+    22:23:void setProducer(com.legaoyi.common.disruptor.DisruptorEventProducer) -> a
+    26:27:void setRoutingKey(java.lang.String) -> setRoutingKey
+    31:35:void handle(com.legaoyi.common.message.ExchangeMessage) -> a
+com.legaoyi.file.server.security.SecurityUtil -> com.legaoyi.file.server.security.a:
+    java.lang.String ATTRIBUTE_MSG_COUNT_TOKEN_BUCKET_KEY -> S
+    com.legaoyi.file.server.GatewayCacheManager gatewayCacheManager -> gatewayCacheManager
+    int limit -> limit
+    16:16:void <init>() -> <init>
+    36:56:boolean validateByIp(java.lang.String,int) -> a
+    60:68:com.legaoyi.file.server.security.TokenBucket createTokenBucket(java.lang.String,int,int) -> a
+    72:90:com.legaoyi.file.server.security.TokenBucket filled(com.legaoyi.file.server.security.TokenBucket) -> a
+    94:98:void filledToken(com.legaoyi.file.server.security.TokenBucket,int) -> a
+com.legaoyi.file.server.security.TokenBucket -> com.legaoyi.file.server.security.b:
+    long serialVersionUID -> serialVersionUID
+    int capacity -> capacity
+    int tokenNum -> T
+    long lastRefillTimePoint -> U
+    java.lang.String tokenBucketKey -> V
+    long increaseMillisecond -> W
+    int increaseNum -> X
+    long increasePeriod -> Y
+    10:22:void <init>() -> <init>
+    29:29:int getCapacity() -> v
+    33:34:void setCapacity(int) -> setCapacity
+    37:37:int getTokenNum() -> w
+    41:42:void setTokenNum(int) -> f
+    45:45:long getLastRefillTimePoint() -> x
+    49:50:void setLastRefillTimePoint(long) -> a
+    53:53:java.lang.String getTokenBucketKey() -> y
+    57:58:void setTokenBucketKey(java.lang.String) -> i
+    61:61:long getIncreaseMillisecond() -> z
+    65:66:void setIncreaseMillisecond(long) -> b
+    69:69:int getIncreaseNum() -> A
+    73:74:void setIncreaseNum(int) -> g
+    77:77:long getIncreasePeriod() -> B
+    81:82:void setIncreasePeriod(long) -> c
+    85:86:void filledToken(int) -> h
+    89:90:void reduceToken(int) -> i
+com.legaoyi.file.server.util.Constants -> com.legaoyi.file.server.util.a:
+    java.lang.String PROTOCOL_VERSION -> Z
+    io.netty.util.AttributeKey ATTRIBUTE_SESSION_ATTACHMENT_INFO -> aa
+    io.netty.util.AttributeKey ATTRIBUTE_SESSION_ATTACHMENT_LIST -> ab
+    io.netty.util.AttributeKey ATTRIBUTE_SESSION_ATTACHMENT -> ac
+    io.netty.util.AttributeKey ATTRIBUTE_SESSION_STATE -> ad
+    10:10:void <init>() -> <init>
+    14:20:void <clinit>() -> <clinit>
+com.legaoyi.file.server.util.DefaultMessageBuilder -> com.legaoyi.file.server.util.b:
+    12:12:void <init>() -> <init>
+    15:29:com.legaoyi.protocol.message.Message build8001Message(int) -> j
+    33:43:com.legaoyi.protocol.message.Message build8001Message(com.legaoyi.protocol.message.Message,int) -> a
+com.legaoyi.file.server.util.MappedFileWriter -> com.legaoyi.file.server.util.c:
+    org.slf4j.Logger logger -> logger
+    int DATA_CHUNK -> ae
+    16:16:void <init>() -> <init>
+    29:78:void write(java.lang.String,byte[]) -> a
+    87:110:void unmap(java.nio.MappedByteBuffer) -> unmap
+    16:16:org.slf4j.Logger access$000() -> access$000
+    18:18:void <clinit>() -> <clinit>
+com.legaoyi.file.server.util.MappedFileWriter$1 -> com.legaoyi.file.server.util.c$1:
+    java.nio.MappedByteBuffer val$mappedByteBuffer -> val$mappedByteBuffer
+    92:92:void <init>(java.nio.MappedByteBuffer) -> <init>
+    97:104:java.lang.Object run() -> run

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>jar</packaging>
+	<artifactId>elink-message-api-core</artifactId>
+	<parent>
+		<groupId>com.legaoyi</groupId>
+		<artifactId>elink-platform</artifactId>
+		<version>2.0.0.RELEASE</version>
+		<relativePath>../../pom.xml</relativePath>
+	</parent>
+	<dependencies>
+		<dependency>
+			<groupId>com.legaoyi</groupId>
+			<artifactId>elink-message-model</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.legaoyi</groupId>
+			<artifactId>elink-platform-base-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.legaoyi</groupId>
+			<artifactId>elink-rabbitmq-support</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-net</groupId>
+			<artifactId>commons-net</artifactId>
+		</dependency>
+	</dependencies>
+</project>

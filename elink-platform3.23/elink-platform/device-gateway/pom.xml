@@ -1,0 +1,28 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>device-protocol</artifactId>
+	<packaging>pom</packaging>
+	<groupId>com.legaoyi</groupId>
+	<version>1.0.0-SNAPSHOT</version>
+	<modules>
+		<module>elink-device-gateway</module>
+		<module>elink-device-jt8082019-gateway</module>
+		<module>elink-device-protocol-base</module>
+		<module>elink-device-protocol-jt8081078-codec</module>
+		<module>elink-device-protocol-jt8081078-message</module>
+		<module>elink-device-protocol-jt8082011-codec</module>
+		<module>elink-device-protocol-jt8082011-message</module>
+		<module>elink-device-protocol-jt8082013-codec</module>
+		<module>elink-device-protocol-jt8082013-message</module>
+		<module>elink-device-protocol-jt8082019-codec</module>
+		<module>elink-device-protocol-jt8082019-message</module>
+		<module>elink-device-protocol-tjsatl2017-codec</module>
+		<module>elink-device-protocol-tjsatl2017-message</module>
+		<module>elink-tjsatl-file-server</module>
+		<module>elink-tjsatl-message-storer-core</module>
+		<module>elink-device-message-storer-base</module>
+		<module>elink-device-message-storer</module>
+	</modules>
+</project>
+

@@ -1,0 +1,192 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="~{admin/layout/app}">
+<div layout:fragment="content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>发布列表</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="col-sm-9">
+                        <a href="javascript:void(0)" onclick="pub()" class="btn btn-info">发布</a>
+                        <a href="javascript:void(0)" onclick="allPub()" class="btn btn-info">全部发布</a>
+                        <a href="javascript:void(0)" onclick="exportImei()" class="btn btn-info ">批量导入</a>
+                    </div>
+                    <!--<div class="col-sm-3">-->
+                        <!--<form  method="get" id="cheacform">-->
+                            <!--<div class="input-group">-->
+                                <!--<input type="text" th:value="${keywords}" name="keywords" placeholder="请输入IMEI"-->
+                                       <!--class="input-sm form-control"> <span class="input-group-btn">-->
+		                            <!--<button type="submit" class="btn btn-sm btn-info"> 搜 索</button> </span>-->
+                            <!--</div>-->
+                        <!--</form>-->
+                    <!--</div>-->
+                </div>
+
+                <div class="ibox-content">
+
+                    <table class="table table-striped table-bordered table-hover dataTables-example"
+                           style="margin-bottom: 0;" id="mytable">
+                        <thead>
+                        <tr>
+                            <th><input id="allboxs" onclick="allcheck()" type="checkbox"/></th>
+                            <th>IMEI</th>
+                            <th>项目名</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr class="gradeX" th:if="${not #lists.isEmpty(list)}"
+                            th:each="item:${list}">
+                            <td><input  name="boxs" type="checkbox"/></td>
+                            <td th:text="${item.getImei()}"></td>
+                            <td th:text="${item.getProject().getProjectName()}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!-- 分页代码 -->
+                    <div class="row" th:with="list=${list}">
+                        <div th:replace="admin/layout/page::html" ></div>
+                    </div>
+                    <!-- 分页代码结束 -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script layout:fragment="my-script"  th:inline="javascript">
+
+
+    var list = [[${ list1 }]];
+    list = $.parseJSON(list).content;
+    var list1 = [[${ whitelists }]];
+    list1 = $.parseJSON(list1);
+    var list2 = [[${ list2 }]];
+    list2 = $.parseJSON(list2);
+    console.log(list);
+    console.log(list1);
+    console.log(list2);
+    var namebox = $("input[name^='boxs']");
+    for(i = 0; i < list.length; i++) {
+        var im = list[i].imei;
+        namebox[i].checked=false;
+        for (j=0 ;j<list1.length;j++){
+            if(list1[j].imei == im){
+                namebox[i].checked=true;    //js操作选中checkbox
+            }
+        }
+       if(list2 !=null){
+           for (k=0 ;k<list2.length;k++){
+               if(list2[k] == im){
+                   namebox[i].checked=true;    //js操作选中checkbox
+               }
+           }
+       }
+
+
+    }
+    function exportImei(){
+        layer.open({
+            type: 2,
+            title:'添加',
+            area: ['50%', '90%'], //宽高
+            content: '/admin/app/exp'
+        })
+    }
+
+
+
+    function allcheck() {
+        var nn = $("#allboxs").is(":checked"); //判断th中的checkbox是否被选中，如果被选中则nn为true，反之为false
+        if(nn == true) {
+            var namebox = $("input[name^='boxs']");  //获取name值为boxs的所有input
+            for(i = 0; i < namebox.length; i++) {
+                namebox[i].checked=true;    //js操作选中checkbox
+            }
+        }
+        if(nn == false) {
+            var namebox = $("input[name^='boxs']");
+            for(i = 0; i < namebox.length; i++) {
+                namebox[i].checked=false;
+            }
+        }
+    }
+
+    function pub(){
+        var data = [];
+        $("#mytable").find(":checkbox:checked").each(function () {
+            var val = $(this).parent().next().text();
+            if(val != 'IMEI'){
+                data.push(val);
+            }
+
+        });
+        console.log(data);
+        if (data.length>0){
+            var index = layer.load(1);
+                for(var i=0;i<data.length;i++){
+                       var ids = data[i];
+                        $.ajax({
+                            url:'/admin/app/white/'+ids,
+                            type:'GET',
+                            dataType:"json",
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="_csrf"]').attr('content')
+                            },
+                            success:function (response) {
+                                if(response && response.code == 0){
+                                    layer.close(index);
+                                    layer.msg(response.data);
+                                    setTimeout(function(){
+                                        window.parent.location.reload(); //刷新父页面
+                                    },100)
+                                }else{
+                                    layer.msg(response.data);
+                                    layer.close(index);
+                                }
+                            },
+                            error:function (response) {
+                                layer.msg("请求错误");
+                                layer.close(index);
+                            }
+                        });
+                }
+            }
+
+    }
+
+    function allPub(){
+        var index = layer.load(1);
+            $.ajax({
+                url:'/admin/app/all-pub',
+                type:'GET',
+                dataType:"json",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="_csrf"]').attr('content')
+                },
+                success:function (response) {
+                    if(response && response.code == 0){
+                        layer.close(index);
+                        layer.msg(response.data);
+                        setTimeout(function(){
+                            window.parent.location.reload(); //刷新父页面
+                        },500)
+                    }else{
+                        layer.msg(response.data);
+                        layer.close(index);
+                    }
+                },
+                error:function (response) {
+                    layer.msg("请求错误");
+                    layer.close(index);
+                }
+
+            });
+
+    }
+</script>
+
+

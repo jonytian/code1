@@ -1,0 +1,7 @@
+com\legaoyi\persistence\mongo\dao\impl\MongoDaoImpl.class
+com\legaoyi\persistence\mongo\model\Pagination.class
+com\legaoyi\persistence\mongo\page\Paginable.class
+com\legaoyi\persistence\mongo\dao\MongoDao.class
+com\legaoyi\persistence\mongo\page\SimplePage.class
+com\legaoyi\persistence\mongo\service\impl\MongoServiceImpl.class
+com\legaoyi\persistence\mongo\service\MongoService.class

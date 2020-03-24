@@ -1,0 +1,16 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>common</artifactId>
+	<packaging>pom</packaging>
+	<groupId>com.legaoyi</groupId>
+	<version>1.0.0.RELEASE</version>
+	<modules>
+		<module>elink-disruptor-support</module>
+		<module>elink-mq-support</module>
+		<module>elink-rabbitmq-support</module>
+		<module>elink-util</module>
+		<module>elink-excel-util</module>
+	</modules>
+</project>
+

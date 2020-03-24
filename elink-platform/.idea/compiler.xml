@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="elink-data-analyst" />
+        <module name="elink-device-gateway" />
+        <module name="elink-device-jt8082019-gateway" />
+        <module name="elink-device-message-storer" />
+        <module name="elink-device-message-storer-base" />
+        <module name="elink-device-protocol-base" />
+        <module name="elink-device-protocol-jt8081078-codec" />
+        <module name="elink-device-protocol-jt8081078-message" />
+        <module name="elink-device-protocol-jt8082011-codec" />
+        <module name="elink-device-protocol-jt8082011-message" />
+        <module name="elink-device-protocol-jt8082013-codec" />
+        <module name="elink-device-protocol-jt8082013-message" />
+        <module name="elink-device-protocol-jt8082019-codec" />
+        <module name="elink-device-protocol-jt8082019-message" />
+        <module name="elink-device-protocol-tjsatl2017-codec" />
+        <module name="elink-device-protocol-tjsatl2017-message" />
+        <module name="elink-disruptor-support" />
+        <module name="elink-excel-util" />
+        <module name="elink-lbs-api-core" />
+        <module name="elink-management-api-core" />
+        <module name="elink-management-model" />
+        <module name="elink-message-api-core" />
+        <module name="elink-message-model" />
+        <module name="elink-mq-support" />
+        <module name="elink-platform-base-core" />
+        <module name="elink-platform-base-model" />
+        <module name="elink-platform-rest-api" />
+        <module name="elink-platform-web" />
+        <module name="elink-rabbitmq-support" />
+        <module name="elink-report-api-core" />
+        <module name="elink-spring-jpa-support" />
+        <module name="elink-spring-mongo-support" />
+        <module name="elink-spring-redis-support" />
+        <module name="elink-tjsatl-file-server" />
+        <module name="elink-tjsatl-message-storer-core" />
+        <module name="elink-util" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="elink-data-analyst" options="-parameters" />
+      <module name="elink-device-gateway" options="-parameters" />
+      <module name="elink-device-jt8082019-gateway" options="-parameters" />
+      <module name="elink-device-message-storer" options="-parameters" />
+      <module name="elink-device-message-storer-base" options="-parameters" />
+      <module name="elink-device-protocol-base" options="-parameters" />
+      <module name="elink-device-protocol-jt8081078-codec" options="-parameters" />
+      <module name="elink-device-protocol-jt8081078-message" options="-parameters" />
+      <module name="elink-device-protocol-jt8082011-codec" options="-parameters" />
+      <module name="elink-device-protocol-jt8082011-message" options="-parameters" />
+      <module name="elink-device-protocol-jt8082013-codec" options="-parameters" />
+      <module name="elink-device-protocol-jt8082013-message" options="-parameters" />
+      <module name="elink-device-protocol-jt8082019-codec" options="-parameters" />
+      <module name="elink-device-protocol-jt8082019-message" options="-parameters" />
+      <module name="elink-device-protocol-tjsatl2017-codec" options="-parameters" />
+      <module name="elink-device-protocol-tjsatl2017-message" options="-parameters" />
+      <module name="elink-disruptor-support" options="-parameters" />
+      <module name="elink-excel-util" options="-parameters" />
+      <module name="elink-lbs-api-core" options="-parameters" />
+      <module name="elink-management-api-core" options="-parameters" />
+      <module name="elink-management-model" options="-parameters" />
+      <module name="elink-message-api-core" options="-parameters" />
+      <module name="elink-message-model" options="-parameters" />
+      <module name="elink-mq-support" options="-parameters" />
+      <module name="elink-platform-base-core" options="-parameters" />
+      <module name="elink-platform-base-model" options="-parameters" />
+      <module name="elink-platform-rest-api" options="-parameters" />
+      <module name="elink-platform-web" options="-parameters" />
+      <module name="elink-rabbitmq-support" options="-parameters" />
+      <module name="elink-report-api-core" options="-parameters" />
+      <module name="elink-spring-jpa-support" options="-parameters" />
+      <module name="elink-spring-mongo-support" options="-parameters" />
+      <module name="elink-spring-redis-support" options="-parameters" />
+      <module name="elink-tjsatl-file-server" options="-parameters" />
+      <module name="elink-tjsatl-message-storer-core" options="-parameters" />
+      <module name="elink-util" options="-parameters" />
+    </option>
+  </component>
+</project>

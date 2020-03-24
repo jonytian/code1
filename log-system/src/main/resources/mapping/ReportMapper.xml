@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.logs.mapper.ReportMapper">
+
+
+  <!-- 查询近7日数据:查询按日期显示各项目异常总数 (line) -->
+  <select id="getChartLine" resultType="java.util.HashMap">
+    select DATE_FORMAT(l.create_time,'%Y-%m-%d') as time,(SELECT d.project_name FROM t_device d WHERE d.device_id = l.device_id) as projectName,COUNT(*) as total from t_log l
+    where
+     DATE_SUB(CURDATE(), INTERVAL 7 DAY) <![CDATA[<=date(l.CREATE_TIME)]]>
+    GROUP BY  time,l.device_id order by time
+  </select>
+
+  <!-- 查询近7日数据:查询按项目版本异常总数(bar) -->
+  <select id="getChartBar" resultType="java.util.HashMap">
+  select (SELECT d.project_name FROM t_device d WHERE d.device_id = l.device_id) as name,l.rom_version as version , COUNT(*) as total from t_log l
+  GROUP BY  name,version  ORDER BY name
+  </select>
+
+  <!-- 查询近7日数据:查询按项目显示异常总数(pie) -->
+  <select id="getChartPie" resultType="java.util.HashMap">
+  select (SELECT d.project_name FROM t_device d WHERE d.device_id = l.device_id) as name  , COUNT(*) as value from t_log l
+  GROUP BY  name  ORDER BY name
+  </select>
+
+  <!-- 获取系统中项目的分组 -->
+  <select id="getProjectGroup" resultType="java.util.HashMap">
+  select project_name as name from t_device
+  GROUP BY  name  ORDER BY name
+  </select>
+
+
+  <!-- 设备:日 周 月 年 -->
+  <!-- 总数 -->
+  <select id="getDeviceAllTotal" resultType="java.lang.Integer">
+    SELECT COUNT(*) as total FROM t_device
+  </select>
+  <!-- 按日查询 -->
+  <select id="getDeviceDay" resultType="java.lang.Integer">
+     SELECT COUNT(*) as total FROM t_device WHERE TO_DAYS(date_format(create_time,'%Y-%m-%d')) = TO_DAYS(NOW())  ;
+  </select>
+  <!-- 按周查询 -->
+  <select id="getDeviceWeek" resultType="java.lang.Integer">
+    SELECT COUNT(*) as total FROM t_device WHERE YEARWEEK(date_format(create_time,'%Y-%m-%d')) = YEARWEEK(now());
+  </select>
+  <!-- 按月查询 -->
+  <select id="getDeviceMonth" resultType="java.lang.Integer">
+    SELECT COUNT(*) as total FROM t_device WHERE DATE_FORMAT( create_time, '%Y%m') = DATE_FORMAT( CURDATE( ) , '%Y%m' ) ;
+  </select>
+  <!-- 按年查询 -->
+  <select id="getDeviceYear" resultType="java.lang.Integer">
+    SELECT COUNT(*) as total FROM t_device WHERE DATE_FORMAT( create_time, '%Y' ) = DATE_FORMAT( CURDATE( ) ,'%Y' );
+  </select>
+
+  <!-- 用户:日 周 月 年 -->
+  <!-- 总数 -->
+  <select id="getUserAllTotal" resultType="java.lang.Integer">
+    SELECT COUNT(*) as total FROM t_user
+  </select>
+  <!-- 按日查询 -->
+  <select id="getUserDay" resultType="java.lang.Integer">
+     SELECT COUNT(*) as total FROM t_user WHERE TO_DAYS(date_format(create_time,'%Y-%m-%d')) = TO_DAYS(NOW())  ;
+  </select>
+  <!-- 按周查询 -->
+  <select id="getUserWeek" resultType="java.lang.Integer">
+    SELECT COUNT(*) as total FROM t_user WHERE YEARWEEK(date_format(create_time,'%Y-%m-%d')) = YEARWEEK(now());
+  </select>
+  <!-- 按月查询 -->
+  <select id="getUserMonth" resultType="java.lang.Integer">
+    SELECT COUNT(*) as total FROM t_user WHERE DATE_FORMAT( create_time, '%Y%m') = DATE_FORMAT( CURDATE( ) , '%Y%m' ) ;
+  </select>
+  <!-- 按年查询 -->
+  <select id="getUserYear" resultType="java.lang.Integer">
+    SELECT COUNT(*) as total FROM t_user WHERE DATE_FORMAT( create_time, '%Y' ) = DATE_FORMAT( CURDATE( ) ,'%Y' );
+  </select>
+
+
+  <!-- 异常:日 周 月 年 -->
+  <!-- 总数 -->
+  <select id="getExceptionAllTotal" resultType="java.lang.Integer">
+    SELECT COUNT(*) as total FROM t_log
+  </select>
+  <!-- 按日查询 -->
+  <select id="getExceptionDay" resultType="java.lang.Integer">
+     SELECT COUNT(*) as total FROM t_log WHERE TO_DAYS(date_format(create_time,'%Y-%m-%d')) = TO_DAYS(NOW())  ;
+  </select>
+  <!-- 按周查询 -->
+  <select id="getExceptionWeek" resultType="java.lang.Integer">
+    SELECT COUNT(*) as total FROM t_log WHERE YEARWEEK(date_format(create_time,'%Y-%m-%d')) = YEARWEEK(now());
+  </select>
+  <!-- 按月查询 -->
+  <select id="getExceptionMonth" resultType="java.lang.Integer">
+    SELECT COUNT(*) as total FROM t_log WHERE DATE_FORMAT( create_time, '%Y%m') = DATE_FORMAT( CURDATE( ) , '%Y%m' ) ;
+  </select>
+  <!-- 按年查询 -->
+  <select id="getExceptionYear" resultType="java.lang.Integer">
+    SELECT COUNT(*) as total FROM t_log WHERE DATE_FORMAT( create_time, '%Y' ) = DATE_FORMAT( CURDATE( ) ,'%Y' );
+  </select>
+
+
+
+</mapper>

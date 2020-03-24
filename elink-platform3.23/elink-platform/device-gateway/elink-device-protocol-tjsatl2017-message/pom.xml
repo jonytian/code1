@@ -1,0 +1,28 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>elink-device-protocol-tjsatl2017-message</artifactId>
+	<parent>
+		<groupId>com.legaoyi</groupId>
+		<artifactId>elink-platform</artifactId>
+		<version>2.0.0.RELEASE</version>
+		<relativePath>../../pom.xml</relativePath>
+	</parent>
+	<dependencies>
+		<dependency>
+			<artifactId>spring-context</artifactId>
+			<groupId>org.springframework</groupId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.legaoyi</groupId>
+			<artifactId>elink-device-protocol-base</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.legaoyi</groupId>
+			<artifactId>elink-util</artifactId>
+		</dependency>
+	</dependencies>
+</project>
+

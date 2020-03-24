@@ -1,0 +1,14 @@
+D:\Work\elink-platform\device-gateway\elink-device-protocol-base\src\main\java\com\legaoyi\protocol\util\ByteUtils.java
+D:\Work\elink-platform\device-gateway\elink-device-protocol-base\src\main\java\com\legaoyi\protocol\message\decoder\MessageBodyDecoder.java
+D:\Work\elink-platform\device-gateway\elink-device-protocol-base\src\main\java\com\legaoyi\protocol\util\SpringBeanUtil.java
+D:\Work\elink-platform\device-gateway\elink-device-protocol-base\src\main\java\com\legaoyi\protocol\exception\MessageDeliveryException.java
+D:\Work\elink-platform\device-gateway\elink-device-protocol-base\src\main\java\com\legaoyi\protocol\exception\IllegalMessageException.java
+D:\Work\elink-platform\device-gateway\elink-device-protocol-base\src\main\java\com\legaoyi\protocol\message\MessageBody.java
+D:\Work\elink-platform\device-gateway\elink-device-protocol-base\src\main\java\com\legaoyi\protocol\util\DateUtils.java
+D:\Work\elink-platform\device-gateway\elink-device-protocol-base\src\main\java\com\legaoyi\protocol\message\MessageHeader.java
+D:\Work\elink-platform\device-gateway\elink-device-protocol-base\src\main\java\com\legaoyi\protocol\util\ServerRuntimeContext.java
+D:\Work\elink-platform\device-gateway\elink-device-protocol-base\src\main\java\com\legaoyi\protocol\util\MessageBuilder.java
+D:\Work\elink-platform\device-gateway\elink-device-protocol-base\src\main\java\com\legaoyi\protocol\exception\UnsupportedMessageException.java
+D:\Work\elink-platform\device-gateway\elink-device-protocol-base\src\main\java\com\legaoyi\protocol\util\ArithUtil.java
+D:\Work\elink-platform\device-gateway\elink-device-protocol-base\src\main\java\com\legaoyi\protocol\message\Message.java
+D:\Work\elink-platform\device-gateway\elink-device-protocol-base\src\main\java\com\legaoyi\protocol\message\encoder\MessageBodyEncoder.java

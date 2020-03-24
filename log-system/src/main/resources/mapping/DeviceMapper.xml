@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.logs.mapper.DeviceMapper">
+
+  <resultMap id="BaseResultMap" type="Device">
+    <id column="device_id" jdbcType="INTEGER" property="deviceId"/>
+    <result column="imei" jdbcType="VARCHAR" property="imei"/>
+    <result column="project_name" jdbcType="VARCHAR" property="projectName"/>
+    <result column="token" jdbcType="VARCHAR" property="token"/>
+    <result column="kicked" jdbcType="INTEGER" property="kicked"/>
+    <result column="online" jdbcType="INTEGER" property="online"/>
+    <result column="restart" jdbcType="INTEGER" property="restart"/>
+    <result column="mtklog_status" jdbcType="INTEGER" property="mtklogStatus"/>
+    <result column="connect_time" jdbcType="TIMESTAMP" property="connectTime"/>
+    <result column="disconnect_time" jdbcType="TIMESTAMP" property="disconnectTime"/>
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+  </resultMap>
+
+  <sql id="Base_Column_List">
+  device_id, imei, project_name, token, kicked, online, restart, mtklog_status ,connect_time,disconnect_time, create_time
+  </sql>
+  <!--=Start getDevices 分页查询列表ProductSearch -->
+  <select id="getDevices" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from t_device
+    <where>
+      <if test="deviceSearch.imei!=null and deviceSearch.imei!=''">
+        AND imei like CONCAT(CONCAT('%',#{deviceSearch.imei}),
+        '%')
+      </if>
+      <if test="deviceSearch.projectName!=null and deviceSearch.projectName!=''">
+        AND project_name like CONCAT(CONCAT('%',#{deviceSearch.projectName}),
+        '%')
+      </if>
+      <if test="deviceSearch.insertTimeStart!=null and deviceSearch.insertTimeStart!=''">
+        AND create_time &gt;= #{deviceSearch.insertTimeStart}
+      </if>
+      <if test="deviceSearch.insertTimeEnd!=null and deviceSearch.insertTimeEnd!=''">
+        AND create_time &lt;= #{deviceSearch.insertTimeEnd}
+      </if>
+    </where>
+
+  </select>
+  <!--=根据IMEI查找 -->
+  <select id="findByImei" parameterType="String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from t_device
+    where
+    imei = #{imei}
+  </select>
+  <!-- 查询所有DeviceVo -->
+  <resultMap  id="deviceVoList" type="DeviceVo">
+    <id column="device_id" jdbcType="INTEGER" property="deviceId"/>
+    <result column="imei" jdbcType="VARCHAR" property="imei"/>
+    <result column="project_name" jdbcType="VARCHAR" property="projectName"/>
+    <result column="token" jdbcType="VARCHAR" property="token"/>
+    <result column="kicked" jdbcType="INTEGER" property="kicked"/>
+    <result column="online" jdbcType="INTEGER" property="online"/>
+    <result column="restart" jdbcType="INTEGER" property="restart"/>
+    <result column="mtklog_status" jdbcType="INTEGER" property="mtklogStatus"/>
+    <result column="connect_time" jdbcType="TIMESTAMP" property="connectTime"/>
+    <result column="disconnect_time" jdbcType="TIMESTAMP" property="disconnectTime"/>
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+
+    <!-- 一对多关系 -->
+    <collection property="logList" ofType="Log">
+      <id column="log_id" jdbcType="INTEGER" property="logId"/>
+      <result column="exception" jdbcType="VARCHAR" property="exception"/>
+      <result column="description" jdbcType="VARCHAR" property="description"/>
+      <result column="package_name" jdbcType="VARCHAR" property="packageName"/>
+      <result column="happen_time" jdbcType="VARCHAR" property="happenTime"/>
+      <result column="expiration_time" jdbcType="VARCHAR" property="expirationTime"/>
+      <result column="log_path" jdbcType="VARCHAR" property="logPath"/>
+      <result column="rom_version" jdbcType="VARCHAR" property="romVersion"/>
+      <result column="android_version" jdbcType="VARCHAR" property="androidVersion"/>
+      <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+      <result column="device_id" jdbcType="INTEGER" property="deviceId"/>
+    </collection>
+  </resultMap>
+  <!--查询设备-->
+  <select id="selectAllDeviceVo" resultMap="deviceVoList">
+        SELECT
+        d.`device_id`,
+        d.`imei`,
+        d.`project_name`,
+        d.`token`,
+        d.`kicked`,
+        d.`online`,
+        d.`restart`,
+        d.`mtklog_status`,
+        d.`connect_time`,
+        d.`disconnect_time`,
+        d.`create_time`,
+
+        l.`log_id`,
+        l.`exception`,
+        l.`description`,
+        l.`package_name`,
+        l.`happen_time`,
+        l.`expiration_time`,
+        l.`log_path`,
+        l.`rom_version`,
+        l.`android_version`,
+        l.`create_time`,
+        l.`device_id`
+        FROM t_device d
+        LEFT JOIN
+        t_log l ON
+        d.`device_id`=l.`device_id`
+
+    <where>
+      <if test="deviceVoSearch.exception!=null and deviceVoSearch.exception!=''">
+        AND l.exception like CONCAT(CONCAT('%',#{deviceVoSearch.exception}),
+        '%')
+      </if>
+      <if test="deviceVoSearch.insertTimeStart!=null and deviceVoSearch.insertTimeStart!=''">
+        AND l.create_time &gt;= #{deviceVoSearch.insertTimeStart}
+      </if>
+      <if test="deviceVoSearch.insertTimeEnd!=null and deviceVoSearch.insertTimeEnd!=''">
+        AND l.create_time &lt;= #{deviceVoSearch.insertTimeEnd}
+      </if>
+    </where>
+
+
+    </select>
+
+  <!--新增设备-->
+  <insert id="insert" parameterType="Device">
+    insert ignore into t_device
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="deviceId != null">
+        device_id,
+      </if>
+      <if test="imei != null">
+        imei,
+      </if>
+      <if test="projectName != null">
+        project_name,
+      </if>
+      <if test="token != null">
+        token,
+      </if>
+      <if test="kicked != null">
+        kicked,
+      </if>
+
+      <if test="online != null">
+        online,
+      </if>
+      <if test="restart != null">
+        restart,
+      </if>
+      <if test="mtklogStatus != null">
+        mtklog_status,
+      </if>
+
+      <if test="connectTime != null">
+        connect_time,
+      </if>
+      <if test="disconnectTime != null">
+        disconnect_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="deviceId != null">
+        #{deviceId,jdbcType=INTEGER},
+      </if>
+      <if test="imei != null">
+        #{imei,jdbcType=VARCHAR},
+      </if>
+      <if test="projectName != null">
+        #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="token != null">
+        #{token,jdbcType=VARCHAR},
+      </if>
+      <if test="kicked != null">
+        #{kicked,jdbcType=INTEGER},
+      </if>
+      <if test="online != null">
+        #{online,jdbcType=INTEGER},
+      </if>
+      <if test="restart != null">
+        #{restart,jdbcType=INTEGER},
+      </if>
+      <if test="mtklogStatus != null">
+        #{mtklogStatus,jdbcType=INTEGER},
+      </if>
+      <if test="connectTime != null">
+        #{connectTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="disconnectTime != null">
+        #{disconnectTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <!--更新设备-->
+  <update id="update" parameterType="Device">
+    update t_device
+    <set>
+      <if test="deviceId != null">
+        device_id = #{deviceId,jdbcType=INTEGER},
+      </if>
+      <if test="imei != null">
+        imei = #{imei,jdbcType=VARCHAR},
+      </if>
+      <if test="projectName != null">
+        project_name = #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="token!= null">
+        token = #{token,jdbcType=VARCHAR},
+      </if>
+      <if test="kicked != null">
+        kicked = #{kicked,jdbcType=INTEGER},
+      </if>
+      <if test="online != null">
+        online = #{online,jdbcType=INTEGER},
+      </if>
+      <if test="restart != null">
+        restart = #{restart,jdbcType=INTEGER},
+      </if>
+      <if test="mtklogStatus != null">
+        mtklog_status = #{mtklogStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="connectTime != null">
+        connect_time = #{connectTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="disconnectTime != null">
+        disconnect_time = #{disconnectTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where imei = #{imei,jdbcType=VARCHAR}
+  </update>
+
+
+
+
+
+</mapper>

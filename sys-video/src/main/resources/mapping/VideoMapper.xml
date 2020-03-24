@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.sys.mapper.VideoMapper">
+
+  <resultMap id="BaseResultMap" type="com.example.sys.entity.Video">
+    <id column="id" jdbcType="INTEGER" property="id"/>
+    <result column="msgid" jdbcType="VARCHAR" property="msgid"/>
+    <result column="seq" jdbcType="INTEGER" property="seq"/>
+    <result column="terminal" jdbcType="VARCHAR" property="terminal"/>
+    <result column="channel" jdbcType="INTEGER" property="channel"/>
+    <result column="timeinterval" jdbcType="INTEGER" property="timeinterval"/>
+    <result column="seialNo" jdbcType="VARCHAR" property="seialNo"/>
+    <result column="fileName" jdbcType="VARCHAR" property="fileName"/>
+    <result column="file" jdbcType="VARCHAR" property="file"/>
+    <result column="startTime" jdbcType="VARCHAR" property="startTime"/>
+    <result column="endTime" jdbcType="VARCHAR" property="endTime"/>
+      <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+  </resultMap>
+
+
+
+  <!--分页查询列表-->
+  <select id="getVideos" resultMap="BaseResultMap">
+    select * from video
+    <where>
+      <if test="videoSearch.terminal!=null and videoSearch.terminal!=''">
+        AND terminal like CONCAT(CONCAT('%',#{videoSearch.terminal}),
+        '%')
+      </if>
+
+      <if test="videoSearch.insertTimeStart!=null and videoSearch.insertTimeStart!=''">
+        AND create_time &gt;= #{videoSearch.insertTimeStart}
+      </if>
+      <if test="videoSearch.insertTimeEnd!=null and videoSearch.insertTimeEnd!=''">
+        AND create_time &lt;= #{videoSearch.insertTimeEnd}
+      </if>
+
+    </where>
+    ORDER BY id DESC
+  </select>
+
+
+  <insert id="insert" parameterType="com.example.sys.entity.Video">
+    insert into video
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+
+      <if test="msgid != null">
+        msgid,
+      </if>
+      <if test="seq != null">
+        seq,
+      </if>
+      <if test="terminal != null">
+        terminal,
+      </if>
+      <if test="channel != null">
+        channel,
+      </if>
+      <if test="timeinterval != null">
+        timeinterval,
+      </if>
+      <if test="seialNo != null">
+        seialNo,
+      </if>
+      <if test="fileName != null">
+        fileName,
+      </if>
+      <if test="file != null">
+        file,
+      </if>
+      <if test="startTime != null">
+        startTime,
+      </if>
+      <if test="endTime != null">
+        endTime,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+
+      <if test="msgid != null">
+        #{msgid,jdbcType=INTEGER},
+      </if>
+      <if test="seq != null">
+        #{seq,jdbcType=INTEGER},
+      </if>
+
+      <if test="terminal != null">
+        #{terminal,jdbcType=VARCHAR},
+      </if>
+
+      <if test="channel != null">
+        #{channel,jdbcType=INTEGER},
+      </if>
+      <if test="timeinterval != null">
+        #{timeinterval,jdbcType=INTEGER},
+      </if>
+
+      <if test="seialNo != null">
+        #{seialNo,jdbcType=VARCHAR},
+      </if>
+      <if test="fileName != null">
+        #{fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="file != null">
+        #{file,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        #{startTime,jdbcType=VARCHAR},
+      </if>
+      <if test="endTime != null">
+        #{endTime,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+
+    </trim>
+  </insert>
+
+
+
+    <delete id="delete" parameterType="java.lang.Integer">
+		delete from video
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+</mapper>

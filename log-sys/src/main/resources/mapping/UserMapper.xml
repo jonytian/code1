@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.logsys.mapper.UserMapper">
+
+	<resultMap id="BaseResultMap" type="User">
+		<id column="user_id" jdbcType="INTEGER" property="userId"/>
+		<result column="username" jdbcType="VARCHAR" property="username"/>
+		<result column="password" jdbcType="VARCHAR" property="password"/>
+		<result column="is_admin" jdbcType="INTEGER" property="isAdmin"/>
+		<result column="login_time" jdbcType="TIMESTAMP" property="loginTime"/>
+		<result column="login_num" jdbcType="INTEGER" property="loginNum"/>
+		<result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+	</resultMap>
+
+	<sql id="Base_Column_List">
+    user_id, username, password, is_admin,login_time,login_num,create_time
+    </sql>
+
+	<!--查找全部-->
+	<select id="findAll" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List"/>
+		from t_user
+	</select>
+
+	<!--根据主键查找-->
+	<select id="findById" parameterType="java.lang.Integer"
+			resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List"/>
+		from t_user
+		where user_id = #{userId,jdbcType=INTEGER}
+	</select>
+	<!--根据主键删除-->
+	<delete id="deleteById" parameterType="java.lang.Integer">
+		delete from t_user
+		where user_id = #{userId,jdbcType=INTEGER}
+	</delete>
+
+	<!-- getUsers 分页查询用户列表userSearch -->
+	<select id="getUsers" resultMap="BaseResultMap">
+	select
+	<include refid="Base_Column_List"/>
+	from t_user
+	<where>
+	<if test="userSearch.username!=null and userSearch.username!=''">
+	AND username like CONCAT(CONCAT('%',#{userSearch.username}),
+	'%')
+	</if>
+	<if test="userSearch.insertTimeStart!=null and userSearch.insertTimeStart!=''">
+	AND create_time &gt;= #{userSearch.insertTimeStart}
+	</if>
+	<if test="userSearch.insertTimeEnd!=null and userSearch.insertTimeEnd!=''">
+	AND create_time &lt;= #{userSearch.insertTimeEnd}
+	</if>
+	</where>
+	ORDER BY user_id ASC
+	</select>
+
+	<!--=Start findUser 根据用户名/密码获取用户 -->
+	<select id="findUser" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List"/>
+		from t_user
+        WHERE username=#{username} and password=#{password}
+	</select>
+	<!--=Start findByName 根据用户名获取用户数据 -->
+	<select id="findByName" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List"/>
+		from t_user
+		WHERE username=#{username}
+	</select>
+
+	<!--新增用户-->
+	<insert id="save" parameterType="User">
+		insert into t_user
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="userId != null">
+				user_id,
+			</if>
+			<if test="username != null">
+				username,
+			</if>
+			<if test="password != null">
+				password,
+			</if>
+			<if test="isAdmin != null">
+				is_admin,
+			</if>
+			<if test="loginTime != null">
+				login_time,
+			</if>
+			<if test="loginNum != null">
+				login_num,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="userId != null">
+				#{userId,jdbcType=INTEGER},
+			</if>
+			<if test="username != null">
+				#{username,jdbcType=VARCHAR},
+			</if>
+			<if test="password != null">
+				#{password,jdbcType=VARCHAR},
+			</if>
+			<if test="isAdmin != null">
+				#{isAdmin,jdbcType=INTEGER},
+			</if>
+			<if test="loginTime != null">
+				#{loginTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="loginNum != null">
+				#{loginNum,jdbcType=INTEGER},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+
+
+	<!--根据主键进行更新-->
+	<update id="update" parameterType="User">
+		update t_user
+		<set>
+		<if test="username != null">
+		username = #{username,jdbcType=VARCHAR},
+		</if>
+		<if test="password != null and password !=''">
+		password = #{password,jdbcType=VARCHAR},
+		</if>
+		<if test="isAdmin != null">
+			is_admin = #{isAdmin,jdbcType=INTEGER},
+		</if>
+			<if test="loginTime != null">
+				login_time = #{loginTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="loginNum != null">
+				login_num = #{loginNum,jdbcType=INTEGER},
+			</if>
+		<if test="createTime != null">
+		create_time = #{createTime,jdbcType=TIMESTAMP},
+		</if>
+		</set>
+		where user_id = #{userId,jdbcType=INTEGER}
+	</update>
+
+	<delete id="delete" parameterType="User">
+		delete from t_user
+		where user_id = #{userId,jdbcType=INTEGER}
+	</delete>
+
+
+</mapper>

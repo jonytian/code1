@@ -1,0 +1,11 @@
+com\legaoyi\persistence\jpa\util\Reflect2Entity.class
+com\legaoyi\persistence\jpa\service\GeneralService.class
+com\legaoyi\persistence\jpa\model\Pagination.class
+com\legaoyi\persistence\jpa\exception\IllegalEntityFieldException.class
+com\legaoyi\persistence\jpa\dao\GeneralDao.class
+com\legaoyi\persistence\jpa\service\impl\GeneralServiceImpl.class
+com\legaoyi\persistence\jpa\dao\impl\GeneralDaoImpl.class
+com\legaoyi\persistence\jpa\util\JsonUtil.class
+com\legaoyi\persistence\jpa\exception\IllegalEntityException.class
+com\legaoyi\persistence\jpa\page\SimplePage.class
+com\legaoyi\persistence\jpa\page\Paginable.class

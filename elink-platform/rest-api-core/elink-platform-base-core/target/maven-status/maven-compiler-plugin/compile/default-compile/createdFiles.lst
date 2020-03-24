@@ -1,0 +1,9 @@
+com\legaoyi\platform\service\impl\DeviceServiceImpl.class
+com\legaoyi\platform\service\UserService.class
+com\legaoyi\platform\ext\service\ExtendService.class
+com\legaoyi\platform\service\DeviceService.class
+com\legaoyi\platform\ext\service\impl\DefaultMongoExtendServiceImpl.class
+com\legaoyi\platform\util\SpringContextUtil.class
+com\legaoyi\platform\rest\BaseController.class
+com\legaoyi\platform\service\impl\UserServiceImpl.class
+com\legaoyi\platform\ext\service\DefaultExtendService.class

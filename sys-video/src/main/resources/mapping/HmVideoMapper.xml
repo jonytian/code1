@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.sys.mapper.HmVideoMapper">
+
+  <resultMap id="BaseResultMap" type="com.example.sys.entity.HmVideo">
+    <id column="id" jdbcType="INTEGER" property="id"/>
+    <result column="imei" jdbcType="VARCHAR" property="imei"/>
+    <result column="time_interval" jdbcType="INTEGER" property="timeInterval"/>
+    <result column="serial_number" jdbcType="VARCHAR" property="serialNumber"/>
+    <result column="file_name" jdbcType="VARCHAR" property="fileName"/>
+    <result column="file_path" jdbcType="VARCHAR" property="filePath"/>
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime"/>
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime"/>
+      <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+  </resultMap>
+
+  <!--查询-->
+  <select id="findAll" resultMap="BaseResultMap">
+    select * from hm
+    <where>
+      <if test="hmVideoSearch.imei!=null and hmVideoSearch.imei!=''">
+        AND imei like CONCAT(CONCAT('%',#{hmVideoSearch.imei}),
+        '%')
+      </if>
+
+      <if test="hmVideoSearch.insertTimeStart!=null and hmVideoSearch.insertTimeStart!=''">
+        AND create_time &gt;= #{hmVideoSearch.insertTimeStart}
+      </if>
+      <if test="hmVideoSearch.insertTimeEnd!=null and hmVideoSearch.insertTimeEnd!=''">
+        AND create_time &lt;= #{hmVideoSearch.insertTimeEnd}
+      </if>
+
+    </where>
+    ORDER BY id DESC
+  </select>
+  <!--新增-->
+  <insert id="insert" parameterType="com.example.sys.entity.HmVideo">
+    insert into hm
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="imei != null">
+        imei,
+      </if>
+      <if test="timeInterval != null">
+        time_interval,
+      </if>
+      <if test="serialNumber != null">
+        serial_number,
+      </if>
+      <if test="fileName != null">
+        file_name,
+      </if>
+      <if test="filePath != null">
+        file_path,
+      </if>
+      <if test="startTime != null">
+        start_time,
+      </if>
+      <if test="endTime != null">
+        end_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="imei != null">
+        #{imei,jdbcType=VARCHAR},
+      </if>
+      <if test="timeInterval != null">
+        #{timeInterval,jdbcType=INTEGER},
+      </if>
+
+      <if test="serialNumber != null">
+        #{serialNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="fileName != null">
+        #{fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="filePath != null">
+        #{filePath,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <!--删除-->
+  <delete id="delete" parameterType="java.lang.Integer">
+		delete from jm
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+
+</mapper>

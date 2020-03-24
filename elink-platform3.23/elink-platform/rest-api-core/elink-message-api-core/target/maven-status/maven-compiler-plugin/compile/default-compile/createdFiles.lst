@@ -1,0 +1,14 @@
+com\legaoyi\message\ext\service\impl\AccStateLogExtendServiceImpl.class
+com\legaoyi\message\ext\service\impl\AlarmExtendServiceImpl.class
+com\legaoyi\message\ext\service\impl\OnlineLogExtendServiceImpl.class
+com\legaoyi\message\ext\service\impl\JTT0102MessageExtendServiceImpl.class
+com\legaoyi\message\ext\service\impl\DeviceFaultExtendServiceImpl.class
+com\legaoyi\message\ext\service\impl\JTT0700MessageExtendServiceImpl.class
+com\legaoyi\message\ext\service\impl\JTT0002MessageExtendServiceImpl.class
+com\legaoyi\message\ext\service\impl\JTT0001MessageExtendServiceImpl.class
+com\legaoyi\message\service\impl\MessageServiceImpl.class
+com\legaoyi\message\ext\service\impl\JTTUnknownMessageExtendServiceImpl.class
+com\legaoyi\message\rest\MediaDataController.class
+com\legaoyi\message\service\MessageService.class
+com\legaoyi\message\ext\service\impl\JTT0702MessageExtendServiceImpl.class
+com\legaoyi\message\rest\MessageController.class

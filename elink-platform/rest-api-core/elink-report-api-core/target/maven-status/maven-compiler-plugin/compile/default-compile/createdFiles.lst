@@ -1,0 +1,12 @@
+com\legaoyi\report\ext\service\impl\AccTimeDayReportExtendServiceImpl.class
+com\legaoyi\report\ext\service\impl\OnlineTimeDayReportExtendServiceImpl.class
+com\legaoyi\report\ext\service\impl\ParkingTimeDayReportExtendServiceImpl.class
+com\legaoyi\report\rest\ReportController.class
+com\legaoyi\report\service\ReportService.class
+com\legaoyi\report\ext\service\impl\CarReportExtendServiceImpl.class
+com\legaoyi\report\service\impl\ReportServiceImpl.class
+com\legaoyi\report\ext\service\impl\DeviceDataCountMonthReportExtendServiceImpl.class
+com\legaoyi\report\ext\service\impl\DeviceParkingLogExtendServiceImpl.class
+com\legaoyi\report\ext\service\impl\AttendanceDayReportExtendServiceImpl.class
+com\legaoyi\report\ext\service\impl\gpsInfoDayReportExtendServiceImpl.class
+com\legaoyi\report\ext\service\impl\AlarmDayReportExtendServiceImpl.class

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd"
+       default-lazy-init="true">
+
+       <alias alias="elink_0001_2013_messageBody"  name="elink_0001_2011_messageBody" />  
+       <alias alias="elink_0002_2013_messageBody"  name="elink_0002_2011_messageBody"/>
+       <alias alias="elink_0003_2013_messageBody"  name="elink_0003_2011_messageBody"/>
+       
+       <alias alias="elink_0100_2013_messageBody"  name="elink_0100_2011_messageBody"/>
+       <alias alias="elink_0101_2013_messageBody"  name="elink_0101_2011_messageBody"/>
+       <alias alias="elink_0102_2013_messageBody"  name="elink_0102_2011_messageBody"/>
+       <alias alias="elink_0104_2013_messageBody"  name="elink_0104_2011_messageBody"/>
+ 
+       <alias alias="elink_0200_2013_messageBody"  name="elink_0200_2011_messageBody" />
+       <alias alias="elink_0201_2013_messageBody"  name="elink_0201_2011_messageBody" />
+       
+       <alias alias="elink_0301_2013_messageBody"  name="elink_0301_2011_messageBody" />
+       <alias alias="elink_0302_2013_messageBody"  name="elink_0302_2011_messageBody" />
+       <alias alias="elink_0303_2013_messageBody"  name="elink_0303_2011_messageBody" />
+       
+       <alias alias="elink_0500_2013_messageBody"  name="elink_0500_2011_messageBody" />
+       <alias alias="elink_0700_2013_messageBody"  name="elink_0700_2011_messageBody" />
+       
+       <alias alias="elink_0700_02H_2013_messageBody"  name="elink_0700_02H_2011_messageBody" />
+        
+       <alias alias="elink_0701_2013_messageBody"  name="elink_0701_2011_messageBody" />
+           
+       <alias alias="elink_0800_2013_messageBody"  name="elink_0800_2011_messageBody" />
+       <alias alias="elink_0801_2013_messageBody"  name="elink_0801_2011_messageBody" />
+       <alias alias="elink_0802_2013_messageBody"  name="elink_0802_2011_messageBody" />       
+       <alias alias="elink_0900_2013_messageBody"  name="elink_0900_2011_messageBody" />
+
+       <alias alias="elink_8001_2013_messageBody"  name="elink_8001_2011_messageBody" />
+       
+       <alias alias="elink_8100_2013_messageBody"  name="elink_8100_2011_messageBody" />
+       <alias alias="elink_8103_2013_messageBody"  name="elink_8103_2011_messageBody" />
+       <alias alias="elink_8104_2013_messageBody"  name="elink_8104_2011_messageBody" />
+       <alias alias="elink_8105_2013_messageBody"  name="elink_8105_2011_messageBody" />
+       
+       <alias alias="elink_8201_2013_messageBody"  name="elink_8201_2011_messageBody" />
+       <alias alias="elink_8202_2013_messageBody"  name="elink_8202_2011_messageBody" />
+       
+       <alias alias="elink_8300_2013_messageBody"  name="elink_8300_2011_messageBody" />
+       <alias alias="elink_8301_2013_messageBody"  name="elink_8301_2011_messageBody" />
+       <alias alias="elink_8302_2013_messageBody"  name="elink_8302_2011_messageBody" />
+       <alias alias="elink_8303_2013_messageBody"  name="elink_8303_2011_messageBody" />
+       <alias alias="elink_8304_2013_messageBody"  name="elink_8304_2011_messageBody" />
+      
+       <alias alias="elink_8400_2013_messageBody"  name="elink_8400_2011_messageBody" />
+       <alias alias="elink_8401_2013_messageBody"  name="elink_8401_2011_messageBody" />
+        
+       <alias alias="elink_8500_2013_messageBody"  name="elink_8500_2011_messageBody" />
+       
+       <alias alias="elink_8600_2013_messageBody"  name="elink_8600_2011_messageBody" />
+       <alias alias="elink_8601_2013_messageBody"  name="elink_8601_2011_messageBody" />
+       <alias alias="elink_8602_2013_messageBody"  name="elink_8602_2011_messageBody" />
+       <alias alias="elink_8603_2013_messageBody"  name="elink_8603_2011_messageBody" />
+       <alias alias="elink_8604_2013_messageBody"  name="elink_8604_2011_messageBody" />
+       <alias alias="elink_8605_2013_messageBody"  name="elink_8605_2011_messageBody" />
+       <alias alias="elink_8606_2013_messageBody"  name="elink_8606_2011_messageBody" />
+       <alias alias="elink_8607_2013_messageBody"  name="elink_8607_2011_messageBody" />
+
+<!--        <alias alias="elink_8700_00H_2013_messageBody"  name="elink_8700_01H_2011_messageBody" /> -->
+<!--        <alias alias="elink_8700_01H_2013_messageBody"  name="elink_8700_01H_2011_messageBody" /> -->
+<!--        <alias alias="elink_8700_02H_2013_messageBody"  name="elink_8700_02H_2011_messageBody" /> -->
+<!--        <alias alias="elink_8700_03H_2013_messageBody"  name="elink_8700_03H_2011_messageBody" /> -->
+<!--        <alias alias="elink_8700_04H_2013_messageBody"  name="elink_8700_04H_2011_messageBody" /> -->
+<!--        <alias alias="elink_8700_05H_2013_messageBody"  name="elink_8700_05H_2011_messageBody" /> -->
+<!--        <alias alias="elink_8700_06H_2013_messageBody"  name="elink_8700_06H_2011_messageBody" /> -->
+<!--        <alias alias="elink_8700_07H_2013_messageBody"  name="elink_8700_07H_2011_messageBody" /> -->
+ 
+       <alias alias="elink_8701_81H_2013_messageBody"  name="elink_8701_81H_2011_messageBody" />
+       
+       <alias alias="elink_8800_2013_messageBody"  name="elink_8800_2011_messageBody" />
+       <alias alias="elink_8801_2013_messageBody"  name="elink_8801_2011_messageBody" />
+       <alias alias="elink_8802_2013_messageBody"  name="elink_8802_2011_messageBody" />
+       <alias alias="elink_8803_2013_messageBody"  name="elink_8803_2011_messageBody" />
+       <alias alias="elink_8804_2013_messageBody"  name="elink_8804_2011_messageBody" />
+       <alias alias="elink_8805_2013_messageBody"  name="elink_8805_2011_messageBody" />
+       <alias alias="elink_8900_2013_messageBody"  name="elink_8900_2011_messageBody" />
+</beans>

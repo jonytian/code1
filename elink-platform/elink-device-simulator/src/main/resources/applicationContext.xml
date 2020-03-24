@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd"
+	default-lazy-init="true">
+	
+	   <alias alias="elink_0200_2013_messageBuilder"  name="elink_0200_2011_messageBuilder"/>
+	   
+	   <alias alias="elink_8001_2013_messageHandler"  name="elink_8001_2011_messageHandler"/>
+	   <alias alias="elink_8001_2013_messageBodyDecoder"  name="elink_8001_2011_messageBodyDecoder"/>
+	   
+	   <alias alias="elink_0001_2013_messageBodyEncoder"  name="elink_0001_2011_messageBodyEncoder"/>
+	   <alias alias="elink_0002_2013_messageBodyEncoder"  name="elink_0002_2011_messageBodyEncoder"/>
+	   <alias alias="elink_0102_2013_messageBodyEncoder"  name="elink_0102_2011_messageBodyEncoder"/>
+	   <alias alias="elink_0110_2013_messageBodyEncoder"  name="elink_0110_2011_messageBodyEncoder"/>
+	   <alias alias="elink_0200_2013_messageBodyEncoder"  name="elink_0200_2011_messageBodyEncoder"/>
+	  
+	   <alias alias="elink_8001_2013_messageBody"  name="elink_8001_2011_messageBody"/>
+	   <alias alias="elink_0001_2013_messageBody"  name="elink_0001_2011_messageBody"/>
+	   <alias alias="elink_0002_2013_messageBody"  name="elink_0002_2011_messageBody"/>
+	   <alias alias="elink_0102_2013_messageBody"  name="elink_0102_2011_messageBody"/>
+	   <alias alias="elink_0110_2013_messageBody"  name="elink_0110_2011_messageBody"/>
+	   <alias alias="elink_0200_2013_messageBody"  name="elink_0200_2011_messageBody"/>
+	   
+	   
+	   
+	   
+	   <alias alias="elink_0200_1078_messageBuilder"  name="elink_0200_2011_messageBuilder"/>
+	   
+	   <alias alias="elink_8001_1078_messageHandler"  name="elink_8001_2011_messageHandler"/>
+	   <alias alias="elink_8001_1078_messageBodyDecoder"  name="elink_8001_2011_messageBodyDecoder"/>
+	   
+	   <alias alias="elink_0001_1078_messageBodyEncoder"  name="elink_0001_2011_messageBodyEncoder"/>
+	   <alias alias="elink_0002_1078_messageBodyEncoder"  name="elink_0002_2011_messageBodyEncoder"/>
+	   <alias alias="elink_0102_1078_messageBodyEncoder"  name="elink_0102_2011_messageBodyEncoder"/>
+	   <alias alias="elink_0110_1078_messageBodyEncoder"  name="elink_0110_2011_messageBodyEncoder"/>
+	   <alias alias="elink_0200_1078_messageBodyEncoder"  name="elink_0200_2011_messageBodyEncoder"/>
+	  
+	   <alias alias="elink_8001_1078_messageBody"  name="elink_8001_2011_messageBody"/>
+	   <alias alias="elink_0001_1078_messageBody"  name="elink_0001_2011_messageBody"/>
+	   <alias alias="elink_0002_1078_messageBody"  name="elink_0002_2011_messageBody"/>
+	   <alias alias="elink_0102_1078_messageBody"  name="elink_0102_2011_messageBody"/>
+	   <alias alias="elink_0110_1078_messageBody"  name="elink_0110_2011_messageBody"/>
+	   <alias alias="elink_0200_1078_messageBody"  name="elink_0200_2011_messageBody"/>
+	   
+	   <alias alias="elink_8001_obd_messageHandler"  name="elink_8001_2011_messageHandler"/>
+	   <alias alias="elink_8001_obd_messageBodyDecoder"  name="elink_8001_2011_messageBodyDecoder"/>
+	   
+	   <alias alias="elink_0001_obd_messageBodyEncoder"  name="elink_0001_2011_messageBodyEncoder"/>
+	   <alias alias="elink_0002_obd_messageBodyEncoder"  name="elink_0002_2011_messageBodyEncoder"/>
+	   <alias alias="elink_0102_obd_messageBodyEncoder"  name="elink_0102_2011_messageBodyEncoder"/>
+	   
+	   <alias alias="elink_8001_obd_messageBody"  name="elink_8001_2011_messageBody"/>
+	   <alias alias="elink_0001_obd_messageBody"  name="elink_0001_2011_messageBody"/>
+	   <alias alias="elink_0002_obd_messageBody"  name="elink_0002_2011_messageBody"/>
+	   <alias alias="elink_0102_obd_messageBody"  name="elink_0102_2011_messageBody"/>
+	   
+	   
+	   <alias alias="elink_8001_tjsatl_messageHandler"  name="elink_8001_2011_messageHandler"/>
+	   <alias alias="elink_8001_tjsatl_messageBodyDecoder"  name="elink_8001_2011_messageBodyDecoder"/>
+	   
+	   <alias alias="elink_0001_tjsatl_messageBodyEncoder"  name="elink_0001_2011_messageBodyEncoder"/>
+	   <alias alias="elink_0002_tjsatl_messageBodyEncoder"  name="elink_0002_2011_messageBodyEncoder"/>
+	   <alias alias="elink_0102_tjsatl_messageBodyEncoder"  name="elink_0102_2011_messageBodyEncoder"/>
+	   
+	   <alias alias="elink_8001_tjsatl_messageBody"  name="elink_8001_2011_messageBody"/>
+	   <alias alias="elink_0001_tjsatl_messageBody"  name="elink_0001_2011_messageBody"/>
+	   <alias alias="elink_0002_tjsatl_messageBody"  name="elink_0002_2011_messageBody"/>
+	   <alias alias="elink_0102_tjsatl_messageBody"  name="elink_0102_2011_messageBody"/>
+</beans>

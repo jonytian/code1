@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  
+  <head>
+    <meta charset="UTF-8">
+    <title>配置</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+      <link th:href="@{/css/font.css}" rel="stylesheet">
+      <link th:href="@{/css/weadmin.css}" rel="stylesheet">
+      <link th:href="@{/lib/layui/css/layui.css}" rel="stylesheet">
+      <script th:src="@{/lib/layui/layui.js}"></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+  <div class="weadmin-body">
+      <!--<form class="layui-form" action="">-->
+      <div class="layui-form">
+          <div class="layui-form-item">
+              <label for="logPath" class="layui-form-label">
+                  <span class="we-red">*</span>日志路径
+              </label>
+              <div class="layui-input-inline">
+                  <input type="text" id="logPath" name="logPath" required="" lay-verify="required"
+                         autocomplete="off"  class="layui-input">
+              </div>
+          </div>
+          <div class="layui-form-item">
+              <label for="logSize" class="layui-form-label">
+                  <span class="we-red">*</span>日志大小
+              </label>
+              <div class="layui-input-inline">
+                  <input type="text"  id="logSize" name="logSize" required="" lay-verify="required"
+                         autocomplete="off" class="layui-input">
+              </div>
+              <div class="layui-form-mid layui-word-aux">
+                  M
+              </div>
+          </div>
+
+          <div class="layui-form-item">
+              <label class="layui-form-label"><span class="we-red">*</span>日志类型</label>
+              <div class="layui-input-block">
+                  <input type="checkbox" name="like[write]" lay-skin="primary" title="mobilelog" value="mobilelog" checked="">
+                  <input type="checkbox" name="like[write]" lay-skin="primary" title="netlog" value="netlog">
+                  <input type="checkbox" name="like[write]" lay-skin="primary" title="modemlog" value="modemlog">
+                  <input type="checkbox" name="like[write]" lay-skin="primary" title="GPSlog" value="GPSlog">
+              </div>
+          </div>
+
+          <div class="layui-form-item">
+              <label  class="layui-form-label">
+              </label>
+              <button  class="layui-btn"  id="add">
+                  确认
+              </button>
+          </div>
+      </div>
+      <!--</form>-->
+  </div>
+
+  <script th:src="@{/js/jquery.min.js}"></script>
+  <script th:src="@{/js/bootstrap.min.js}"></script>
+  <script th:src="@{/js/plugins/layer/layer.min.js}"></script>
+  <script th:src="@{/js/plugins/jquery-form/jquery.form.js}"></script>
+  <script th:src="@{/js/plugins/validate/jquery.validate.min.js}"></script>
+  <script th:src="@{/js/plugins/validate/messages_zh.min.js}"></script>
+  <script type="text/javascript">
+
+      console.log('选中的数据:'+JSON.stringify(parent.myData));
+
+      layui.use('form', function () {
+          var form = layui.form; //只有执行了这一步，部分表单元素才会自动修饰成功
+          form.render();
+      });
+
+      $(document).on('click','#add',function(){
+
+          var logPath =  $(" #logPath ").val();
+          var logSize =  $(" #logSize ").val();
+          if(isEmpty(logPath)){
+              layer.msg("路径不能为空");
+              return ;
+          }
+          if(isEmpty(logSize)){
+              layer.msg("大小不能为空");
+              return ;
+          }
+          console.log(logPath);
+          console.log(logSize);
+          var arr = new Array();
+          $.each($('input:checkbox:checked'),function(){
+              arr.push($(this).val());
+          });
+          var logType = arr.join(",");
+          console.log(logType);
+
+          var map={
+              "logPath":logPath,
+              "logSize":logSize,
+              "logType":logType,
+              "data":parent.myData
+          };
+
+          $.ajax({
+              url:'/message/setLog',
+              type:'POST',
+              data:JSON.stringify(map),
+              dataType:"json",
+              contentType: "application/json",
+              success:function (res) {
+                  if(res && res.code == 0){
+                      layer.msg(res.data);
+                  }else{
+                      layer.msg(res.data);
+                  }
+              },
+              error:function (res) {
+                  layer.msg("请求错误");
+              }
+          });
+
+      });
+
+      function isEmpty(obj){
+          if(typeof obj == "undefined" || obj == null || obj == ""){
+              return true;
+          }else{
+              return false;
+          }
+      }
+
+  </script>
+  </body>
+
+</html>

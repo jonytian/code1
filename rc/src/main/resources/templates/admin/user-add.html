@@ -1,0 +1,185 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="~{admin/layout/app}">
+
+<head>
+    <style>
+        .form-group label:after {
+            content: '*';
+            color: red;
+            font-size: 8px;
+        }
+    </style>
+</head>
+
+<div layout:fragment="content" >
+    <div class="ibox float-e-margins">
+
+        <div class="ibox-content">
+            <form th:action="@{/admin/user/save}" method="post" class="form-horizontal m-t" id="roleForm" >
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">用户名</label>
+                    <div class="col-sm-8">
+                        <!--<span class="required" style="color:red; font-size: 10%;">*</span>-->
+                        <input id="userName" required="required"  name="userName" class="form-control" type="text" aria-required="true" aria-invalid="true"  >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">邮箱</label>
+                    <div class="col-sm-8">
+                        <input id="email"  name="email" class="form-control" type="text" aria-required="true" aria-invalid="true"  >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">密码</label>
+                    <div class="col-sm-8">
+                        <input id="password"   name="password" class="form-control" type="password" aria-required="true" aria-invalid="true"  >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">确认密码</label>
+                    <div class="col-sm-8">
+                        <input id="confirmPassword"   name="confirmPassword" class="form-control" type="password" aria-required="true" aria-invalid="true"  >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                <label class="col-sm-3 control-label">用户角色</label>
+                <div class="col-sm-8">
+                <select  class="form-control"  name="roleId" id="roleId" >
+
+                <option th:each="item:${gadmins}" th:value="${item.getGid()}"  th:text="${item.getGname()}"></option>
+
+                </select>
+
+                </div>
+                </div>
+
+                <!--<div class="form-group">-->
+                    <!--<label class="col-sm-3 control-label">用户角色：</label>-->
+                    <!--<div class="col-sm-8">-->
+                        <!--<select  class="form-control"  name="adminGid" id="admin_gid" >-->
+                            <!--<option value="0">&#45;&#45;请选择&#45;&#45;</option>-->
+
+                            <!--<option th:each="item:${gadmins}" th:value="${item.getGid()}"  th:text="${item.getGname()}"></option>-->
+
+                        <!--</select>-->
+
+                    <!--</div>-->
+                <!--</div>-->
+
+
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-3">
+                        <button class="btn btn-primary" type="submit">保 存</button>
+                    </div>
+                </div>
+                <input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden"/>
+            </form>
+        </div>
+    </div>
+</div>
+<script layout:fragment="my-script">
+
+        $().ready(function () {
+            var icon = "<i class='fa fa-times-circle'></i> ";
+            $("#roleForm").validate({
+                rules:{
+                    userName:{
+                        required:true,
+                        maxlength:16
+
+                    },
+                    password:{
+                        required:true,
+                        rangelength:[6,16]
+                    },
+                    confirmPassword:{
+                        required:true,
+                        rangelength:[6,16]
+                    },
+                    email:{
+                        required:true,
+                        email:true,
+                    },
+                    admin_gid:{
+                        required:true,
+                    },
+                    roleId:{
+                        required:true,
+                    }
+
+
+                },
+                messages:{
+                    userName:{
+                        required:icon+"用户名必须填写",
+
+                        maxlength:icon+"用户名长度16个字符内",
+                    },
+                    password:{
+                        required:icon+'密码不能为空',
+                        minength:icon+'密码长度6-16个字符'
+                    },
+                    confirmPassword:{
+                        required:icon+'密码不能为空',
+                        minength:icon+'密码长度6-16个字符'
+                    },
+                    roleId:{
+                        required:icon+'角色不能为空',
+                    },
+
+                },
+                submitHandler:function (form) {
+                    if ($("#password").val() !=  $("#confirmPassword").val()){
+                        layer.msg("两次密码不一致！");
+                        return
+                    }
+
+                    var passMatch = $("#password").val();
+                    var matchReg1 = /(?!^(\d+|[a-zA-Z]+|[~!@#$%^&*?]+)$)^[\w~!@#$%^&*?]{6,16}$/;
+                    console.log(passMatch.match(matchReg1));
+                    if(passMatch.match(matchReg1)==null){
+                        layer.msg("密码格式不正确，必须包含字母、数字、符号中的任意2种!");
+                        return
+                    }
+
+
+
+                    var strMatch = $("#email").val();
+                    var matchReg = /.*?(@reacheng.com)/;
+                    console.log(strMatch.match(matchReg));
+                    if(strMatch.match(matchReg)==null){
+                        layer.msg("邮箱格式不正确，必须以@reacheng.com结尾!");
+                        return
+                    }
+
+
+                    var index = layer.load(1);
+                    $(form).ajaxSubmit({
+                        dataType:"json",
+                        success:function (response) {
+                            if(response && response.code == 0){
+                                  layer.close(index);
+                                layer.msg(response.data);
+                                setTimeout(function(){
+                                    window.parent.location.reload(); //刷新父页面
+                                },500)
+                            }else{
+                                layer.msg(response.data);
+                                 layer.close(index);
+                            }
+                        },
+                        error:function (response) {
+                            layer.msg("请求错误");
+                            layer.close(index);
+                        }
+                    })
+                }
+            });
+
+        })
+
+
+</script>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>出货查询系统</title>
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+
+    <link th:href="@{/css/font.css}" rel="stylesheet">
+    <link th:href="@{/css/weadmin.css}" rel="stylesheet">
+    <script th:src="@{/layui/layui.js}"></script>
+
+</head>
+<body class="login-bg">
+    
+    <div class="login">
+        <div class="message">登录</div>
+        <div id="darkbannerwrap"></div>
+
+        <form method="post" th:action="@{/admin/login1}" id="form">
+            <input name="username" placeholder="用户名"  type="text" lay-verify="required" class="layui-input" >
+            <hr class="hr15">
+            <input name="password" lay-verify="required" placeholder="密码"  type="password" class="layui-input">
+            <hr class="hr15">
+            <input class="loginin" value="登录" lay-submit lay-filter="login" style="width:100%;" type="submit">
+            <hr class="hr20" >
+
+        </form>
+    </div>
+
+
+    <!-- 底部结束 -->
+</body>
+
+<script th:src="@{/system/js/jquery.min.js}"></script>
+<script th:src="@{/system/js/bootstrap.min.js}"></script>
+<script th:src="@{/system/js/plugins/layer/layer.min.js}"></script>
+<script th:src="@{/system/js/plugins/jquery-form/jquery.form.js}"></script>
+<script th:src="@{/system/js/plugins/validate/jquery.validate.min.js}"></script>
+<script th:src="@{/system/js/plugins/validate/messages_zh.min.js}"></script>
+<script   th:inline="javascript">
+    $().ready(function () {
+        // var url = [[${#httpServletRequest.getRequestURL()}]];
+        var url = [[${#httpServletRequest.getScheme()+'://'+#httpServletRequest.getServerName()+':'+#httpServletRequest.getServerPort()+#httpServletRequest.getContextPath()}]];
+        var icon = "<i class='fa fa-times-circle'></i> ";
+        $("#form").validate({
+            rules: {
+                user_name: {
+                    required: true,
+                },
+                password: {
+                    required: true,
+                },
+
+            },
+            submitHandler:function (form) {
+                var index = layer.load(1);
+                $(form).ajaxSubmit({
+                    dataType:"json",
+                    success:function (res) {
+                        if(res && res.code == 0){
+                            layer.close(index);
+                            layer.msg("登录成功");
+                            setTimeout(function(){
+                                // window.parent.location.reload(); //刷新父页面
+                                window.location.href = url+'/product/index'
+                                // parent.layer.close(index);//关闭自身页面
+                            },500)
+                        }else{
+                            layer.msg(res.data);
+                            layer.close(index);
+                        }
+                    },
+                    error:function (response) {
+                        layer.msg("请求错误");
+                        layer.close(index);
+                    }
+                })
+            }
+        });
+
+
+    })
+
+
+</script>
+</html>

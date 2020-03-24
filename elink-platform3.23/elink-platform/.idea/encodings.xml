@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/elink-disruptor-support" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/elink-excel-util" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/elink-mq-support" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/elink-rabbitmq-support" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/elink-util" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/device-gateway/elink-device-gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/device-gateway/elink-device-jt8082019-gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/device-gateway/elink-device-message-storer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/device-gateway/elink-device-message-storer-base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/device-gateway/elink-device-protocol-base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/device-gateway/elink-device-protocol-jt8081078-codec" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/device-gateway/elink-device-protocol-jt8081078-message" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/device-gateway/elink-device-protocol-jt8082011-codec" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/device-gateway/elink-device-protocol-jt8082011-message" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/device-gateway/elink-device-protocol-jt8082013-codec" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/device-gateway/elink-device-protocol-jt8082013-message" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/device-gateway/elink-device-protocol-jt8082019-codec" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/device-gateway/elink-device-protocol-jt8082019-message" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/device-gateway/elink-device-protocol-tjsatl2017-codec" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/device-gateway/elink-device-protocol-tjsatl2017-message" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/device-gateway/elink-tjsatl-file-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/device-gateway/elink-tjsatl-message-storer-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/elink-data-analyst" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/elink-platform-rest-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/elink-platform-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/persistence-support/elink-spring-jpa-support" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/persistence-support/elink-spring-mongo-support" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/persistence-support/elink-spring-redis-support" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rest-api-core/elink-lbs-api-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rest-api-core/elink-management-api-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rest-api-core/elink-management-model" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rest-api-core/elink-message-api-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rest-api-core/elink-message-model" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rest-api-core/elink-platform-base-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rest-api-core/elink-platform-base-model" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rest-api-core/elink-report-api-core" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>日志列表</title>
+	<meta name="Description" content="基于layUI数据表格操作"/>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="../css/font.css">
+	<link rel="stylesheet" href="../css/weadmin.css">
+	<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+	<!--[if lt IE 9]>
+	<script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	<script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+
+	<![endif]-->
+	<style type="text/css">
+		.layui-form-switch {
+			width: 55px;
+		}
+		.layui-form-switch em {
+			width: 40px;
+		}
+		body{overflow-y: scroll;}
+	</style>
+</head>
+
+<body>
+<div class="weadmin-nav">
+			<span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a href="">日志管理</a>
+        <a>
+          <cite>异常列表</cite></a>
+      </span>
+	<a class="layui-btn layui-btn-sm" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+		<i class="layui-icon" style="line-height:30px">&#x1002;</i></a>
+</div>
+<div class="weadmin-body">
+	<div class="layui-row">
+		<form id="logVoSearch" class="layui-form layui-form-pane" method="post" action="" style="margin-top: 20px;">
+			<div class="layui-form-item">
+				<label class="layui-form-label">IMEI</label>
+				<div class="layui-input-inline">
+					<input id="imei" name="imei" autocomplete="off" class="layui-input" type="text"/>
+				</div>
+				<label class="layui-form-label">异常名称</label>
+				<div class="layui-input-inline">
+					<input id="exception" name="exception" autocomplete="off" class="layui-input" type="text"/>
+				</div>
+				<label class="layui-form-label">异常描述</label>
+				<div class="layui-input-inline">
+					<input id="description" name="description" autocomplete="off" class="layui-input" type="text"/>
+				</div>
+
+				<label class="layui-form-label">项目名称</label>
+				<div class="layui-input-inline">
+					<input id="projectName" name="projectName" autocomplete="off" class="layui-input" type="text"/>
+				</div>
+				<label class="layui-form-label">ROM版本</label>
+				<div class="layui-input-inline">
+					<input id="romVersion" name="romVersion" autocomplete="off" class="layui-input" type="text"/>
+				</div>
+
+			</div>
+
+			<div class="layui-form-item">
+				<div class="layui-inline">
+					<label class="layui-form-label">创建时间</label>
+					<div class="layui-input-inline" style="width: 175px;">
+						<input  name="insertTimeStart" id="insertTimeStart" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input" type="text"/>
+					</div>
+					<div class="layui-form-mid">-</div>
+					<div class="layui-input-inline" style="width: 175px;">
+						<input name="insertTimeEnd" id="insertTimeEnd" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input" type="text"/>
+					</div>
+					<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+					<button class="layui-btn" lay-submit="" lay-filter="search"><i class="layui-icon">&#xe615;</i></button>
+				</div>
+			</div>
+
+		</form>
+	</div>
+	<div class="layui-btn-group demoTable">
+		<button class="layui-btn" data-type="restart">重启设备</button>
+		<button class="layui-btn" data-type="uploadLog">上传日志文件</button>
+		<button class="layui-btn" data-type="openLog">开启MTKLOG</button>
+		<button class="layui-btn" data-type="closeLog">关闭MTKLOG</button>
+		<button class="layui-btn" data-type="setLog">配置MTKLOG</button>
+		<button class="layui-btn" data-type="startGrab">开始抓取MTKLOG</button>
+		<button class="layui-btn" data-type="stopGrab">停止抓取MTKLOG</button>
+		<button class="layui-btn" data-type="cleartLog">清除MTKLOG</button>
+		<!--<button class="layui-btn" data-type="getLogFile">获取MTKLOG文件列表</button>-->
+	</div>
+	<script type="text/html" id="barDemo">
+		<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="download">下载</a>
+	</script>
+	<!--table-->
+	<table id="logList" lay-data="{id:'idTest'}" lay-filter="demo"></table>
+
+	<script src="../../lib/layui/layui.js" charset="utf-8"></script>
+
+	<script th:src="@{/js/admin/logList.js}"></script>
+</div>
+</body>
+
+</html>

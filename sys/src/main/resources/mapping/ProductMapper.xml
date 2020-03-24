@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.sys.mapper.ProductMapper">
+
+  <resultMap id="BaseResultMap" type="com.example.sys.entity.Product">
+    <id column="id" jdbcType="INTEGER" property="id"/>
+    <result column="date" jdbcType="VARCHAR" property="date"/>
+    <result column="case_number" jdbcType="VARCHAR" property="case_number"/>
+    <result column="product_type" jdbcType="VARCHAR" property="product_type"/>
+    <result column="motherboard_sn" jdbcType="VARCHAR" property="motherboard_sn"/>
+    <result column="machine_sn" jdbcType="VARCHAR" property="machine_sn"/>
+    <result column="imei_1" jdbcType="VARCHAR" property="imei_1"/>
+    <result column="imei_2" jdbcType="VARCHAR" property="imei_2"/>
+    <result column="ICCID1" jdbcType="VARCHAR" property="iccid1"/>
+    <result column="ICCID2" jdbcType="VARCHAR" property="iccid2"/>
+    <result column="BT" jdbcType="VARCHAR" property="bt"/>
+    <result column="WiFi" jdbcType="VARCHAR" property="wifi"/>
+    <result column="aging_test_temperature" jdbcType="VARCHAR" property="aging_test_temperature"/>
+    <result column="software_version" jdbcType="VARCHAR" property="software_version"/>
+    <result column="T1_CID" jdbcType="VARCHAR" property="t1_cid"/>
+    <result column="T2_CID" jdbcType="VARCHAR" property="t2_cid"/>
+    <result column="motherboard_id" jdbcType="VARCHAR" property="motherboard_id"/>
+    <result column="shipping_address" jdbcType="VARCHAR" property="shipping_address"/>
+    <result column="main_camera" jdbcType="VARCHAR" property="main_camera"/>
+    <result column="secondary_camera" jdbcType="VARCHAR" property="secondary_camera"/>
+    <result column="usb_camera" jdbcType="VARCHAR" property="usb_camera"/>
+    <result column="AHD_A_channel" jdbcType="VARCHAR" property="ahd_a_channel"/>
+    <result column="AHD_B_channel" jdbcType="VARCHAR" property="ahd_b_channel"/>
+    <result column="AHD_C_channel" jdbcType="VARCHAR" property="ahd_c_channel"/>
+    <result column="AHD_D_channel" jdbcType="VARCHAR" property="ahd_d_channel"/>
+    <result column="touch_screen" jdbcType="VARCHAR" property="touch_screen"/>
+    <result column="secondary_touch_screen" jdbcType="VARCHAR" property="secondary_touch_screen"/>
+    <result column="third_touch_screen" jdbcType="VARCHAR" property="third_touch_screen"/>
+    <result column="display" jdbcType="VARCHAR" property="display"/>
+    <result column="secondary_display" jdbcType="VARCHAR" property="secondary_display"/>
+    <result column="third_display" jdbcType="VARCHAR" property="third_display"/>
+    <result column="fm_launch" jdbcType="VARCHAR" property="fm_launch"/>
+    <result column="accelerometer" jdbcType="VARCHAR" property="accelerometer"/>
+    <result column="gyro_sensor" jdbcType="VARCHAR" property="gyro_sensor"/>
+    <result column="electronic_compass_sensor" jdbcType="VARCHAR" property="electronic_compass_sensor"/>
+    <result column="light_perception_and_proximity_sensor" jdbcType="VARCHAR" property="light_perception_and_proximity_sensor"/>
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+  </resultMap>
+
+  <!--<sql id="Base_Column_List">-->
+  <!--id, date, case_number, product_type, motherboard_sn, machine_sn, imei_1, imei_2-->
+  <!--,score,description, code, avatar, send_time, create_time, update_time, delete_time,-->
+  <!--version-->
+  <!--</sql>-->
+
+  <!--=Start getProducts 分页查询列表ProductSearch -->
+  <select id="getProducts" resultMap="BaseResultMap">
+    select
+    *
+    from vehicle_shippinginquiry
+    <where>
+
+      <if test="productSearch.case_number!=null and productSearch.case_number!=''">
+        AND case_number like CONCAT(CONCAT('%',#{productSearch.case_number}),
+        '%')
+      </if>
+      <if test="productSearch.product_type!=null and productSearch.product_type!=''">
+        AND product_type like CONCAT(CONCAT('%',#{productSearch.product_type}),
+        '%')
+      </if>
+      <if test="productSearch.motherboard_sn!=null and productSearch.motherboard_sn!=''">
+        AND motherboard_sn like CONCAT(CONCAT('%',#{productSearch.motherboard_sn}),
+        '%')
+      </if>
+      <if test="productSearch.machine_sn!=null and productSearch.machine_sn!=''">
+        AND machine_sn like CONCAT(CONCAT('%',#{productSearch.machine_sn}),
+        '%')
+      </if>
+      <if test="productSearch.imei_1!=null and productSearch.imei_1!=''">
+        AND imei_1 like CONCAT(CONCAT('%',#{productSearch.imei_1}),
+        '%')
+      </if>
+      <if test="productSearch.imei_2!=null and productSearch.imei_2!=''">
+        AND imei_2 like CONCAT(CONCAT('%',#{productSearch.imei_2}),
+        '%')
+      </if>
+      <if test="productSearch.ICCID1!=null and productSearch.ICCID1!=''">
+        AND ICCID1 like CONCAT(CONCAT('%',#{productSearch.ICCID1}),
+        '%')
+      </if>
+      <if test="productSearch.ICCID2!=null and productSearch.ICCID2!=''">
+        AND ICCID2 like CONCAT(CONCAT('%',#{productSearch.ICCID2}),
+        '%')
+      </if>
+      <if test="productSearch.BT!=null and productSearch.BT!=''">
+        AND BT like CONCAT(CONCAT('%',#{productSearch.BT}),
+        '%')
+      </if>
+      <if test="productSearch.WiFi!=null and productSearch.WiFi!=''">
+        AND WiFi like CONCAT(CONCAT('%',#{productSearch.WiFi}),
+        '%')
+      </if>
+      <if test="productSearch.aging_test_temperature!=null and productSearch.aging_test_temperature!=''">
+        AND aging_test_temperature like CONCAT(CONCAT('%',#{productSearch.aging_test_temperature}),
+        '%')
+      </if>
+      <if test="productSearch.software_version!=null and productSearch.software_version!=''">
+        AND software_version like CONCAT(CONCAT('%',#{productSearch.software_version}),
+        '%')
+      </if>
+      <if test="productSearch.T1_CID!=null and productSearch.T1_CID!=''">
+        AND T1_CID like CONCAT(CONCAT('%',#{productSearch.T1_CID}),
+        '%')
+      </if>
+      <if test="productSearch.T2_CID!=null and productSearch.T2_CID!=''">
+        AND T2_CID like CONCAT(CONCAT('%',#{productSearch.T2_CID}),
+        '%')
+      </if>
+      <if test="productSearch.motherboard_id!=null and productSearch.motherboard_id!=''">
+        AND motherboard_id like CONCAT(CONCAT('%',#{productSearch.motherboard_id}),
+        '%')
+      </if>
+      <if test="productSearch.shipping_address!=null and productSearch.shipping_address!=''">
+        AND shipping_address like CONCAT(CONCAT('%',#{productSearch.shipping_address}),
+        '%')
+      </if>
+      <if test="productSearch.main_camera!=null and productSearch.main_camera!=''">
+        AND main_camera like CONCAT(CONCAT('%',#{productSearch.main_camera}),
+        '%')
+      </if>
+
+      <if test="productSearch.secondary_camera!=null and productSearch.secondary_camera!=''">
+        AND secondary_camera like CONCAT(CONCAT('%',#{productSearch.secondary_camera}),
+        '%')
+      </if>
+
+      <if test="productSearch.usb_camera!=null and productSearch.usb_camera!=''">
+        AND usb_camera like CONCAT(CONCAT('%',#{productSearch.usb_camera}),
+        '%')
+      </if>
+
+      <if test="productSearch.AHD_A_channel!=null and productSearch.AHD_A_channel!=''">
+        AND AHD_A_channel like CONCAT(CONCAT('%',#{productSearch.AHD_A_channel}),
+        '%')
+      </if>
+
+      <if test="productSearch.AHD_B_channel!=null and productSearch.AHD_B_channel!=''">
+        AND AHD_B_channel like CONCAT(CONCAT('%',#{productSearch.AHD_B_channel}),
+        '%')
+      </if>
+      <if test="productSearch.AHD_C_channel!=null and productSearch.AHD_C_channel!=''">
+        AND AHD_C_channel like CONCAT(CONCAT('%',#{productSearch.AHD_C_channel}),
+        '%')
+      </if>
+
+      <if test="productSearch.AHD_D_channel!=null and productSearch.AHD_D_channel!=''">
+        AND AHD_D_channel like CONCAT(CONCAT('%',#{productSearch.AHD_D_channel}),
+        '%')
+      </if>
+
+      <if test="productSearch.touch_screen!=null and productSearch.touch_screen!=''">
+        AND touch_screen like CONCAT(CONCAT('%',#{productSearch.touch_screen}),
+        '%')
+      </if>
+
+      <if test="productSearch.secondary_touch_screen!=null and productSearch.secondary_touch_screen!=''">
+        AND secondary_touch_screen like CONCAT(CONCAT('%',#{productSearch.secondary_touch_screen}),
+        '%')
+      </if>
+
+      <if test="productSearch.third_touch_screen!=null and productSearch.third_touch_screen!=''">
+        AND third_touch_screen like CONCAT(CONCAT('%',#{productSearch.third_touch_screen}),
+        '%')
+      </if>
+
+      <if test="productSearch.display!=null and productSearch.display!=''">
+        AND display like CONCAT(CONCAT('%',#{productSearch.display}),
+        '%')
+      </if>
+
+      <if test="productSearch.secondary_display!=null and productSearch.secondary_display!=''">
+        AND secondary_display like CONCAT(CONCAT('%',#{productSearch.secondary_display}),
+        '%')
+      </if>
+
+      <if test="productSearch.third_display!=null and productSearch.third_display!=''">
+        AND third_display like CONCAT(CONCAT('%',#{productSearch.third_display}),
+        '%')
+      </if>
+
+      <if test="productSearch.fm_launch!=null and productSearch.fm_launch!=''">
+        AND fm_launch like CONCAT(CONCAT('%',#{productSearch.fm_launch}),
+        '%')
+      </if>
+      <if test="productSearch.accelerometer!=null and productSearch.accelerometer!=''">
+        AND accelerometer like CONCAT(CONCAT('%',#{productSearch.accelerometer}),
+        '%')
+      </if>
+      <if test="productSearch.gyro_sensor!=null and productSearch.gyro_sensor!=''">
+        AND gyro_sensor like CONCAT(CONCAT('%',#{productSearch.gyro_sensor}),
+        '%')
+      </if>
+      <if test="productSearch.electronic_compass_sensor!=null and productSearch.electronic_compass_sensor!=''">
+        AND electronic_compass_sensor like CONCAT(CONCAT('%',#{productSearch.electronic_compass_sensor}),
+        '%')
+      </if>
+
+      <if test="productSearch.light_perception_and_proximity_sensor!=null and productSearch.light_perception_and_proximity_sensor!=''">
+        AND light_perception_and_proximity_sensor like CONCAT(CONCAT('%',#{productSearch.light_perception_and_proximity_sensor}),
+        '%')
+      </if>
+
+
+      <if test="productSearch.insertTimeStart!=null and productSearch.insertTimeStart!=''">
+        AND create_time &gt;= #{productSearch.insertTimeStart}
+      </if>
+      <if test="productSearch.insertTimeEnd!=null and productSearch.insertTimeEnd!=''">
+        AND create_time &lt;= #{productSearch.insertTimeEnd}
+      </if>
+
+    </where>
+    ORDER BY id DESC
+  </select>
+
+
+  <insert id="insertProducts" parameterType="com.example.sys.entity.Product">
+    insert ignore into vehicle_shippinginquiry
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="date != null">
+        date,
+      </if>
+      <if test="case_number != null">
+        case_number,
+      </if>
+      <if test="product_type != null">
+        product_type,
+      </if>
+      <if test="motherboard_sn != null">
+        motherboard_sn,
+      </if>
+      <if test="machine_sn != null">
+        machine_sn,
+      </if>
+      <if test="imei_1 != null">
+        imei_1,
+      </if>
+      <if test="imei_2 != null">
+        imei_2,
+      </if>
+      <if test="iccid1 != null">
+        ICCID1,
+      </if>
+      <if test="iccid2 != null">
+        ICCID2,
+      </if>
+      <if test="bt != null">
+        BT,
+      </if>
+      <if test="wifi != null">
+        WiFi,
+      </if>
+      <if test="aging_test_temperature != null">
+        aging_test_temperature,
+      </if>
+      <if test="software_version != null">
+        software_version,
+      </if>
+      <if test="t1_cid != null">
+        T1_CID,
+      </if>
+      <if test="t2_cid != null">
+        T2_CID,
+      </if>
+      <if test="motherboard_id != null">
+        motherboard_id,
+      </if>
+      <if test="shipping_address != null">
+        shipping_address,
+      </if>
+      <if test="main_camera != null">
+        main_camera,
+      </if>
+      <if test="secondary_camera != null">
+        secondary_camera,
+      </if>
+      <if test="usb_camera != null">
+        usb_camera,
+      </if>
+      <if test="ahd_a_channel != null">
+        AHD_A_channel,
+      </if>
+      <if test="ahd_b_channel != null">
+        AHD_B_channel,
+      </if>
+      <if test="ahd_c_channel != null">
+        AHD_C_channel,
+      </if>
+      <if test="ahd_d_channel != null">
+        AHD_D_channel,
+      </if>
+      <if test="touch_screen != null">
+        touch_screen,
+      </if>
+      <if test="secondary_touch_screen != null">
+        secondary_touch_screen,
+      </if>
+      <if test="third_touch_screen != null">
+        third_touch_screen,
+      </if>
+      <if test="display != null">
+        display,
+      </if>
+      <if test="secondary_display != null">
+        secondary_display,
+      </if>
+      <if test="third_display != null">
+        third_display,
+      </if>
+      <if test="fm_launch != null">
+        fm_launch,
+      </if>
+      <if test="accelerometer != null">
+        accelerometer,
+      </if>
+      <if test="gyro_sensor != null">
+        gyro_sensor,
+      </if>
+      <if test="electronic_compass_sensor != null">
+        electronic_compass_sensor,
+      </if>
+      <if test="light_perception_and_proximity_sensor != null">
+        light_perception_and_proximity_sensor,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="case_number != null">
+        #{case_number,jdbcType=VARCHAR},
+      </if>
+      <if test="product_type != null">
+        #{product_type,jdbcType=VARCHAR},
+      </if>
+      <if test="motherboard_sn != null">
+        #{motherboard_sn,jdbcType=VARCHAR},
+      </if>
+      <if test="machine_sn != null">
+        #{machine_sn,jdbcType=VARCHAR},
+      </if>
+      <if test="imei_1 != null">
+        #{imei_1,jdbcType=VARCHAR},
+      </if>
+      <if test="imei_2 != null">
+        #{imei_2,jdbcType=VARCHAR},
+      </if>
+      <if test="iccid1 != null">
+        #{iccid1,jdbcType=VARCHAR},
+      </if>
+      <if test="iccid2 != null">
+        #{iccid2,jdbcType=VARCHAR},
+      </if>
+      <if test="bt != null">
+        #{bt,jdbcType=VARCHAR},
+      </if>
+      <if test="wifi != null">
+        #{wifi,jdbcType=VARCHAR},
+      </if>
+      <if test="aging_test_temperature != null">
+        #{aging_test_temperature,jdbcType=VARCHAR},
+      </if>
+      <if test="software_version != null">
+        #{software_version,jdbcType=VARCHAR},
+      </if>
+      <if test="t1_cid != null">
+        #{t1_cid,jdbcType=VARCHAR},
+      </if>
+      <if test="t2_cid != null">
+        #{t2_cid,jdbcType=VARCHAR},
+      </if>
+      <if test="motherboard_id != null">
+        #{motherboard_id,jdbcType=VARCHAR},
+      </if>
+      <if test="shipping_address != null">
+        #{shipping_address,jdbcType=VARCHAR},
+      </if>
+      <if test="main_camera != null">
+        #{main_camera,jdbcType=VARCHAR},
+      </if>
+      <if test="secondary_camera != null">
+        #{secondary_camera,jdbcType=VARCHAR},
+      </if>
+      <if test="usb_camera != null">
+        #{usb_camera,jdbcType=VARCHAR},
+      </if>
+      <if test="ahd_a_channel != null">
+      #{ahd_a_channel,jdbcType=VARCHAR},
+    </if>
+      <if test="ahd_b_channel != null">
+        #{ahd_b_channel,jdbcType=VARCHAR},
+      </if>
+      <if test="ahd_c_channel != null">
+        #{ahd_c_channel,jdbcType=VARCHAR},
+      </if>
+      <if test="ahd_d_channel != null">
+        #{ahd_d_channel,jdbcType=VARCHAR},
+      </if>
+      <if test="touch_screen != null">
+        #{touch_screen,jdbcType=VARCHAR},
+      </if>
+      <if test="secondary_touch_screen != null">
+        #{secondary_touch_screen,jdbcType=VARCHAR},
+      </if>
+      <if test="third_touch_screen != null">
+        #{third_touch_screen,jdbcType=VARCHAR},
+      </if>
+      <if test="display != null">
+        #{display,jdbcType=VARCHAR},
+      </if>
+      <if test="secondary_display != null">
+        #{secondary_display,jdbcType=VARCHAR},
+      </if>
+      <if test="third_display != null">
+        #{third_display,jdbcType=VARCHAR},
+      </if>
+      <if test="fm_launch != null">
+        #{fm_launch,jdbcType=VARCHAR},
+      </if>
+      <if test="accelerometer != null">
+        #{accelerometer,jdbcType=VARCHAR},
+      </if>
+      <if test="gyro_sensor != null">
+        #{gyro_sensor,jdbcType=VARCHAR},
+      </if>
+      <if test="electronic_compass_sensor != null">
+        #{electronic_compass_sensor,jdbcType=VARCHAR},
+      </if>
+      <if test="light_perception_and_proximity_sensor != null">
+        #{light_perception_and_proximity_sensor,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+
+  <select id="findByIMEI" resultType="com.example.sys.entity.Product">
+    select
+    *
+    from vehicle_shippinginquiry
+    WHERE imei_1=#{imei}
+  </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from vehicle_shippinginquiry
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+</mapper>

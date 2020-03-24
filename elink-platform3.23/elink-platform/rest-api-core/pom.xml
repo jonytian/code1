@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.legaoyi</groupId>
+	<artifactId>core</artifactId>
+	<version>2.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>elink-management-model</module>
+		<module>elink-management-api-core</module>
+		<module>elink-message-model</module>
+		<module>elink-message-api-core</module>
+		<module>elink-platform-base-model</module>
+		<module>elink-platform-base-core</module>
+		<module>elink-report-api-core</module>
+		<module>elink-lbs-api-core</module>
+	</modules>
+</project>

@@ -1,0 +1,14 @@
+com\legaoyi\platform\model\CarDevice.class
+com\legaoyi\platform\model\UserRoleUser.class
+com\legaoyi\platform\model\Car.class
+com\legaoyi\platform\model\Department.class
+com\legaoyi\platform\model\DistrictSearchData.class
+com\legaoyi\platform\model\EnterpriseConfig.class
+com\legaoyi\platform\model\BaseModel.class
+com\legaoyi\platform\model\Organization.class
+com\legaoyi\platform\model\UserResource.class
+com\legaoyi\platform\model\Device.class
+com\legaoyi\platform\model\UserRole.class
+com\legaoyi\platform\model\Enterprise.class
+com\legaoyi\platform\model\User.class
+com\legaoyi\platform\model\District.class

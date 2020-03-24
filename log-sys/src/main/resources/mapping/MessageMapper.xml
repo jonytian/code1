@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.logsys.mapper.MessageMapper">
+
+  <resultMap id="BaseResultMap" type="Message">
+    <id column="id" jdbcType="INTEGER" property="id"/>
+    <result column="code" jdbcType="VARCHAR" property="code"/>
+    <result column="imei" jdbcType="VARCHAR" property="imei"/>
+    <result column="channel_id" jdbcType="VARCHAR" property="channelId"/>
+    <result column="content" jdbcType="VARCHAR" property="content"/>
+    <result column="sender" jdbcType="VARCHAR" property="sender"/>
+    <result column="receiver" jdbcType="VARCHAR" property="receiver"/>
+    <result column="send_time" jdbcType="TIMESTAMP" property="sendTime"/>
+  </resultMap>
+
+
+  <sql id="Base_Column_List">
+  id,code, imei,channel_id, content, sender, receiver, send_time
+  </sql>
+
+  <!--=Start getDevices 分页查询列表ProductSearch -->
+  <select id="getMessages" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from t_message
+    <where>
+      <if test="messageSearch.imei!=null and messageSearch.imei!=''">
+        AND imei like CONCAT(CONCAT('%',#{messageSearch.imei}),
+        '%')
+      </if>
+
+      <if test="messageSearch.insertTimeStart!=null and messageSearch.insertTimeStart!=''">
+        AND send_time &gt;= #{messageSearch.insertTimeStart}
+      </if>
+      <if test="messageSearch.insertTimeEnd!=null and messageSearch.insertTimeEnd!=''">
+        AND send_time &lt;= #{messageSearch.insertTimeEnd}
+      </if>
+    </where>
+  </select>
+
+  <!--新增-->
+  <insert id="insert" parameterType="Message">
+    insert ignore into t_message
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="code != null">
+        code,
+      </if>
+      <if test="imei != null">
+        imei,
+      </if>
+      <if test="channelId != null">
+        channel_id,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="sender != null">
+        sender,
+      </if>
+      <if test="receiver != null">
+        receiver,
+      </if>
+      <if test="sendTime != null">
+        send_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="imei != null">
+        #{imei,jdbcType=VARCHAR},
+      </if>
+      <if test="channelId != null">
+        #{channelId,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="sender != null">
+        #{sender,jdbcType=INTEGER},
+      </if>
+      <if test="receiver != null">
+        #{receiver,jdbcType=INTEGER},
+      </if>
+      <if test="sendTime != null">
+        #{sendTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+
+
+</mapper>

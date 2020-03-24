@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>修改密码</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+		<link th:href="@{/css/font.css}" rel="stylesheet">
+		<link th:href="@{/css/weadmin.css}" rel="stylesheet">
+		<script th:src="@{/lib/layui/layui.js}"></script>
+		<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+		<!--[if lt IE 9]>
+	      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+
+	<div class="weadmin-body">
+		<form class="form-horizontal m-t" id="commentForm" th:action="@{/user/set-pwd}" method="post">
+
+			<div class="layui-form-item">
+				<label  class="layui-form-label">
+					<span class="we-red">*</span>旧密码
+				</label>
+				<div class="layui-input-inline">
+					<input type="password" id="oldPassword" name="oldPassword" required="" lay-verify="required" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">
+					<span class="we-red">*</span>新密码
+				</label>
+				<div class="layui-input-inline">
+					<input type="password" id="password" name="password" required="" lay-verify="required" autocomplete="off" class="layui-input">
+				</div>
+				<div class="layui-form-mid layui-word-aux">
+					6到16个字符
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label  class="layui-form-label">
+					<span class="we-red">*</span>确认密码
+				</label>
+				<div class="layui-input-inline">
+					<input type="password" id="password_confirm" name="password_confirm" required="" lay-verify="required" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">
+				</label>
+				<button class="layui-btn" lay-filter="save" lay-submit="">确定</button>
+			</div>
+		</form>
+	</div>
+	<script th:src="@{/js/jquery.min.js}"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	<script th:src="@{/js/plugins/layer/layer.min.js}"></script>
+	<script th:src="@{/js/plugins/jquery-form/jquery.form.js}"></script>
+	<script th:src="@{/js/plugins/validate/jquery.validate.min.js}"></script>
+	<script th:src="@{/js/plugins/validate/messages_zh.min.js}"></script>
+	<script type="text/javascript">
+		$().ready(function () {
+			var icon = "<i class='fa fa-times-circle'></i> ";
+			$("#commentForm").validate({
+				rules:{
+					oldPassword:{
+						required:true,
+					},
+					password:{
+						required:true,
+						minlength:6,
+					},
+					password_confirm:{
+						required:true,
+						minlength:6,
+						equalTo:"#password"
+					}
+
+
+				},
+				messages:{
+					oldPassword:{
+						required:icon+"请输入旧密码",
+					},
+					password:{
+						required:icon+"请输入密码",
+					}
+
+				},
+				submitHandler:function (form) {
+
+					if ($("#oldPassword").val() ==  $("#password").val()){
+						layer.msg("请设置不同于旧密码的密码！");
+						return
+					}
+					var index = layer.load(1);
+					$(form).ajaxSubmit({
+						dataType:"json",
+						success:function (response) {
+							if(response && response.code == 0){
+								layer.close(index);
+								layer.msg(response.data);
+								setTimeout(function(){
+									window.location.href='/admin/logout';
+									window.location.reload(); //刷新父页面
+								},500)
+							}else{
+								layer.msg(response.data);
+								layer.close(index);
+							}
+						},
+						error:function (response) {
+							layer.msg("请求错误");
+							layer.close(index);
+						}
+					})
+				}
+			});
+
+		})
+	</script>
+
+
+
+
+
+
+
+
+
+</html>

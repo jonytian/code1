@@ -1,0 +1,450 @@
+com.legaoyi.AppApplicationListener -> com.legaoyi.AppApplicationListener:
+    org.slf4j.Logger logger -> logger
+    com.legaoyi.protocol.util.ServerRuntimeContext serverRuntimeContext -> serverRuntimeContext
+    22:22:void <init>() -> <init>
+    32:37:void onApplicationEvent(org.springframework.context.ApplicationEvent) -> onApplicationEvent
+    40:42:void startServer() -> startServer
+    45:54:void stopServer() -> stopServer
+    59:66:void restartNotify(int) -> restartNotify
+    24:24:void <clinit>() -> <clinit>
+com.legaoyi.AppConfiguration -> com.legaoyi.AppConfiguration:
+    8:8:void <init>() -> <init>
+com.legaoyi.Startup -> com.legaoyi.Startup:
+    15:15:void <init>() -> <init>
+    18:19:void main(java.lang.String[]) -> main
+    23:23:com.legaoyi.AppApplicationListener appApplicationListener() -> appApplicationListener
+com.legaoyi.gateway.message.handler.AuthResponseMessageHandler -> com.legaoyi.gateway.message.handler.a:
+    org.slf4j.Logger logger -> logger
+    boolean closeSession -> a
+    com.legaoyi.gateway.message.handler.DeviceDownMessageDeliverer messageDeliverer -> b
+    com.legaoyi.protocol.server.ServerMessageHandler urgentMessageHandler -> urgentMessageHandler
+    boolean multiProtocol -> c
+    java.lang.String defultJttProtocolVersion -> d
+    com.legaoyi.protocol.server.GatewayCacheManager gatewayCacheManager -> gatewayCacheManager
+    37:55:void <init>() -> <init>
+    65:170:void handle(com.legaoyi.common.message.ExchangeMessage) -> a
+    39:39:void <clinit>() -> <clinit>
+com.legaoyi.gateway.message.handler.DeviceDownMessageDeliverer -> com.legaoyi.gateway.message.handler.b:
+    java.lang.String defultProtocolVersion -> e
+    26:28:void <init>() -> <init>
+    32:58:void deliver(com.legaoyi.protocol.server.Session,com.legaoyi.protocol.message.Message) -> a
+    61:66:void deliver(io.netty.channel.ChannelHandlerContext,com.legaoyi.protocol.message.Message) -> a
+com.legaoyi.gateway.message.handler.DeviceDownMessageHandler -> com.legaoyi.gateway.message.handler.c:
+    java.lang.String defultProtocolVersion -> e
+    com.legaoyi.gateway.message.handler.DeviceDownMessageDeliverer messageDeliverer -> b
+    29:31:void <init>() -> <init>
+    41:71:void handle(com.legaoyi.common.message.ExchangeMessage) -> a
+com.legaoyi.gateway.message.handler.DeviceLogoffMessageHandler -> com.legaoyi.gateway.message.handler.d:
+    com.legaoyi.protocol.server.GatewayCacheManager gatewayCacheManager -> gatewayCacheManager
+    21:21:void <init>() -> <init>
+    30:43:void handle(com.legaoyi.common.message.ExchangeMessage) -> a
+com.legaoyi.gateway.message.handler.ExchangeMessageHandler -> com.legaoyi.gateway.message.handler.e:
+    com.legaoyi.gateway.message.handler.ExchangeMessageHandler successor -> f
+    10:10:void <init>() -> <init>
+    15:15:com.legaoyi.gateway.message.handler.ExchangeMessageHandler getSuccessor() -> a
+    19:20:void setSuccessor(com.legaoyi.gateway.message.handler.ExchangeMessageHandler) -> a
+    void handle(com.legaoyi.common.message.ExchangeMessage) -> a
+com.legaoyi.gateway.message.handler.PlatformDownMessageHandler -> com.legaoyi.gateway.message.handler.f:
+    org.slf4j.Logger logger -> logger
+    com.legaoyi.protocol.server.ServerMessageHandler urgentMessageHandler -> urgentMessageHandler
+    java.util.List messageHandleList -> g
+    25:25:void <init>() -> <init>
+    34:35:void setUrgentMessageHandler(com.legaoyi.protocol.server.ServerMessageHandler) -> a
+    38:48:void setMessageHandleList(java.util.List) -> a
+    53:100:void handle(java.lang.String) -> handle
+    103:103:void handle(byte[]) -> handle
+    27:27:void <clinit>() -> <clinit>
+com.legaoyi.gateway.message.handler.RemoveBlackListMessageHandler -> com.legaoyi.gateway.message.handler.g:
+    com.legaoyi.protocol.server.GatewayCacheManager gatewayCacheManager -> gatewayCacheManager
+    19:19:void <init>() -> <init>
+    28:52:void handle(com.legaoyi.common.message.ExchangeMessage) -> a
+com.legaoyi.gateway.security.SecurityUtil -> com.legaoyi.gateway.security.a:
+    java.lang.String ATTRIBUTE_MSG_COUNT_TOKEN_BUCKET_KEY -> h
+    java.lang.String ATTRIBUTE_MSG_DATA_TOKEN_BUCKET_KEY -> i
+    com.legaoyi.protocol.server.GatewayCacheManager gatewayCacheManager -> gatewayCacheManager
+    19:19:void <init>() -> <init>
+    39:63:boolean validate(com.legaoyi.protocol.server.Session,java.lang.String,int,int,int) -> a
+    74:74:boolean validate(com.legaoyi.protocol.server.Session,int) -> a
+    86:86:boolean validate(com.legaoyi.protocol.server.Session,int,int) -> a
+    98:115:boolean validateByIp(java.lang.String,int,int) -> a
+    127:144:boolean validateByMessageId(java.lang.String,java.lang.String,int) -> a
+    148:152:com.legaoyi.gateway.security.TokenBucket getCacheTokenBucket(java.lang.String,java.lang.String) -> a
+    156:164:com.legaoyi.gateway.security.TokenBucket createTokenBucket(java.lang.String,int,int) -> b
+    168:186:com.legaoyi.gateway.security.TokenBucket filled(com.legaoyi.gateway.security.TokenBucket) -> a
+    190:194:void filledToken(com.legaoyi.gateway.security.TokenBucket,int) -> a
+com.legaoyi.gateway.security.TokenBucket -> com.legaoyi.gateway.security.b:
+    long serialVersionUID -> serialVersionUID
+    int capacity -> capacity
+    int tokenNum -> j
+    long lastRefillTimePoint -> k
+    java.lang.String tokenBucketKey -> l
+    long increaseMillisecond -> m
+    int increaseNum -> n
+    long increasePeriod -> o
+    10:22:void <init>() -> <init>
+    29:29:int getCapacity() -> b
+    33:34:void setCapacity(int) -> setCapacity
+    37:37:int getTokenNum() -> c
+    41:42:void setTokenNum(int) -> a
+    45:45:long getLastRefillTimePoint() -> d
+    49:50:void setLastRefillTimePoint(long) -> a
+    53:53:java.lang.String getTokenBucketKey() -> e
+    57:58:void setTokenBucketKey(java.lang.String) -> a
+    61:61:long getIncreaseMillisecond() -> f
+    65:66:void setIncreaseMillisecond(long) -> b
+    69:69:int getIncreaseNum() -> g
+    73:74:void setIncreaseNum(int) -> b
+    77:77:long getIncreasePeriod() -> h
+    81:82:void setIncreasePeriod(long) -> c
+    85:86:void filledToken(int) -> c
+    89:90:void reduceToken(int) -> d
+com.legaoyi.protocol.server.AutoWrite8001MessageChannelHandler -> com.legaoyi.protocol.server.a:
+    java.lang.String autoResp8001Messages -> p
+    java.util.Map autoResp8001MessagesMap -> q
+    com.legaoyi.gateway.message.handler.DeviceDownMessageDeliverer messageDeliverer -> b
+    22:22:void <init>() -> <init>
+    35:43:void init() -> init
+    47:58:boolean handle(io.netty.channel.ChannelHandlerContext,com.legaoyi.protocol.message.Message) -> b
+com.legaoyi.protocol.server.BaseMessageChannelInboundHandler -> com.legaoyi.protocol.server.b:
+    org.slf4j.Logger logger -> logger
+    13:13:void <init>() -> <init>
+    19:35:void channelRead(io.netty.channel.ChannelHandlerContext,java.lang.Object) -> channelRead
+    boolean handle(io.netty.channel.ChannelHandlerContext,com.legaoyi.protocol.message.Message) -> b
+    15:15:void <clinit>() -> <clinit>
+com.legaoyi.protocol.server.BytesMessageChannelInboundHandler -> com.legaoyi.protocol.server.c:
+    org.slf4j.Logger logger -> logger
+    10:10:void <init>() -> <init>
+    16:32:void channelRead(io.netty.channel.ChannelHandlerContext,java.lang.Object) -> channelRead
+    boolean handle(io.netty.channel.ChannelHandlerContext,byte[]) -> handle
+    12:12:void <clinit>() -> <clinit>
+com.legaoyi.protocol.server.BytesToMessageChannelHandler -> com.legaoyi.protocol.server.d:
+    org.slf4j.Logger logger -> logger
+    int messageDataLimit -> r
+    java.lang.String defultProtocolVersion -> e
+    com.legaoyi.gateway.message.handler.DeviceDownMessageDeliverer messageDeliverer -> b
+    com.legaoyi.protocol.server.PackagesCacheManager packagesCacheManager -> s
+    32:39:void <init>() -> <init>
+    52:67:void channelRead(io.netty.channel.ChannelHandlerContext,java.lang.Object) -> channelRead
+    70:124:com.legaoyi.protocol.message.Message decodeMessage(io.netty.channel.ChannelHandlerContext,byte[]) -> a
+    129:185:byte[] checkPackages(com.legaoyi.protocol.server.Session,com.legaoyi.protocol.message.MessageHeader,byte[]) -> a
+    189:199:com.legaoyi.protocol.message.Message build8003Message(com.legaoyi.protocol.message.MessageHeader,java.util.List,int) -> a
+    34:34:void <clinit>() -> <clinit>
+com.legaoyi.protocol.server.ChannelInboundEventHandler -> com.legaoyi.protocol.server.ChannelInboundEventHandler:
+    org.slf4j.Logger logger -> logger
+    com.legaoyi.protocol.server.ServerMessageHandler urgentMessageHandler -> urgentMessageHandler
+    com.legaoyi.protocol.server.DataLimitAlarmHandler dataLimitAlarmHandler -> dataLimitAlarmHandler
+    int maxTerminalConnSize -> maxTerminalConnSize
+    com.legaoyi.protocol.server.GatewayCacheManager gatewayCacheManager -> gatewayCacheManager
+    25:25:void <init>() -> <init>
+    46:79:void channelActive(io.netty.channel.ChannelHandlerContext) -> channelActive
+    83:108:void channelInactive(io.netty.channel.ChannelHandlerContext) -> channelInactive
+    112:126:void exceptionCaught(io.netty.channel.ChannelHandlerContext,java.lang.Throwable) -> exceptionCaught
+    130:144:void userEventTriggered(io.netty.channel.ChannelHandlerContext,java.lang.Object) -> userEventTriggered
+    27:27:void <clinit>() -> <clinit>
+com.legaoyi.protocol.server.CodecDecoder -> com.legaoyi.protocol.server.e:
+    org.slf4j.Logger logger -> logger
+    26:26:void <init>() -> <init>
+    32:87:void decode(io.netty.channel.ChannelHandlerContext,io.netty.buffer.ByteBuf,java.util.List) -> decode
+    91:107:void handleIllegalMessage(io.netty.channel.ChannelHandlerContext) -> a
+    28:28:void <clinit>() -> <clinit>
+com.legaoyi.protocol.server.CodecEncoder -> com.legaoyi.protocol.server.f:
+    19:19:void <init>() -> <init>
+    23:26:void encode(io.netty.channel.ChannelHandlerContext,java.util.List,io.netty.buffer.ByteBuf) -> a
+    17:17:void encode(io.netty.channel.ChannelHandlerContext,java.lang.Object,io.netty.buffer.ByteBuf) -> encode
+com.legaoyi.protocol.server.DataLimitAlarmHandler -> com.legaoyi.protocol.server.g:
+    org.slf4j.Logger logger -> logger
+    com.legaoyi.protocol.server.ServerMessageHandler commonMessageHandler -> t
+    com.legaoyi.protocol.server.GatewayCacheManager gatewayCacheManager -> gatewayCacheManager
+    16:16:void <init>() -> <init>
+    36:63:void handleDataLimitAlarm(java.lang.String,java.lang.String,int) -> b
+    66:75:void handleDataLimitAlarm(com.legaoyi.protocol.server.Session,int) -> b
+    18:18:void <clinit>() -> <clinit>
+com.legaoyi.protocol.server.GatewayCacheManager -> com.legaoyi.protocol.server.h:
+    java.lang.String CACHE_NAME_ELINK_DEVICE_GATEWAY_CACHE -> u
+    17:17:void <init>() -> <init>
+    23:23:java.util.Map addTokenBucketCache(java.lang.String,java.util.Map) -> a
+    27:27:void removeTokenBucketCache(java.lang.String) -> b
+    31:31:java.util.Map getTokenBucketCache(java.lang.String) -> c
+    36:36:java.util.Map addBlackListCache(java.lang.String,java.util.Map) -> b
+    41:41:java.util.Map getBlackListCache(java.lang.String) -> d
+    45:45:void removeBlackList(java.lang.String) -> e
+    49:49:com.legaoyi.gateway.security.TokenBucket addTokenBucketCacheByIp(java.lang.String,com.legaoyi.gateway.security.TokenBucket) -> a
+    54:54:com.legaoyi.gateway.security.TokenBucket getTokenBucketCacheByIp(java.lang.String) -> f
+    58:58:void removeTokenBucketCacheByIp(java.lang.String) -> g
+    62:62:com.legaoyi.gateway.security.TokenBucket addTokenBucketCache(java.lang.String,java.lang.String,com.legaoyi.gateway.security.TokenBucket) -> a
+    66:66:void removeTokenBucketCache(java.lang.String,java.lang.String) -> b
+    70:70:com.legaoyi.gateway.security.TokenBucket getTokenBucketCache(java.lang.String,java.lang.String) -> c
+    75:75:java.lang.String addAuthCodeCache(java.lang.String,java.lang.String) -> d
+    80:80:java.lang.String getAuthCodeCache(java.lang.String) -> h
+    84:84:void removeAuthCodeCache(java.lang.String) -> i
+    88:88:com.legaoyi.protocol.server.Packages addPackageCache(java.lang.String,com.legaoyi.protocol.server.Packages) -> a
+    92:92:void removePackageCache(java.lang.String) -> j
+    96:96:com.legaoyi.protocol.server.Packages getPackageCache(java.lang.String) -> k
+com.legaoyi.protocol.server.LoggerChannelInbouHandler -> com.legaoyi.protocol.server.LoggerChannelInbouHandler:
+    org.slf4j.Logger logger -> logger
+    14:14:void <init>() -> <init>
+    20:23:boolean handle(io.netty.channel.ChannelHandlerContext,byte[]) -> handle
+    16:16:void <clinit>() -> <clinit>
+com.legaoyi.protocol.server.LoggerChannelOutbouHandler -> com.legaoyi.protocol.server.LoggerChannelOutbouHandler:
+    org.slf4j.Logger logger -> logger
+    16:16:void <init>() -> <init>
+    22:34:void write(io.netty.channel.ChannelHandlerContext,java.lang.Object,io.netty.channel.ChannelPromise) -> write
+    18:18:void <clinit>() -> <clinit>
+com.legaoyi.protocol.server.MessageCountLimitChannelHandler -> com.legaoyi.protocol.server.i:
+    com.legaoyi.protocol.server.DataLimitAlarmHandler dataLimitAlarmHandler -> dataLimitAlarmHandler
+    com.legaoyi.gateway.security.SecurityUtil securityUtil -> v
+    int messageCountLimit -> w
+    int message0102CountLimit -> x
+    int message0100CountLimit -> y
+    java.lang.String mediaMessage -> z
+    java.util.Map mediaMessageMap -> A
+    26:26:void <init>() -> <init>
+    52:60:void init() -> init
+    64:117:boolean handle(io.netty.channel.ChannelHandlerContext,com.legaoyi.protocol.message.Message) -> b
+com.legaoyi.protocol.server.MessageDataLimitChannelHandler -> com.legaoyi.protocol.server.j:
+    org.slf4j.Logger logger -> logger
+    com.legaoyi.protocol.server.DataLimitAlarmHandler dataLimitAlarmHandler -> dataLimitAlarmHandler
+    com.legaoyi.gateway.security.SecurityUtil securityUtil -> v
+    int messageDataLimit -> r
+    19:19:void <init>() -> <init>
+    38:75:boolean handle(io.netty.channel.ChannelHandlerContext,byte[]) -> handle
+    21:21:void <clinit>() -> <clinit>
+com.legaoyi.protocol.server.MessagePublishChannelHandler -> com.legaoyi.protocol.server.k:
+    java.lang.String urgentMessage -> B
+    java.util.Map urgentMessageMap -> C
+    java.lang.String mediaMessage -> z
+    java.util.Map mediaMessageMap -> A
+    java.util.Map ignoreMessageMap -> D
+    com.legaoyi.protocol.server.ServerMessageHandler urgentMessageHandler -> urgentMessageHandler
+    com.legaoyi.protocol.server.ServerMessageHandler commonMessageHandler -> t
+    com.legaoyi.protocol.server.ServerMessageHandler mediaMessageHandler -> E
+    java.lang.String ignoreMessage -> F
+    22:22:void <init>() -> <init>
+    53:79:void init() -> init
+    83:100:boolean handle(io.netty.channel.ChannelHandlerContext,com.legaoyi.protocol.message.Message) -> b
+com.legaoyi.protocol.server.OpenChannelHandler -> com.legaoyi.protocol.server.l:
+    io.netty.channel.group.ChannelGroup channelGroup -> G
+    11:13:void <init>(io.netty.channel.group.ChannelGroup) -> <init>
+    17:19:void channelActive(io.netty.channel.ChannelHandlerContext) -> channelActive
+    23:25:void channelInactive(io.netty.channel.ChannelHandlerContext) -> channelInactive
+com.legaoyi.protocol.server.Packages -> com.legaoyi.protocol.server.m:
+    long serialVersionUID -> serialVersionUID
+    byte[][] packages -> H
+    int firstSeq -> I
+    int total -> total
+    int maxSeq -> J
+    int currentSeq -> K
+    55:66:void <init>(int) -> <init>
+    69:77:void addPackage(int,byte[]) -> a
+    80:80:boolean isRetransmission() -> i
+    84:92:boolean isFull() -> isFull
+    96:96:int getFirstSeq() -> j
+    100:100:int getPackageSize() -> k
+    104:110:java.util.List getLostPackageSeqs() -> l
+    114:118:byte[] getAllPackages() -> m
+com.legaoyi.protocol.server.PackagesCacheManager -> com.legaoyi.protocol.server.n:
+    com.legaoyi.protocol.server.GatewayCacheManager gatewayCacheManager -> gatewayCacheManager
+    13:13:void <init>() -> <init>
+    20:33:com.legaoyi.protocol.server.Packages createPackageCache(java.lang.String,int) -> a
+    37:40:com.legaoyi.protocol.server.Packages addPackageCache(java.lang.String,int,int,byte[]) -> a
+    44:45:void removePackageCache(java.lang.String) -> j
+com.legaoyi.protocol.server.Server -> com.legaoyi.protocol.server.o:
+    org.slf4j.Logger logger -> logger
+    boolean isRunning -> L
+    io.netty.channel.EventLoopGroup bossGroup -> M
+    io.netty.channel.EventLoopGroup workerGroup -> N
+    int idleTime -> O
+    int port -> port
+    int connectThreadPoolSize -> P
+    int ioThreadPoolSize -> Q
+    io.netty.channel.group.ChannelGroup channelGroup -> G
+    com.legaoyi.protocol.server.ChannelInboundEventHandler channelInboundEventHandler -> R
+    com.legaoyi.protocol.server.MessageDataLimitChannelHandler messageDataLimitChannelHandler -> S
+    com.legaoyi.protocol.server.LoggerChannelInbouHandler loggerChannelInbouHandler -> T
+    io.netty.channel.ChannelOutboundHandler loggerChannelOutbouHandler -> U
+    com.legaoyi.protocol.server.MessageCountLimitChannelHandler messageCountLimitChannelHandler -> V
+    com.legaoyi.protocol.server.BytesToMessageChannelHandler bytesToMessageChannelHandler -> W
+    com.legaoyi.protocol.server.SessionContextChannelHandler sessionContextChannelHandler -> X
+    com.legaoyi.protocol.server.MessagePublishChannelHandler messagePublishChannelHandler -> Y
+    com.legaoyi.protocol.server.AutoWrite8001MessageChannelHandler autoWrite8001MessageChannelHandler -> Z
+    com.legaoyi.protocol.server.CodecEncoder codecEncoder -> aa
+    java.lang.Object LOCK -> LOCK
+    34:55:void <init>() -> <init>
+    100:112:void start() -> start
+    115:128:void stop() -> stop
+    131:185:void startServer() -> startServer
+    34:34:com.legaoyi.protocol.server.CodecEncoder access$000(com.legaoyi.protocol.server.Server) -> a
+    34:34:io.netty.channel.ChannelOutboundHandler access$100(com.legaoyi.protocol.server.Server) -> b
+    34:34:int access$200(com.legaoyi.protocol.server.Server) -> c
+    34:34:io.netty.channel.group.ChannelGroup access$300(com.legaoyi.protocol.server.Server) -> d
+    34:34:com.legaoyi.protocol.server.ChannelInboundEventHandler access$400(com.legaoyi.protocol.server.Server) -> e
+    34:34:com.legaoyi.protocol.server.MessageDataLimitChannelHandler access$500(com.legaoyi.protocol.server.Server) -> f
+    34:34:com.legaoyi.protocol.server.LoggerChannelInbouHandler access$600(com.legaoyi.protocol.server.Server) -> g
+    34:34:com.legaoyi.protocol.server.BytesToMessageChannelHandler access$700(com.legaoyi.protocol.server.Server) -> h
+    34:34:com.legaoyi.protocol.server.MessageCountLimitChannelHandler access$800(com.legaoyi.protocol.server.Server) -> i
+    34:34:com.legaoyi.protocol.server.SessionContextChannelHandler access$900(com.legaoyi.protocol.server.Server) -> j
+    34:34:com.legaoyi.protocol.server.MessagePublishChannelHandler access$1000(com.legaoyi.protocol.server.Server) -> k
+    34:34:com.legaoyi.protocol.server.AutoWrite8001MessageChannelHandler access$1100(com.legaoyi.protocol.server.Server) -> l
+    36:97:void <clinit>() -> <clinit>
+com.legaoyi.protocol.server.Server$1 -> com.legaoyi.protocol.server.o$1:
+    com.legaoyi.protocol.server.Server this$0 -> ab
+    136:136:void <init>(com.legaoyi.protocol.server.Server) -> <init>
+    140:154:void initChannel(io.netty.channel.socket.SocketChannel) -> a
+    136:136:void initChannel(io.netty.channel.Channel) -> initChannel
+com.legaoyi.protocol.server.ServerDisruptorMessageHandler -> com.legaoyi.protocol.server.p:
+    org.slf4j.Logger logger -> logger
+    com.legaoyi.mq.MQMessageProducer producer -> ac
+    java.lang.String gatewayId -> gatewayId
+    int threadPoolSize -> ad
+    java.lang.String mediaStorePath -> ae
+    java.util.concurrent.ExecutorService fixedThreadPool -> af
+    33:50:void <init>() -> <init>
+    54:55:void init() -> init
+    59:86:void handle(java.lang.Object) -> handle
+    89:120:void resetMessage(com.legaoyi.common.message.ExchangeMessage) -> b
+    33:33:java.lang.String access$000(com.legaoyi.protocol.server.ServerDisruptorMessageHandler) -> a
+    33:33:void access$100(com.legaoyi.protocol.server.ServerDisruptorMessageHandler,com.legaoyi.common.message.ExchangeMessage) -> a
+    33:33:com.legaoyi.mq.MQMessageProducer access$200(com.legaoyi.protocol.server.ServerDisruptorMessageHandler) -> b
+    33:33:org.slf4j.Logger access$300() -> access$300
+    35:35:void <clinit>() -> <clinit>
+com.legaoyi.protocol.server.ServerDisruptorMessageHandler$1 -> com.legaoyi.protocol.server.p$1:
+    java.lang.Object val$message -> ag
+    com.legaoyi.protocol.server.ServerDisruptorMessageHandler this$0 -> ah
+    59:59:void <init>(com.legaoyi.protocol.server.ServerDisruptorMessageHandler,java.lang.Object) -> <init>
+    63:84:void run() -> run
+com.legaoyi.protocol.server.ServerMessageHandler -> com.legaoyi.protocol.server.q:
+    void handle(com.legaoyi.common.message.ExchangeMessage) -> a
+com.legaoyi.protocol.server.ServerUpMessageHandler -> com.legaoyi.protocol.server.r:
+    com.legaoyi.common.disruptor.DisruptorEventProducer producer -> ai
+    java.lang.String routingKey -> routingKey
+    15:15:void <init>() -> <init>
+    22:23:void setProducer(com.legaoyi.common.disruptor.DisruptorEventProducer) -> a
+    26:27:void setRoutingKey(java.lang.String) -> setRoutingKey
+    31:35:void handle(com.legaoyi.common.message.ExchangeMessage) -> a
+com.legaoyi.protocol.server.Session -> com.legaoyi.protocol.server.s:
+    java.lang.String simCode -> aj
+    java.lang.String protocolVersion -> ak
+    com.legaoyi.protocol.server.SessionState sessionState -> al
+    io.netty.channel.ChannelHandlerContext ctx -> ctx
+    java.util.Map tokenBucket -> am
+    java.util.Set upMessageLimit -> an
+    java.util.List messageNumLimit -> ao
+    java.util.List messageByteLimit -> ap
+    long createTime -> aq
+    24:40:void <init>(java.lang.String,io.netty.channel.ChannelHandlerContext) -> <init>
+    24:46:void <init>(io.netty.channel.ChannelHandlerContext) -> <init>
+    49:49:java.lang.String getSimCode() -> getSimCode
+    53:54:void setSimCode(java.lang.String) -> setSimCode
+    57:57:java.lang.String getProtocolVersion() -> n
+    61:62:void setProtocolVersion(java.lang.String) -> l
+    65:66:void setTokenBucket(java.lang.String,com.legaoyi.gateway.security.TokenBucket) -> b
+    69:69:java.util.Map getTokenBucket() -> o
+    73:73:com.legaoyi.gateway.security.TokenBucket getTokenBucket(java.lang.String) -> m
+    77:78:void setSessionState(com.legaoyi.protocol.server.SessionState) -> a
+    81:81:com.legaoyi.protocol.server.SessionState getSessionState() -> p
+    85:85:io.netty.channel.ChannelHandlerContext getChannelHandlerContext() -> q
+    89:89:long getCreateTime() -> getCreateTime
+    93:93:java.util.Set getUpMessageLimit() -> r
+    97:98:void setUpMessageLimit(java.util.Set) -> a
+    101:101:java.util.List getMessageNumLimit() -> s
+    105:106:void setMessageNumLimit(java.util.List) -> b
+    109:109:java.util.List getMessageByteLimit() -> t
+    113:114:void setMessageByteLimit(java.util.List) -> c
+com.legaoyi.protocol.server.SessionContext -> com.legaoyi.protocol.server.t:
+    com.legaoyi.protocol.server.Session session -> ar
+    io.netty.util.AttributeKey ATTRIBUTE_SESSION_CONTEXT -> as
+    17:19:void <init>(io.netty.channel.ChannelHandlerContext) -> <init>
+    22:23:com.legaoyi.protocol.server.Session createSession(java.lang.String) -> n
+    27:27:com.legaoyi.protocol.server.Session getCurrentSession() -> u
+    31:34:void closeSession(java.lang.String) -> o
+    15:15:void <clinit>() -> <clinit>
+com.legaoyi.protocol.server.SessionContextChannelHandler -> com.legaoyi.protocol.server.u:
+    boolean ignoreAuthentication -> at
+    boolean multiProtocol -> c
+    com.legaoyi.gateway.message.handler.DeviceDownMessageDeliverer messageDeliverer -> b
+    com.legaoyi.protocol.server.ServerMessageHandler urgentMessageHandler -> urgentMessageHandler
+    com.legaoyi.protocol.server.GatewayCacheManager gatewayCacheManager -> gatewayCacheManager
+    21:26:void <init>() -> <init>
+    43:76:boolean handle(io.netty.channel.ChannelHandlerContext,com.legaoyi.protocol.message.Message) -> b
+    80:88:void buildDefault0102Message(io.netty.channel.ChannelHandlerContext,com.legaoyi.protocol.message.Message) -> c
+    91:98:void handleIllegalMessage(com.legaoyi.protocol.server.Session,com.legaoyi.protocol.message.Message) -> b
+    101:103:void createSession(io.netty.channel.ChannelHandlerContext,java.lang.String) -> a
+    106:122:boolean checkAuthCode(com.legaoyi.protocol.server.Session,com.legaoyi.protocol.message.Message) -> c
+    127:132:void write8001Message(com.legaoyi.protocol.server.Session,com.legaoyi.protocol.message.Message,int) -> a
+com.legaoyi.protocol.server.SessionManager -> com.legaoyi.protocol.server.SessionManager:
+    org.slf4j.Logger logger -> logger
+    com.legaoyi.protocol.server.SessionManager sessionManager -> sessionManager
+    java.util.Map sessionMap -> sessionMap
+    25:25:void <init>() -> <init>
+    28:28:com.legaoyi.protocol.server.SessionManager getInstance() -> getInstance
+    32:41:void closeSession(java.lang.String,java.lang.String) -> closeSession
+    44:62:com.legaoyi.protocol.server.Session createSession(java.lang.String,io.netty.channel.ChannelHandlerContext) -> createSession
+    66:66:com.legaoyi.protocol.server.Session initSession(io.netty.channel.ChannelHandlerContext) -> initSession
+    70:70:com.legaoyi.protocol.server.Session getSession(java.lang.String) -> getSession
+    74:74:int size() -> size
+    78:84:void closeAll() -> closeAll
+    19:23:void <clinit>() -> <clinit>
+com.legaoyi.protocol.server.SessionState -> com.legaoyi.protocol.server.v:
+    com.legaoyi.protocol.server.SessionState CREATING -> au
+    com.legaoyi.protocol.server.SessionState INITIATED -> av
+    com.legaoyi.protocol.server.SessionState AUTHENTICATED -> aw
+    com.legaoyi.protocol.server.SessionState[] $VALUES -> ax
+    8:8:com.legaoyi.protocol.server.SessionState[] values() -> v
+    8:8:com.legaoyi.protocol.server.SessionState valueOf(java.lang.String) -> p
+    8:8:void <init>(java.lang.String,int) -> <init>
+    8:9:void <clinit>() -> <clinit>
+com.legaoyi.protocol.util.DefaultMessageBuilder -> com.legaoyi.protocol.util.a:
+    22:22:void <init>() -> <init>
+    25:28:com.legaoyi.common.message.ExchangeMessage buildLinkStateMessage(java.lang.String,int) -> b
+    32:32:com.legaoyi.common.message.ExchangeMessage buildOnlineMessage(java.lang.String) -> q
+    36:36:com.legaoyi.common.message.ExchangeMessage buildOfflineMessage(java.lang.String) -> r
+    40:65:com.legaoyi.protocol.message.Message build8001Message(io.netty.channel.ChannelHandlerContext,int) -> a
+    69:78:com.legaoyi.protocol.message.Message build8001Message(com.legaoyi.protocol.message.Message,int) -> a
+com.legaoyi.protocol.util.UnknownMessageBody -> com.legaoyi.protocol.util.b:
+    long serialVersionUID -> serialVersionUID
+    java.lang.String messageId -> ay
+    java.lang.String messageBody -> az
+    6:6:void <init>() -> <init>
+    17:17:java.lang.String getMessageId() -> getMessageId
+    21:22:void setMessageId(java.lang.String) -> setMessageId
+    25:25:java.lang.String getMessageBody() -> w
+    29:30:void setMessageBody(java.lang.String) -> s
+com.legaoyi.rabbitmq.DeviceDownMessageRabbitmqListener -> com.legaoyi.rabbitmq.DeviceDownMessageRabbitmqListener:
+    org.slf4j.Logger logger -> logger
+    java.lang.String DEFAULT_CHARSET -> DEFAULT_CHARSET
+    java.lang.String downMessageExchange -> downMessageExchange
+    java.lang.String commonDownMessageQueue -> commonDownMessageQueue
+    java.lang.String gatewayId -> gatewayId
+    com.legaoyi.mq.MQMessageHandler messageHandler -> messageHandler
+    boolean durable -> durable
+    20:39:void <init>() -> <init>
+    44:44:org.springframework.amqp.core.Queue commonDownMessageQueue() -> commonDownMessageQueue
+    49:49:org.springframework.amqp.core.DirectExchange downMessageExchange() -> downMessageExchange
+    55:55:org.springframework.amqp.core.Binding commonDownMessageQueueBinding() -> commonDownMessageQueueBinding
+    60:70:void onMessage(byte[]) -> onMessage
+    75:82:void onMessage(java.lang.String) -> onMessage
+    22:22:void <clinit>() -> <clinit>
+com.legaoyi.rabbitmq.RabbitmqConfiguration -> com.legaoyi.rabbitmq.a:
+    java.lang.String upMessageExchange -> aA
+    java.lang.String commonUpMessageQueue -> aB
+    java.lang.String urgentUpMessageQueue -> aC
+    java.lang.String mediaUpMessageQueue -> aD
+    boolean durable -> durable
+    int bufferSize -> bufferSize
+    com.legaoyi.protocol.util.ServerRuntimeContext serverRuntimeContext -> serverRuntimeContext
+    com.legaoyi.protocol.server.ServerDisruptorMessageHandler serverDisruptorMessageHandler -> aE
+    27:41:void <init>() -> <init>
+    57:57:org.springframework.amqp.core.Queue commonUpMessageQueue() -> x
+    62:62:org.springframework.amqp.core.Queue urgentUpMessageQueue() -> y
+    67:67:org.springframework.amqp.core.Queue mediaUpMessageQueue() -> z
+    72:72:org.springframework.amqp.core.DirectExchange upMessageExchange() -> A
+    77:77:org.springframework.amqp.core.Binding commonUpMessageQueueBinding() -> B
+    82:82:org.springframework.amqp.core.Binding urgentUpMessageQueueBinding() -> C
+    87:87:org.springframework.amqp.core.Binding mediaUpMessageQueueBinding() -> D
+    92:92:com.legaoyi.mq.MQMessageProducer initMessageProducer() -> E
+    97:97:com.legaoyi.common.disruptor.DisruptorEventConsumer initDisruptorEventConsumer() -> F
+    102:102:com.legaoyi.common.disruptor.DisruptorEventProducer initDisruptorEventProducer() -> G
+    107:110:com.legaoyi.protocol.server.ServerUpMessageHandler initCommonServerMessageHandler() -> H
+    115:118:com.legaoyi.protocol.server.ServerUpMessageHandler initUrgentServerMessageHandler() -> I
+    123:126:com.legaoyi.protocol.server.ServerUpMessageHandler initMediaServerMessageHandler() -> J
+    131:139:com.legaoyi.mq.MQMessageHandler initPlatformDownMessageHandler() -> K
